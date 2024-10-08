@@ -138,7 +138,6 @@ describe("creating routes from JSX", () => {
             shouldRevalidate={() => true}
             element={<h1>home</h1>}
           />
-
           <Route path="users">
             <Route
               index

@@ -143,7 +143,7 @@ describe("special character tests", () => {
     return (
       <>
         <p>{location.pathname}</p>
-        <Link to="/reset">Link to reset</Link>
+        <Link to="..//reset">Link to reset</Link>
       </>
     );
   }
@@ -171,7 +171,7 @@ describe("special character tests", () => {
         return (
           <>
             <h1>{heading}</h1>
-            <CaptureLocation></CaptureLocation>
+            <CaptureLocation />
           </>
         );
       }
@@ -189,10 +189,12 @@ describe("special character tests", () => {
               element={<Comp heading="Parent Nested Param Route" />}
             />
           </Route>
-          <Route
-            path="/inline-splat/*"
-            element={<Comp heading="Inline Nested Splat Route" />}
-          />
+          <Route path="/inline-splat">
+            <Route
+              path="*"
+              element={<Comp heading="Inline Nested Splat Route" />}
+            />
+          </Route>
           <Route path="/splat">
             <Route
               path="*"
@@ -203,18 +205,22 @@ describe("special character tests", () => {
             path="/reset"
             element={<Link to={navigatePath}>Link to path</Link>}
           />
-          <Route
-            path="/descendant/:param/*"
-            element={
-              <Routes>
-                <Route
-                  path="match"
-                  element={<Comp heading="Descendant Route" />}
-                />
-              </Routes>
-            }
-          />
-          <Route path="/*" element={<Comp heading="Root Splat Route" />} />
+          <Route path="/descendant/:param">
+            <Route
+              path="*"
+              element={
+                <Routes>
+                  <Route
+                    path="match"
+                    element={<Comp heading="Descendant Route" />}
+                  />
+                </Routes>
+              }
+            />
+          </Route>
+          <Route path="">
+            <Route path="*" element={<Comp heading="Root Splat Route" />} />
+          </Route>
         </>
       );
 
@@ -222,7 +228,13 @@ describe("special character tests", () => {
       // the right route match, window.location, useLocation(), and useParams()
       // values
       let ctx = render(
-        <BrowserRouter window={testWindow}>
+        <BrowserRouter
+          window={testWindow}
+          future={{
+            v7_relativeSplatPath: true,
+            v7_startTransition: true,
+          }}
+        >
           <Routes>{routeElements}</Routes>
         </BrowserRouter>
       );
@@ -269,8 +281,24 @@ describe("special character tests", () => {
       // Now run the same initialized-location render through a data router
       // and confirm all the same assertions
       let routes = createRoutesFromElements(routeElements);
-      let router = createBrowserRouter(routes, { window: testWindow });
-      ctx = render(<RouterProvider router={router} />);
+      let router = createBrowserRouter(routes, {
+        window: testWindow,
+
+        future: {
+          v7_fetcherPersist: true,
+          v7_normalizeFormMethod: true,
+          v7_partialHydration: true,
+          v7_skipActionStatusRevalidation: true,
+        },
+      });
+      ctx = render(
+        <RouterProvider
+          router={router}
+          future={{
+            v7_startTransition: true,
+          }}
+        />
+      );
 
       expect(ctx.container.querySelector("h1")?.innerHTML).toBe(
         expectedHeading
@@ -532,7 +560,13 @@ describe("special character tests", () => {
 
     it("does not trim trailing spaces on ancestor splat route segments", async () => {
       let ctx = render(
-        <BrowserRouter window={getWindow("/parent/child/%20%20param%20%20")}>
+        <BrowserRouter
+          window={getWindow("/parent/child/%20%20param%20%20")}
+          future={{
+            v7_relativeSplatPath: true,
+            v7_startTransition: true,
+          }}
+        >
           <App />
         </BrowserRouter>
       );
@@ -569,7 +603,9 @@ describe("special character tests", () => {
       function App() {
         return (
           <Routes>
-            <Route path="/parent/*" element={<Parent />} />
+            <Route path="/parent">
+              <Route path="*" element={<Parent />} />
+            </Route>
           </Routes>
         );
       }
@@ -577,7 +613,9 @@ describe("special character tests", () => {
       function Parent() {
         return (
           <Routes>
-            <Route path="child/:param/*" element={<Child />} />
+            <Route path="child/:param">
+              <Route path="*" element={<Child />} />
+            </Route>
           </Routes>
         );
       }
@@ -585,7 +623,7 @@ describe("special character tests", () => {
       function Child() {
         return (
           <>
-            <Link to="./grandchild">Link to grandchild</Link>
+            <Link to=".././grandchild">Link to grandchild</Link>
             <Routes>
               <Route path="grandchild" element={<Grandchild />} />
             </Routes>
@@ -634,7 +672,7 @@ describe("special character tests", () => {
         return (
           <>
             <p>{location.pathname}</p>
-            <Link to="/reset">Link to reset</Link>
+            <Link to="..//reset">Link to reset</Link>
           </>
         );
       }
@@ -684,7 +722,13 @@ describe("special character tests", () => {
       // the right route match, window.location, useLocation(), and useParams()
       // values
       let ctx = render(
-        <BrowserRouter window={testWindow}>
+        <BrowserRouter
+          window={testWindow}
+          future={{
+            v7_relativeSplatPath: true,
+            v7_startTransition: true,
+          }}
+        >
           <Routes>{routeElements}</Routes>
         </BrowserRouter>
       );
@@ -710,8 +754,24 @@ describe("special character tests", () => {
       // Now run the same initialized-location render through a data router
       // and confirm all the same assertions
       let routes = createRoutesFromElements(routeElements);
-      let router = createBrowserRouter(routes, { window: testWindow });
-      ctx = render(<RouterProvider router={router} />);
+      let router = createBrowserRouter(routes, {
+        window: testWindow,
+
+        future: {
+          v7_fetcherPersist: true,
+          v7_normalizeFormMethod: true,
+          v7_partialHydration: true,
+          v7_skipActionStatusRevalidation: true,
+        },
+      });
+      ctx = render(
+        <RouterProvider
+          router={router}
+          future={{
+            v7_startTransition: true,
+          }}
+        />
+      );
 
       expect(ctx.container.querySelector("h1")!.innerHTML).toBe(
         expectedHeading
@@ -856,7 +916,14 @@ describe("special character tests", () => {
           [{ path: "/with space", element: <ShowPath /> }],
           { initialEntries: ["/with space"] }
         );
-        let ctx = render(<RouterProvider router={router} />);
+        let ctx = render(
+          <RouterProvider
+            router={router}
+            future={{
+              v7_startTransition: true,
+            }}
+          />
+        );
 
         expect(ctx.container.innerHTML).toMatchInlineSnapshot(
           `"<pre>{"pathname":"/with space","search":"","hash":""}</pre>"`
@@ -874,7 +941,14 @@ describe("special character tests", () => {
           { path: "/", element: <Start /> },
           { path: "/with space", element: <ShowPath /> },
         ]);
-        let ctx = render(<RouterProvider router={router} />);
+        let ctx = render(
+          <RouterProvider
+            router={router}
+            future={{
+              v7_startTransition: true,
+            }}
+          />
+        );
 
         expect(ctx.container.innerHTML).toMatchInlineSnapshot(
           `"<pre>{"pathname":"/with space","search":"","hash":""}</pre>"`
@@ -887,7 +961,13 @@ describe("special character tests", () => {
         let testWindow = getWindow("/with space");
 
         let ctx = render(
-          <BrowserRouter window={testWindow}>
+          <BrowserRouter
+            window={testWindow}
+            future={{
+              v7_relativeSplatPath: true,
+              v7_startTransition: true,
+            }}
+          >
             <Routes>
               <Route path="/with space" element={<ShowPath />} />
             </Routes>
@@ -911,7 +991,13 @@ describe("special character tests", () => {
         }
 
         let ctx = render(
-          <BrowserRouter window={testWindow}>
+          <BrowserRouter
+            window={testWindow}
+            future={{
+              v7_relativeSplatPath: true,
+              v7_startTransition: true,
+            }}
+          >
             <Routes>
               <Route path="/" element={<Start />} />
               <Route path="/with space" element={<ShowPath />} />
@@ -930,9 +1016,25 @@ describe("special character tests", () => {
 
         let router = createBrowserRouter(
           [{ path: "/with space", element: <ShowPath /> }],
-          { window: testWindow }
+          {
+            window: testWindow,
+
+            future: {
+              v7_fetcherPersist: true,
+              v7_normalizeFormMethod: true,
+              v7_partialHydration: true,
+              v7_skipActionStatusRevalidation: true,
+            },
+          }
         );
-        let ctx = render(<RouterProvider router={router} />);
+        let ctx = render(
+          <RouterProvider
+            router={router}
+            future={{
+              v7_startTransition: true,
+            }}
+          />
+        );
 
         expect(testWindow.location.pathname).toBe("/with%20space");
         expect(ctx.container.innerHTML).toMatchInlineSnapshot(
@@ -955,9 +1057,25 @@ describe("special character tests", () => {
             { path: "/", element: <Start /> },
             { path: "/with space", element: <ShowPath /> },
           ],
-          { window: testWindow }
+          {
+            window: testWindow,
+
+            future: {
+              v7_fetcherPersist: true,
+              v7_normalizeFormMethod: true,
+              v7_partialHydration: true,
+              v7_skipActionStatusRevalidation: true,
+            },
+          }
         );
-        let ctx = render(<RouterProvider router={router} />);
+        let ctx = render(
+          <RouterProvider
+            router={router}
+            future={{
+              v7_startTransition: true,
+            }}
+          />
+        );
 
         expect(testWindow.location.pathname).toBe("/with%20space");
         expect(ctx.container.innerHTML).toMatchInlineSnapshot(
@@ -989,9 +1107,25 @@ describe("special character tests", () => {
               ],
             },
           ],
-          { window: testWindow }
+          {
+            window: testWindow,
+
+            future: {
+              v7_fetcherPersist: true,
+              v7_normalizeFormMethod: true,
+              v7_partialHydration: true,
+              v7_skipActionStatusRevalidation: true,
+            },
+          }
         );
-        let ctx = render(<RouterProvider router={router} />);
+        let ctx = render(
+          <RouterProvider
+            router={router}
+            future={{
+              v7_startTransition: true,
+            }}
+          />
+        );
 
         expect(testWindow.location.pathname).toBe("/user/b%C3%BCcherwurm");
         expect(ctx.container.innerHTML).toMatchInlineSnapshot(`
@@ -1063,7 +1197,14 @@ describe("special character tests", () => {
           [{ path: "/with space", element: <ShowPath /> }],
           { window: testWindow }
         );
-        let ctx = render(<RouterProvider router={router} />);
+        let ctx = render(
+          <RouterProvider
+            router={router}
+            future={{
+              v7_startTransition: true,
+            }}
+          />
+        );
 
         expect(testWindow.location.pathname).toBe("/");
         expect(testWindow.location.hash).toBe("#/with%20space");
@@ -1089,7 +1230,14 @@ describe("special character tests", () => {
           ],
           { window: testWindow }
         );
-        let ctx = render(<RouterProvider router={router} />);
+        let ctx = render(
+          <RouterProvider
+            router={router}
+            future={{
+              v7_startTransition: true,
+            }}
+          />
+        );
 
         expect(testWindow.location.pathname).toBe("/");
         expect(testWindow.location.hash).toBe("#/with%20space");

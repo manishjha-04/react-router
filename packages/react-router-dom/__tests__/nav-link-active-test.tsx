@@ -212,7 +212,13 @@ describe("NavLink", () => {
 
       TestRenderer.act(() => {
         renderer = TestRenderer.create(
-          <BrowserRouter window={getWindow("/users/matt brophy")}>
+          <BrowserRouter
+            window={getWindow("/users/matt brophy")}
+            future={{
+              v7_relativeSplatPath: true,
+              v7_startTransition: true,
+            }}
+          >
             <Routes>
               <Route
                 path="/users/:name"
@@ -380,10 +386,7 @@ describe("NavLink", () => {
           <MemoryRouter initialEntries={["/home"]}>
             <Routes>
               <Route index element={<h1>Root</h1>} />
-              <Route
-                path="home"
-                element={<NavLink to="/">Root</NavLink>}
-              ></Route>
+              <Route path="home" element={<NavLink to="/">Root</NavLink>} />
             </Routes>
           </MemoryRouter>
         );
@@ -409,10 +412,7 @@ describe("NavLink", () => {
                   </>
                 }
               >
-                <Route
-                  path="home"
-                  element={<NavLink to="/">Root</NavLink>}
-                ></Route>
+                <Route path="home" element={<NavLink to="/">Root</NavLink>} />
               </Route>
             </Routes>
           </MemoryRouter>
@@ -662,9 +662,23 @@ describe("NavLink using a data router", () => {
       ),
       {
         window: getWindow("/foo"),
+
+        future: {
+          v7_fetcherPersist: true,
+          v7_normalizeFormMethod: true,
+          v7_partialHydration: true,
+          v7_skipActionStatusRevalidation: true,
+        },
       }
     );
-    render(<RouterProvider router={router} />);
+    render(
+      <RouterProvider
+        router={router}
+        future={{
+          v7_startTransition: true,
+        }}
+      />
+    );
 
     function Layout() {
       return (
@@ -701,9 +715,23 @@ describe("NavLink using a data router", () => {
       ),
       {
         window: getWindow("/foo"),
+
+        future: {
+          v7_fetcherPersist: true,
+          v7_normalizeFormMethod: true,
+          v7_partialHydration: true,
+          v7_skipActionStatusRevalidation: true,
+        },
       }
     );
-    render(<RouterProvider router={router} />);
+    render(
+      <RouterProvider
+        router={router}
+        future={{
+          v7_startTransition: true,
+        }}
+      />
+    );
 
     function Layout() {
       return (
@@ -721,7 +749,6 @@ describe("NavLink using a data router", () => {
           >
             Link to Bar
           </NavLink>
-
           <Outlet />
         </>
       );
@@ -756,9 +783,23 @@ describe("NavLink using a data router", () => {
       ),
       {
         window: getWindow("/foo"),
+
+        future: {
+          v7_fetcherPersist: true,
+          v7_normalizeFormMethod: true,
+          v7_partialHydration: true,
+          v7_skipActionStatusRevalidation: true,
+        },
       }
     );
-    render(<RouterProvider router={router} />);
+    render(
+      <RouterProvider
+        router={router}
+        future={{
+          v7_startTransition: true,
+        }}
+      />
+    );
 
     function Layout() {
       return (
@@ -776,7 +817,6 @@ describe("NavLink using a data router", () => {
           >
             Link to Bar
           </NavLink>
-
           <Outlet />
         </>
       );
@@ -811,9 +851,23 @@ describe("NavLink using a data router", () => {
       ),
       {
         window: getWindow("/foo"),
+
+        future: {
+          v7_fetcherPersist: true,
+          v7_normalizeFormMethod: true,
+          v7_partialHydration: true,
+          v7_skipActionStatusRevalidation: true,
+        },
       }
     );
-    render(<RouterProvider router={router} />);
+    render(
+      <RouterProvider
+        router={router}
+        future={{
+          v7_startTransition: true,
+        }}
+      />
+    );
 
     function Layout() {
       return (
@@ -828,7 +882,6 @@ describe("NavLink using a data router", () => {
                 : "Link to Bar (idle)"
             }
           </NavLink>
-
           <Outlet />
         </>
       );
@@ -860,9 +913,23 @@ describe("NavLink using a data router", () => {
       ),
       {
         window: getWindow("/foo"),
+
+        future: {
+          v7_fetcherPersist: true,
+          v7_normalizeFormMethod: true,
+          v7_partialHydration: true,
+          v7_skipActionStatusRevalidation: true,
+        },
       }
     );
-    render(<RouterProvider router={router} />);
+    render(
+      <RouterProvider
+        router={router}
+        future={{
+          v7_startTransition: true,
+        }}
+      />
+    );
 
     function Layout() {
       return (
@@ -906,9 +973,23 @@ describe("NavLink using a data router", () => {
       ),
       {
         window: getWindow("/foo"),
+
+        future: {
+          v7_fetcherPersist: true,
+          v7_normalizeFormMethod: true,
+          v7_partialHydration: true,
+          v7_skipActionStatusRevalidation: true,
+        },
       }
     );
-    render(<RouterProvider router={router} />);
+    render(
+      <RouterProvider
+        router={router}
+        future={{
+          v7_startTransition: true,
+        }}
+      />
+    );
 
     function Layout() {
       return (
@@ -959,9 +1040,23 @@ describe("NavLink using a data router", () => {
       {
         window: getWindow("/base/foo"),
         basename: "/base",
+
+        future: {
+          v7_fetcherPersist: true,
+          v7_normalizeFormMethod: true,
+          v7_partialHydration: true,
+          v7_skipActionStatusRevalidation: true,
+        },
       }
     );
-    render(<RouterProvider router={router} />);
+    render(
+      <RouterProvider
+        router={router}
+        future={{
+          v7_startTransition: true,
+        }}
+      />
+    );
 
     function Layout() {
       return (

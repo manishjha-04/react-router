@@ -60,7 +60,14 @@ function testDomRouter(
           ),
           { window: getWindow("/") }
         );
-        render(<RouterProvider router={router} />);
+        render(
+          <RouterProvider
+            router={router}
+            future={{
+              v7_startTransition: true,
+            }}
+          />
+        );
 
         function FormPage() {
           return (
@@ -71,14 +78,12 @@ function testDomRouter(
               <Form id="myform" method="post">
                 <input type="text" name="tasks" defaultValue="first" />
                 <input type="text" name="tasks" defaultValue="second" />
-
                 <button name="tasks" value="">
                   Add Task
                 </button>
                 <button value="">No Name</button>
                 <input type="image" name="tasks" alt="Add Task" />
                 <input type="image" alt="No Name" />
-
                 <input type="text" name="tasks" defaultValue="last" />
               </Form>
             </>

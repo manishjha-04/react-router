@@ -12,14 +12,12 @@ export default function App() {
   return (
     <div>
       <h1>Custom Link Example</h1>
-
       <p>
         This example demonstrates how to create a custom{" "}
-        <code>&lt;Link&gt;</code> component that knows whether or not it is
-        "active" using the low-level <code>useResolvedPath()</code> and{" "}
-        <code>useMatch()</code> hooks.
+        <code>&lt;Link&gt;</code>component that knows whether or not it is
+        "active" using the low-level <code>useResolvedPath()</code>and{" "}
+        <code>useMatch()</code>hooks.
       </p>
-
       <Routes>
         <Route path="/" element={<Layout />}>
           <Route index element={<Home />} />
@@ -62,9 +60,7 @@ function Layout() {
           </li>
         </ul>
       </nav>
-
       <hr />
-
       <Outlet />
     </div>
   );
@@ -91,7 +87,7 @@ function NoMatch() {
     <div>
       <h1>Nothing to see here!</h1>
       <p>
-        <Link to="/">Go to the home page</Link>
+        <Link to="../">Go to the home page</Link>
       </p>
     </div>
   );

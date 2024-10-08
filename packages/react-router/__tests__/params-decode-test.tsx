@@ -13,14 +13,16 @@ describe("Decoding params", () => {
       renderer = TestRenderer.create(
         <MemoryRouter initialEntries={["/content/%2F"]}>
           <Routes>
-            <Route
-              path="content/*"
-              element={
-                <Routes>
-                  <Route path=":id" element={<Content />} />
-                </Routes>
-              }
-            />
+            <Route path="content">
+              <Route
+                path="*"
+                element={
+                  <Routes>
+                    <Route path=":id" element={<Content />} />
+                  </Routes>
+                }
+              />
+            </Route>
           </Routes>
         </MemoryRouter>
       );

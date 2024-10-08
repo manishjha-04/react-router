@@ -12,31 +12,49 @@ import "@reach/dialog/styles.css";
 
 import { IMAGES, getImageById } from "./images";
 
-const router = createBrowserRouter([
+const router = createBrowserRouter(
+  [
+    {
+      path: "/",
+      Component: Layout,
+      children: [
+        {
+          path: "/",
+          Component: Home,
+        },
+        {
+          path: "gallery",
+          Component: Gallery,
+          children: [
+            {
+              path: "img/:id",
+              Component: ImageView,
+            },
+          ],
+        },
+      ],
+    },
+  ],
   {
-    path: "/",
-    Component: Layout,
-    children: [
-      {
-        path: "/",
-        Component: Home,
-      },
-      {
-        path: "gallery",
-        Component: Gallery,
-        children: [
-          {
-            path: "img/:id",
-            Component: ImageView,
-          },
-        ],
-      },
-    ],
-  },
-]);
+    future: {
+      v7_relativeSplatPath: true,
+      v7_fetcherPersist: true,
+      v7_normalizeFormMethod: true,
+      v7_partialHydration: true,
+      v7_skipActionStatusRevalidation: true,
+    },
+  }
+);
 
 export default function App() {
-  return <RouterProvider router={router} />;
+  return (
+    <RouterProvider
+      router={router}
+      future={{
+        v7_startTransition: true,
+      }}
+    />
+  );
 }
 
 export function Layout() {
@@ -52,10 +70,10 @@ export function Layout() {
         <nav>
           <ul>
             <li>
-              <Link to="/">Home</Link>
+              <Link to="../">Home</Link>
             </li>
             <li>
-              <Link to="/gallery">Gallery</Link>
+              <Link to="..//gallery">Gallery</Link>
             </li>
           </ul>
         </nav>
@@ -71,7 +89,7 @@ export function Home() {
     <div>
       <h2>Home</h2>
       <p>
-        Click over to the <Link to="/gallery">Gallery</Link> route to see the
+        Click over to the <Link to="..//gallery">Gallery</Link> route to see the
         modal in action
       </p>
       <Outlet />

@@ -52,7 +52,9 @@ describe("GH Issue #8165", () => {
           <h1>Level 0</h1>
           <Routes>
             <Route path="*" element={<Root />} />
-            <Route path=":lang/*" element={<Root />} />
+            <Route path=":lang">
+              <Route path="*" element={<Root />} />
+            </Route>
           </Routes>
         </div>
       );

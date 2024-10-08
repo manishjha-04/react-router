@@ -21,7 +21,7 @@ describe("<Link> href", () => {
         renderer = TestRenderer.create(
           <MemoryRouter initialEntries={["/inbox"]}>
             <Routes>
-              <Route path="inbox" element={<Link to="/about" />} />
+              <Route path="inbox" element={<Link to="..//about" />} />
             </Routes>
           </MemoryRouter>
         );
@@ -36,7 +36,7 @@ describe("<Link> href", () => {
         renderer = TestRenderer.create(
           <MemoryRouter initialEntries={["/inbox"]}>
             <Routes>
-              <Route path="inbox" element={<Link to="." />} />
+              <Route path="inbox" element={<Link to="../." />} />
             </Routes>
           </MemoryRouter>
         );
@@ -52,7 +52,7 @@ describe("<Link> href", () => {
           <MemoryRouter initialEntries={["/inbox/messages"]}>
             <Routes>
               <Route path="inbox">
-                <Route path="messages" element={<Link to=".." />} />
+                <Route path="messages" element={<Link to="../.." />} />
               </Route>
             </Routes>
           </MemoryRouter>
@@ -99,7 +99,7 @@ describe("<Link> href", () => {
               <Route path="inbox">
                 <Route
                   path="messages"
-                  element={<Link to="https://remix.run" />}
+                  element={<Link to="../https://remix.run" />}
                 />
               </Route>
             </Routes>
@@ -119,7 +119,7 @@ describe("<Link> href", () => {
           <MemoryRouter initialEntries={["/inbox/messages"]}>
             <Routes>
               <Route path="inbox">
-                <Route path="messages" element={<Link to="//remix.run" />} />
+                <Route path="messages" element={<Link to="..///remix.run" />} />
               </Route>
             </Routes>
           </MemoryRouter>
@@ -138,7 +138,7 @@ describe("<Link> href", () => {
               <Route path="inbox">
                 <Route
                   path="messages"
-                  element={<Link to="mailto:remix@example.com" />}
+                  element={<Link to="../mailto:remix@example.com" />}
                 />
               </Route>
             </Routes>
@@ -160,7 +160,7 @@ describe("<Link> href", () => {
               <Route path="inbox">
                 <Route
                   path="messages"
-                  element={<Link to="web+remix://somepath" />}
+                  element={<Link to="../web+remix://somepath" />}
                 />
               </Route>
             </Routes>
@@ -182,7 +182,7 @@ describe("<Link> href", () => {
               <Route path="inbox">
                 <Route
                   path="messages"
-                  element={<Link to="http://localhost/inbox" />}
+                  element={<Link to="../http://localhost/inbox" />}
                 />
               </Route>
             </Routes>
@@ -248,7 +248,7 @@ describe("<Link> href", () => {
           <MemoryRouter initialEntries={["/inbox/messages/abc"]}>
             <Routes>
               <Route path="inbox">
-                <Route path="messages/:id" element={<Link to="/about" />} />
+                <Route path="messages/:id" element={<Link to="..//about" />} />
               </Route>
             </Routes>
           </MemoryRouter>
@@ -265,7 +265,7 @@ describe("<Link> href", () => {
           <MemoryRouter initialEntries={["/inbox/messages/abc"]}>
             <Routes>
               <Route path="inbox">
-                <Route path="messages/:id" element={<Link to="." />} />
+                <Route path="messages/:id" element={<Link to="../." />} />
               </Route>
             </Routes>
           </MemoryRouter>
@@ -284,7 +284,7 @@ describe("<Link> href", () => {
           <MemoryRouter initialEntries={["/inbox/messages/abc"]}>
             <Routes>
               <Route path="inbox">
-                <Route path="messages/:id" element={<Link to=".." />} />
+                <Route path="messages/:id" element={<Link to="../.." />} />
               </Route>
             </Routes>
           </MemoryRouter>
@@ -323,7 +323,7 @@ describe("<Link> href", () => {
           <MemoryRouter initialEntries={["/inbox"]}>
             <Routes>
               <Route path="inbox">
-                <Route index element={<Link to="/home" />} />
+                <Route index element={<Link to="..//home" />} />
               </Route>
             </Routes>
           </MemoryRouter>
@@ -340,7 +340,7 @@ describe("<Link> href", () => {
           <MemoryRouter initialEntries={["/inbox"]}>
             <Routes>
               <Route path="inbox">
-                <Route index element={<Link to="." />} />
+                <Route index element={<Link to="../." />} />
               </Route>
             </Routes>
           </MemoryRouter>
@@ -357,7 +357,7 @@ describe("<Link> href", () => {
           <MemoryRouter initialEntries={["/inbox"]}>
             <Routes>
               <Route path="inbox">
-                <Route index element={<Link to=".." />} />
+                <Route index element={<Link to="../.." />} />
               </Route>
             </Routes>
           </MemoryRouter>
@@ -413,7 +413,9 @@ describe("<Link> href", () => {
           <MemoryRouter initialEntries={["/inbox/messages"]}>
             <Routes>
               <Route path="inbox">
-                <Route element={<MessagesLayout link={<Link to="/home" />} />}>
+                <Route
+                  element={<MessagesLayout link={<Link to="..//home" />} />}
+                >
                   <Route path="messages" element={<h1>Messages</h1>} />
                 </Route>
               </Route>
@@ -432,7 +434,7 @@ describe("<Link> href", () => {
           <MemoryRouter initialEntries={["/inbox/messages"]}>
             <Routes>
               <Route path="inbox">
-                <Route element={<MessagesLayout link={<Link to="." />} />}>
+                <Route element={<MessagesLayout link={<Link to="../." />} />}>
                   <Route path="messages" element={<h1>Messages</h1>} />
                 </Route>
               </Route>
@@ -451,7 +453,7 @@ describe("<Link> href", () => {
           <MemoryRouter initialEntries={["/inbox/messages"]}>
             <Routes>
               <Route path="inbox">
-                <Route element={<MessagesLayout link={<Link to=".." />} />}>
+                <Route element={<MessagesLayout link={<Link to="../.." />} />}>
                   <Route path="messages" element={<h1>Messages</h1>} />
                 </Route>
               </Route>
@@ -505,7 +507,9 @@ describe("<Link> href", () => {
           <MemoryRouter initialEntries={["/inbox/messages/123"]}>
             <Routes>
               <Route path="inbox">
-                <Route path="messages/*" element={<Link to="/about" />} />
+                <Route path="messages">
+                  <Route path="*" element={<Link to="..//about" />} />
+                </Route>
               </Route>
             </Routes>
           </MemoryRouter>
@@ -522,7 +526,9 @@ describe("<Link> href", () => {
           <MemoryRouter initialEntries={["/inbox/messages/abc"]}>
             <Routes>
               <Route path="inbox">
-                <Route path="messages/*" element={<Link to="." />} />
+                <Route path="messages">
+                  <Route path="*" element={<Link to="../." />} />
+                </Route>
               </Route>
             </Routes>
           </MemoryRouter>
@@ -541,7 +547,9 @@ describe("<Link> href", () => {
           <MemoryRouter initialEntries={["/inbox/messages/abc"]}>
             <Routes>
               <Route path="inbox">
-                <Route path="messages/*" element={<Link to=".." />} />
+                <Route path="messages">
+                  <Route path="*" element={<Link to="../.." />} />
+                </Route>
               </Route>
             </Routes>
           </MemoryRouter>
@@ -558,10 +566,9 @@ describe("<Link> href", () => {
           <MemoryRouter initialEntries={["/inbox/messages/abc"]}>
             <Routes>
               <Route path="inbox">
-                <Route
-                  path="messages/*"
-                  element={<Link to="../messages/def" />}
-                />
+                <Route path="messages">
+                  <Route path="*" element={<Link to="../messages/def" />} />
+                </Route>
               </Route>
             </Routes>
           </MemoryRouter>
@@ -580,16 +587,18 @@ describe("<Link> href", () => {
           <MemoryRouter initialEntries={["/inbox/messages"]}>
             <Routes>
               <Route path="inbox">
-                <Route
-                  path="messages/*"
-                  element={
-                    <>
-                      <Link to="../../about" />
-                      {/* traverse past the root */}
-                      <Link to="../../../about" />
-                    </>
-                  }
-                />
+                <Route path="messages">
+                  <Route
+                    path="*"
+                    element={
+                      <>
+                        <Link to="../../about" />
+                        {/* traverse past the root */}
+                        <Link to="../../../about" />
+                      </>
+                    }
+                  />
+                </Route>
               </Route>
             </Routes>
           </MemoryRouter>
@@ -609,7 +618,7 @@ describe("<Link> href", () => {
         renderer = TestRenderer.create(
           <MemoryRouter basename="/app" initialEntries={["/app/inbox"]}>
             <Routes>
-              <Route path="inbox" element={<Link to="/about" />} />
+              <Route path="inbox" element={<Link to="..//about" />} />
             </Routes>
           </MemoryRouter>
         );
@@ -624,7 +633,7 @@ describe("<Link> href", () => {
         renderer = TestRenderer.create(
           <MemoryRouter basename="/app" initialEntries={["/app/inbox"]}>
             <Routes>
-              <Route path="inbox" element={<Link to="." />} />
+              <Route path="inbox" element={<Link to="../." />} />
             </Routes>
           </MemoryRouter>
         );
@@ -656,17 +665,19 @@ describe("<Link> href", () => {
         renderer = TestRenderer.create(
           <MemoryRouter initialEntries={["/auth/login"]}>
             <Routes>
-              <Route
-                path="auth/*"
-                element={
-                  <Routes>
-                    <Route
-                      path="login"
-                      element={<Link to="/auth/forgot-password" />}
-                    />
-                  </Routes>
-                }
-              />
+              <Route path="auth">
+                <Route
+                  path="*"
+                  element={
+                    <Routes>
+                      <Route
+                        path="login"
+                        element={<Link to="..//auth/forgot-password" />}
+                      />
+                    </Routes>
+                  }
+                />
+              </Route>
             </Routes>
           </MemoryRouter>
         );
@@ -683,14 +694,16 @@ describe("<Link> href", () => {
         renderer = TestRenderer.create(
           <MemoryRouter initialEntries={["/auth/login"]}>
             <Routes>
-              <Route
-                path="auth/*"
-                element={
-                  <Routes>
-                    <Route path="login" element={<Link to="." />} />
-                  </Routes>
-                }
-              />
+              <Route path="auth">
+                <Route
+                  path="*"
+                  element={
+                    <Routes>
+                      <Route path="login" element={<Link to="../." />} />
+                    </Routes>
+                  }
+                />
+              </Route>
             </Routes>
           </MemoryRouter>
         );
@@ -705,14 +718,16 @@ describe("<Link> href", () => {
         renderer = TestRenderer.create(
           <MemoryRouter initialEntries={["/auth/login"]}>
             <Routes>
-              <Route
-                path="auth/*"
-                element={
-                  <Routes>
-                    <Route path="login" element={<Link to=".." />} />
-                  </Routes>
-                }
-              />
+              <Route path="auth">
+                <Route
+                  path="*"
+                  element={
+                    <Routes>
+                      <Route path="login" element={<Link to="../.." />} />
+                    </Routes>
+                  }
+                />
+              </Route>
             </Routes>
           </MemoryRouter>
         );
@@ -727,23 +742,25 @@ describe("<Link> href", () => {
         renderer = TestRenderer.create(
           <MemoryRouter initialEntries={["/auth/login"]}>
             <Routes>
-              <Route
-                path="auth/*"
-                element={
-                  <Routes>
-                    <Route
-                      path="login"
-                      element={
-                        <>
-                          <Link to="../../about" />
-                          {/* traverse past the root */}
-                          <Link to="../../../about" />
-                        </>
-                      }
-                    />
-                  </Routes>
-                }
-              />
+              <Route path="auth">
+                <Route
+                  path="*"
+                  element={
+                    <Routes>
+                      <Route
+                        path="login"
+                        element={
+                          <>
+                            <Link to="../../about" />
+                            {/* traverse past the root */}
+                            <Link to="../../../about" />
+                          </>
+                        }
+                      />
+                    </Routes>
+                  }
+                />
+              </Route>
             </Routes>
           </MemoryRouter>
         );
@@ -764,7 +781,7 @@ describe("<Link> href", () => {
             <Routes>
               <Route
                 path="inbox"
-                element={<Link to="/about" relative="path" />}
+                element={<Link to="..//about" relative="path" />}
               />
             </Routes>
           </MemoryRouter>
@@ -780,7 +797,10 @@ describe("<Link> href", () => {
         renderer = TestRenderer.create(
           <MemoryRouter initialEntries={["/inbox"]}>
             <Routes>
-              <Route path="inbox" element={<Link to="." relative="path" />} />
+              <Route
+                path="inbox"
+                element={<Link to="../." relative="path" />}
+              />
             </Routes>
           </MemoryRouter>
         );
@@ -799,7 +819,7 @@ describe("<Link> href", () => {
               <Route path="inbox/messages" />
               <Route
                 path="inbox/messages/:id"
-                element={<Link to=".." relative="path" />}
+                element={<Link to="../.." relative="path" />}
               />
             </Routes>
           </MemoryRouter>
@@ -845,9 +865,17 @@ describe("<Link> href", () => {
       let renderer: TestRenderer.ReactTestRenderer;
       TestRenderer.act(() => {
         renderer = TestRenderer.create(
-          <BrowserRouter>
+          <BrowserRouter
+            future={{
+              v7_relativeSplatPath: true,
+              v7_startTransition: true,
+            }}
+          >
             <Routes>
-              <Route path="/" element={<Link to="/path?search=value#hash" />} />
+              <Route
+                path="/"
+                element={<Link to="..//path?search=value#hash" />}
+              />
             </Routes>
           </BrowserRouter>
         );
@@ -860,13 +888,31 @@ describe("<Link> href", () => {
     it("renders proper <a href> for createBrowserRouter", () => {
       let renderer: TestRenderer.ReactTestRenderer;
       TestRenderer.act(() => {
-        let router = createBrowserRouter([
+        let router = createBrowserRouter(
+          [
+            {
+              path: "/",
+              element: <Link to="..//path?search=value#hash">Link</Link>,
+            },
+          ],
           {
-            path: "/",
-            element: <Link to="/path?search=value#hash">Link</Link>,
-          },
-        ]);
-        renderer = TestRenderer.create(<RouterProvider router={router} />);
+            future: {
+              v7_relativeSplatPath: true,
+              v7_fetcherPersist: true,
+              v7_normalizeFormMethod: true,
+              v7_partialHydration: true,
+              v7_skipActionStatusRevalidation: true,
+            },
+          }
+        );
+        renderer = TestRenderer.create(
+          <RouterProvider
+            router={router}
+            future={{
+              v7_startTransition: true,
+            }}
+          />
+        );
       });
       expect(renderer.root.findByType("a").props.href).toEqual(
         "/path?search=value#hash"
@@ -881,7 +927,10 @@ describe("<Link> href", () => {
         renderer = TestRenderer.create(
           <HashRouter>
             <Routes>
-              <Route path="/" element={<Link to="/path?search=value#hash" />} />
+              <Route
+                path="/"
+                element={<Link to="..//path?search=value#hash" />}
+              />
             </Routes>
           </HashRouter>
         );
@@ -897,10 +946,17 @@ describe("<Link> href", () => {
         let router = createHashRouter([
           {
             path: "/",
-            element: <Link to="/path?search=value#hash">Link</Link>,
+            element: <Link to="..//path?search=value#hash">Link</Link>,
           },
         ]);
-        renderer = TestRenderer.create(<RouterProvider router={router} />);
+        renderer = TestRenderer.create(
+          <RouterProvider
+            router={router}
+            future={{
+              v7_startTransition: true,
+            }}
+          />
+        );
       });
       expect(renderer.root.findByType("a").props.href).toEqual(
         "#/path?search=value#hash"
@@ -915,7 +971,7 @@ describe("<Link> href", () => {
       renderer = TestRenderer.create(
         <MemoryRouter>
           <Routes>
-            <Route path="/" element={<Link to="//" />} />
+            <Route path="/" element={<Link to="..///" />} />
           </Routes>
         </MemoryRouter>
       );
@@ -933,8 +989,8 @@ describe("<Link> href", () => {
     TestRenderer.act(() => {
       renderer = TestRenderer.create(
         <MemoryRouter>
-          <Link to="route">Route</Link>
-          <Link to="path" relative="path">
+          <Link to="../route">Route</Link>
+          <Link to="../path" relative="path">
             Path
           </Link>
         </MemoryRouter>

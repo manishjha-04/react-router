@@ -27,7 +27,7 @@ describe("usePrompt", () => {
             path: "/",
             Component() {
               usePrompt({ when: true, message: "Are you sure??" });
-              return <Link to="/arbitrary">Navigate</Link>;
+              return <Link to="..//arbitrary">Navigate</Link>;
             },
           },
           {
@@ -35,10 +35,26 @@ describe("usePrompt", () => {
             Component: () => <h1>Arbitrary</h1>,
           },
         ],
-        { window: testWindow }
+        {
+          window: testWindow,
+
+          future: {
+            v7_fetcherPersist: true,
+            v7_normalizeFormMethod: true,
+            v7_partialHydration: true,
+            v7_skipActionStatusRevalidation: true,
+          },
+        }
       );
 
-      render(<RouterProvider router={router} />);
+      render(
+        <RouterProvider
+          router={router}
+          future={{
+            v7_startTransition: true,
+          }}
+        />
+      );
       expect(screen.getByText("Navigate")).toBeInTheDocument();
 
       fireEvent.click(screen.getByText("Navigate"));
@@ -60,7 +76,7 @@ describe("usePrompt", () => {
             path: "/",
             Component() {
               usePrompt({ when: true, message: "Are you sure??" });
-              return <Link to="/arbitrary">Navigate</Link>;
+              return <Link to="..//arbitrary">Navigate</Link>;
             },
           },
           {
@@ -68,10 +84,26 @@ describe("usePrompt", () => {
             Component: () => <h1>Arbitrary</h1>,
           },
         ],
-        { window: testWindow }
+        {
+          window: testWindow,
+
+          future: {
+            v7_fetcherPersist: true,
+            v7_normalizeFormMethod: true,
+            v7_partialHydration: true,
+            v7_skipActionStatusRevalidation: true,
+          },
+        }
       );
 
-      render(<RouterProvider router={router} />);
+      render(
+        <RouterProvider
+          router={router}
+          future={{
+            v7_startTransition: true,
+          }}
+        />
+      );
       expect(screen.getByText("Navigate")).toBeInTheDocument();
 
       fireEvent.click(screen.getByText("Navigate"));
@@ -95,7 +127,7 @@ describe("usePrompt", () => {
             path: "/",
             Component() {
               usePrompt({ when: false, message: "Are you sure??" });
-              return <Link to="/arbitrary">Navigate</Link>;
+              return <Link to="..//arbitrary">Navigate</Link>;
             },
           },
           {
@@ -103,10 +135,26 @@ describe("usePrompt", () => {
             Component: () => <h1>Arbitrary</h1>,
           },
         ],
-        { window: testWindow }
+        {
+          window: testWindow,
+
+          future: {
+            v7_fetcherPersist: true,
+            v7_normalizeFormMethod: true,
+            v7_partialHydration: true,
+            v7_skipActionStatusRevalidation: true,
+          },
+        }
       );
 
-      render(<RouterProvider router={router} />);
+      render(
+        <RouterProvider
+          router={router}
+          future={{
+            v7_startTransition: true,
+          }}
+        />
+      );
       expect(screen.getByText("Navigate")).toBeInTheDocument();
 
       fireEvent.click(screen.getByText("Navigate"));

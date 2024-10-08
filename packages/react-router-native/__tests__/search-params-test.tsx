@@ -34,7 +34,6 @@ describe("useSearchParams", () => {
       return (
         <View>
           <Text>The current query is "{searchParams.get("q")}".</Text>
-
           <SearchForm onSubmit={handleSubmit}>
             <TextInput value={query} onChangeText={setQuery} />
           </SearchForm>
@@ -87,7 +86,6 @@ describe("useSearchParams", () => {
         <View>
           <Text>The current query is "{searchParams.get("q")}".</Text>
           <Text>The new query is "{searchParams.get("new")}".</Text>
-
           <SearchForm onSubmit={handleSubmit}>
             <TextInput value={query} onChangeText={setQuery} />
           </SearchForm>

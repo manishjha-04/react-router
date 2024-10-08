@@ -24,7 +24,6 @@ export default function App() {
   return (
     <div>
       <h1>Modal Example</h1>
-
       <p>
         This is an example of how to create a contextual modal navigation with
         React Router where the navigation path the user takes determines if the
@@ -36,14 +35,12 @@ export default function App() {
         directly (rather than from the collection page) it renders as it's own
         full page instead of in a modal.
       </p>
-
       <p>
         In this example, notice how the URL updates when the modal opens (if you
         are viewing the example in StackBlitz you may need to open in a new
         browser window). Even though the URL is updated to the specific item in
         the modal, the background page is still showing behind it.
       </p>
-
       <p>
         Next, copy and paste the URL to a new browser tab and notice that it
         shows that specific item not in a modal, but directly on the page. This
@@ -52,7 +49,6 @@ export default function App() {
         did when you opened the modal, so they don't see it in the context of
         the background page.
       </p>
-
       <Routes location={state?.backgroundLocation || location}>
         <Route path="/" element={<Layout />}>
           <Route index element={<Home />} />
@@ -61,7 +57,6 @@ export default function App() {
           <Route path="*" element={<NoMatch />} />
         </Route>
       </Routes>
-
       {/* Show the modal when a `backgroundLocation` is set */}
       {state?.backgroundLocation && (
         <Routes>
@@ -78,16 +73,14 @@ function Layout() {
       <nav>
         <ul>
           <li>
-            <Link to="/">Home</Link>
+            <Link to="../">Home</Link>
           </li>
           <li>
-            <Link to="/gallery">Gallery</Link>
+            <Link to="..//gallery">Gallery</Link>
           </li>
         </ul>
       </nav>
-
       <hr />
-
       <Outlet />
     </div>
   );
@@ -97,14 +90,13 @@ function Home() {
   return (
     <div>
       <h2>Home</h2>
-
       <h3>Featured Images</h3>
       <ul>
         <li>
-          <Link to="/img/1">Image 1</Link>
+          <Link to="..//img/1">Image 1</Link>
         </li>
         <li>
-          <Link to="/img/2">Image 2</Link>
+          <Link to="..//img/2">Image 2</Link>
         </li>
       </ul>
     </div>
@@ -223,7 +215,7 @@ function NoMatch() {
     <div>
       <h2>Nothing to see here!</h2>
       <p>
-        <Link to="/">Go to the home page</Link>
+        <Link to="../">Go to the home page</Link>
       </p>
     </div>
   );

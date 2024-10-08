@@ -18,20 +18,18 @@ function Layout() {
   return (
     <div>
       <h1>Welcome to the Home app!</h1>
-
       <p>
         This example demonstrates how you can stitch two React Router apps
-        together using the <code>`basename`</code> prop on{" "}
-        <code>`BrowserRouter`</code> and <code>`StaticRouter`</code>.
+        together using the <code>`basename`</code>prop on{" "}
+        <code>`BrowserRouter`</code>and <code>`StaticRouter`</code>.
       </p>
-
       <nav>
         <ul>
           <li>
-            <Link to="/">Home</Link>
+            <Link to="../">Home</Link>
           </li>
           <li>
-            <Link to="/about">About</Link>
+            <Link to="..//about">About</Link>
           </li>
           <li>
             {/* Use a normal <a> when linking to the "Inbox" app so the browser
@@ -42,9 +40,7 @@ function Layout() {
           </li>
         </ul>
       </nav>
-
       <hr />
-
       <Outlet />
     </div>
   );

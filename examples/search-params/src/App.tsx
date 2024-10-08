@@ -5,14 +5,12 @@ export default function App() {
   return (
     <div>
       <h1>Search Params Example</h1>
-
       <p>
         This example demonstrates a simple search page that makes a request for
         user data to the GitHub API and displays information for that user on
         the page. The example uses the <code>useSearchParams()</code> hook to
         read and write the URL query string.
       </p>
-
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="*" element={<NoMatch />} />
@@ -90,7 +88,6 @@ function Home() {
           <button type="submit">Random</button>
         </form>
       </div>
-
       {userData && (
         <div
           style={{
@@ -124,7 +121,7 @@ function NoMatch() {
     <div>
       <h2>Nothing to see here!</h2>
       <p>
-        <Link to="/">Go to the home page</Link>
+        <Link to="../">Go to the home page</Link>
       </p>
     </div>
   );

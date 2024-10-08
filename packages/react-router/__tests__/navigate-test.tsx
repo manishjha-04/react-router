@@ -473,7 +473,12 @@ describe("<Navigate>", () => {
 
     let { container } = render(
       <React.StrictMode>
-        <RouterProvider router={router} />
+        <RouterProvider
+          router={router}
+          future={{
+            v7_startTransition: true,
+          }}
+        />
       </React.StrictMode>
     );
 
@@ -509,7 +514,12 @@ describe("<Navigate>", () => {
 
     let { container } = render(
       <React.StrictMode>
-        <RouterProvider router={router} />
+        <RouterProvider
+          router={router}
+          future={{
+            v7_startTransition: true,
+          }}
+        />
       </React.StrictMode>
     );
 
@@ -552,7 +562,12 @@ describe("<Navigate>", () => {
 
     let { container } = render(
       <React.StrictMode>
-        <RouterProvider router={router} />
+        <RouterProvider
+          router={router}
+          future={{
+            v7_startTransition: true,
+          }}
+        />
       </React.StrictMode>
     );
 
@@ -607,7 +622,12 @@ describe("concurrent mode", () => {
 
       let { container } = render(
         <React.StrictMode>
-          <RouterProvider router={router} />
+          <RouterProvider
+            router={router}
+            future={{
+              v7_startTransition: true,
+            }}
+          />
         </React.StrictMode>
       );
 
@@ -674,7 +694,12 @@ describe("concurrent mode", () => {
 
       let { container } = render(
         <React.StrictMode>
-          <RouterProvider router={router} />
+          <RouterProvider
+            router={router}
+            future={{
+              v7_startTransition: true,
+            }}
+          />
         </React.StrictMode>
       );
 
@@ -743,7 +768,12 @@ describe("concurrent mode", () => {
 
       let { container } = render(
         <React.StrictMode>
-          <RouterProvider router={router} />
+          <RouterProvider
+            router={router}
+            future={{
+              v7_startTransition: true,
+            }}
+          />
         </React.StrictMode>
       );
 
@@ -818,7 +848,12 @@ describe("concurrent mode", () => {
 
       let { container } = render(
         <React.StrictMode>
-          <RouterProvider router={router} />
+          <RouterProvider
+            router={router}
+            future={{
+              v7_startTransition: true,
+            }}
+          />
         </React.StrictMode>
       );
 
@@ -894,7 +929,10 @@ describe("concurrent mode", () => {
         <React.StrictMode>
           <RouterProvider
             router={router}
-            future={{ v7_startTransition: true }}
+            future={{
+              v7_startTransition: true,
+              v7_startTransition: true,
+            }}
           />
         </React.StrictMode>
       );
@@ -964,7 +1002,10 @@ describe("concurrent mode", () => {
         <React.StrictMode>
           <RouterProvider
             router={router}
-            future={{ v7_startTransition: true }}
+            future={{
+              v7_startTransition: true,
+              v7_startTransition: true,
+            }}
           />
         </React.StrictMode>
       );
@@ -1040,7 +1081,10 @@ describe("concurrent mode", () => {
         <React.StrictMode>
           <RouterProvider
             router={router}
-            future={{ v7_startTransition: true }}
+            future={{
+              v7_startTransition: true,
+              v7_startTransition: true,
+            }}
           />
         </React.StrictMode>
       );
@@ -1118,7 +1162,10 @@ describe("concurrent mode", () => {
         <React.StrictMode>
           <RouterProvider
             router={router}
-            future={{ v7_startTransition: true }}
+            future={{
+              v7_startTransition: true,
+              v7_startTransition: true,
+            }}
           />
         </React.StrictMode>
       );

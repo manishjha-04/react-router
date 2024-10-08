@@ -151,7 +151,10 @@ describe("Handles concurrent mode features during navigations", () => {
       let { container } = render(
         <BrowserRouter
           window={getWindowImpl("/", false)}
-          future={{ v7_startTransition: true }}
+          future={{
+            v7_startTransition: true,
+            v7_startTransition: true,
+          }}
         >
           <Routes>
             <Route path="/" element={<Home />} />
@@ -242,7 +245,13 @@ describe("Handles concurrent mode features during navigations", () => {
         )
       );
       let { container } = render(
-        <RouterProvider router={router} future={{ v7_startTransition: true }} />
+        <RouterProvider
+          router={router}
+          future={{
+            v7_startTransition: true,
+            v7_startTransition: true,
+          }}
+        />
       );
 
       await assertNavigation(container, resolve, resolveLazy);
@@ -316,7 +325,10 @@ describe("Handles concurrent mode features during navigations", () => {
       let { container } = render(
         <BrowserRouter
           window-={getWindowImpl("/", true)}
-          future={{ v7_startTransition: true }}
+          future={{
+            v7_startTransition: true,
+            v7_startTransition: true,
+          }}
         >
           <Routes>
             <Route path="/" element={<Home />} />
@@ -365,7 +377,13 @@ describe("Handles concurrent mode features during navigations", () => {
         )
       );
       let { container } = render(
-        <RouterProvider router={router} future={{ v7_startTransition: true }} />
+        <RouterProvider
+          router={router}
+          future={{
+            v7_startTransition: true,
+            v7_startTransition: true,
+          }}
+        />
       );
 
       await assertNavigation(container, resolve, resolveLazy);

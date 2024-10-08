@@ -35,7 +35,9 @@ describe("Descendant <Routes> splat matching", () => {
           <MemoryRouter initialEntries={["/courses/react/react-fundamentals"]}>
             <Routes>
               <Route path="courses" element={<Courses />}>
-                <Route path="react/*" element={<ReactCourses />} />
+                <Route path="react">
+                  <Route path="*" element={<ReactCourses />} />
+                </Route>
               </Route>
             </Routes>
           </MemoryRouter>
@@ -97,7 +99,9 @@ describe("Descendant <Routes> splat matching", () => {
             <MemoryRouter initialEntries={initialEntries}>
               <Routes>
                 <Route path="courses" element={<Courses />}>
-                  <Route path="react/*" element={<ReactCourses />} />
+                  <Route path="react">
+                    <Route path="*" element={<ReactCourses />} />
+                  </Route>
                 </Route>
               </Routes>
             </MemoryRouter>

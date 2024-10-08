@@ -10,7 +10,7 @@ describe("A <Link> in a <StaticRouter>", () => {
       TestRenderer.act(() => {
         renderer = TestRenderer.create(
           <StaticRouter location="/">
-            <Link to="mjackson" />
+            <Link to="../mjackson" />
           </StaticRouter>
         );
       });
@@ -23,7 +23,7 @@ describe("A <Link> in a <StaticRouter>", () => {
       TestRenderer.act(() => {
         renderer = TestRenderer.create(
           <StaticRouter location="/base" basename="/base">
-            <Link to="mjackson" />
+            <Link to="../mjackson" />
           </StaticRouter>
         );
       });

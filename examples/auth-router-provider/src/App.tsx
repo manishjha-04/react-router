@@ -14,46 +14,63 @@ import {
 } from "react-router-dom";
 import { fakeAuthProvider } from "./auth";
 
-const router = createBrowserRouter([
-  {
-    id: "root",
-    path: "/",
-    loader() {
-      // Our root route always provides the user, if logged in
-      return { user: fakeAuthProvider.username };
+const router = createBrowserRouter(
+  [
+    {
+      id: "root",
+      path: "/",
+      loader() {
+        // Our root route always provides the user, if logged in
+        return { user: fakeAuthProvider.username };
+      },
+      Component: Layout,
+      children: [
+        {
+          index: true,
+          Component: PublicPage,
+        },
+        {
+          path: "login",
+          action: loginAction,
+          loader: loginLoader,
+          Component: LoginPage,
+        },
+        {
+          path: "protected",
+          loader: protectedLoader,
+          Component: ProtectedPage,
+        },
+      ],
     },
-    Component: Layout,
-    children: [
-      {
-        index: true,
-        Component: PublicPage,
+    {
+      path: "/logout",
+      async action() {
+        // We signout in a "resource route" that we can hit from a fetcher.Form
+        await fakeAuthProvider.signout();
+        return redirect("/");
       },
-      {
-        path: "login",
-        action: loginAction,
-        loader: loginLoader,
-        Component: LoginPage,
-      },
-      {
-        path: "protected",
-        loader: protectedLoader,
-        Component: ProtectedPage,
-      },
-    ],
-  },
-  {
-    path: "/logout",
-    async action() {
-      // We signout in a "resource route" that we can hit from a fetcher.Form
-      await fakeAuthProvider.signout();
-      return redirect("/");
     },
-  },
-]);
+  ],
+  {
+    future: {
+      v7_relativeSplatPath: true,
+      v7_fetcherPersist: true,
+      v7_normalizeFormMethod: true,
+      v7_partialHydration: true,
+      v7_skipActionStatusRevalidation: true,
+    },
+  }
+);
 
 export default function App() {
   return (
-    <RouterProvider router={router} fallbackElement={<p>Initial Load...</p>} />
+    <RouterProvider
+      router={router}
+      fallbackElement={<p>Initial Load...</p>}
+      future={{
+        v7_startTransition: true,
+      }}
+    />
   );
 }
 
@@ -61,37 +78,31 @@ function Layout() {
   return (
     <div>
       <h1>Auth Example using RouterProvider</h1>
-
       <p>
         This example demonstrates a simple login flow with three pages: a public
         page, a protected page, and a login page. In order to see the protected
         page, you must first login. Pretty standard stuff.
       </p>
-
       <p>
         First, visit the public page. Then, visit the protected page. You're not
         yet logged in, so you are redirected to the login page. After you login,
         you are redirected back to the protected page.
       </p>
-
       <p>
         Notice the URL change each time. If you click the back button at this
         point, would you expect to go back to the login page? No! You're already
         logged in. Try it out, and you'll see you go back to the page you
         visited just *before* logging in, the public page.
       </p>
-
       <AuthStatus />
-
       <ul>
         <li>
-          <Link to="/">Public Page</Link>
+          <Link to="../">Public Page</Link>
         </li>
         <li>
-          <Link to="/protected">Protected Page</Link>
+          <Link to="..//protected">Protected Page</Link>
         </li>
       </ul>
-
       <Outlet />
     </div>
   );
@@ -167,7 +178,6 @@ function LoginPage() {
   return (
     <div>
       <p>You must log in to view the page at {from}</p>
-
       <Form method="post" replace>
         <input type="hidden" name="redirectTo" value={from} />
         <label>

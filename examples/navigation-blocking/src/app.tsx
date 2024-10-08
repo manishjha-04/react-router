@@ -36,7 +36,16 @@ let router = createBrowserRouter(
       <Route path="four" element={<h2>Four</h2>} />
       <Route path="five" element={<h2>Five</h2>} />
     </Route>
-  )
+  ),
+  {
+    future: {
+      v7_relativeSplatPath: true,
+      v7_fetcherPersist: true,
+      v7_normalizeFormMethod: true,
+      v7_partialHydration: true,
+      v7_skipActionStatusRevalidation: true,
+    },
+  }
 );
 
 if (import.meta.hot) {
@@ -44,7 +53,14 @@ if (import.meta.hot) {
 }
 
 export default function App() {
-  return <RouterProvider router={router} />;
+  return (
+    <RouterProvider
+      router={router}
+      future={{
+        v7_startTransition: true,
+      }}
+    />
+  );
 }
 
 function Layout() {
@@ -67,12 +83,12 @@ function Layout() {
     <>
       <h1>Navigation Blocking Example</h1>
       <nav>
-        <Link to="/">Index</Link>&nbsp;&nbsp;
-        <Link to="/one">One</Link>&nbsp;&nbsp;
-        <Link to="/two">Two</Link>&nbsp;&nbsp;
-        <Link to="/three">Three (Form with blocker)</Link>&nbsp;&nbsp;
-        <Link to="/four">Four</Link>&nbsp;&nbsp;
-        <Link to="/five">Five</Link>&nbsp;&nbsp;
+        <Link to="../">Index</Link>
+        <Link to="..//one">One</Link>
+        <Link to="..//two">Two</Link>
+        <Link to="..//three">Three (Form with blocker)</Link>
+        <Link to="..//four">Four</Link>
+        <Link to="..//five">Five</Link>
       </nav>
       <p>
         Current location (index): {location.pathname} ({historyIndex})
@@ -117,7 +133,6 @@ function ImportantForm() {
           <span style={{ color: "green" }}>No</span>
         )}
       </p>
-
       <Form method="post">
         <label>
           Enter some important data:
@@ -129,7 +144,6 @@ function ImportantForm() {
         </label>
         <button type="submit">Save</button>
       </Form>
-
       {blocker ? <ConfirmNavigation blocker={blocker} /> : null}
     </>
   );

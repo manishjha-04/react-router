@@ -32,14 +32,21 @@ describe("trailing slashes", () => {
         let window = getWindowImpl("/app");
         act(() => {
           ReactDOM.createRoot(node).render(
-            <BrowserRouter basename="/app" window={window}>
+            <BrowserRouter
+              basename="/app"
+              window={window}
+              future={{
+                v7_relativeSplatPath: true,
+                v7_startTransition: true,
+              }}
+            >
               <Routes>
                 <Route
                   index
                   element={
                     <>
-                      <Link to="" />
-                      <Link to="/" />
+                      <Link to="../" />
+                      <Link to="../" />
                     </>
                   }
                 />
@@ -64,14 +71,21 @@ describe("trailing slashes", () => {
         let window = getWindowImpl("/app");
         act(() => {
           ReactDOM.createRoot(node).render(
-            <BrowserRouter basename="/app" window={window}>
+            <BrowserRouter
+              basename="/app"
+              window={window}
+              future={{
+                v7_relativeSplatPath: true,
+                v7_startTransition: true,
+              }}
+            >
               <Routes>
                 <Route
                   path=""
                   element={
                     <>
-                      <Link to="" />
-                      <Link to="/" />
+                      <Link to="../" />
+                      <Link to="../" />
                     </>
                   }
                 />
@@ -96,13 +110,20 @@ describe("trailing slashes", () => {
         let window = getWindowImpl("/app/parent/child");
         act(() => {
           ReactDOM.createRoot(node).render(
-            <BrowserRouter basename="/app" window={window}>
+            <BrowserRouter
+              basename="/app"
+              window={window}
+              future={{
+                v7_relativeSplatPath: true,
+                v7_startTransition: true,
+              }}
+            >
               <Routes>
                 <Route
                   path="parent"
                   element={
                     <>
-                      <Link to=".." />
+                      <Link to="../.." />
                       <Link to="../" />
                       <Outlet />
                     </>
@@ -180,14 +201,21 @@ describe("trailing slashes", () => {
         let window = getWindowImpl("/app/");
         act(() => {
           ReactDOM.createRoot(node).render(
-            <BrowserRouter basename="/app/" window={window}>
+            <BrowserRouter
+              basename="/app/"
+              window={window}
+              future={{
+                v7_relativeSplatPath: true,
+                v7_startTransition: true,
+              }}
+            >
               <Routes>
                 <Route
                   index
                   element={
                     <>
-                      <Link to="" />
-                      <Link to="/" />
+                      <Link to="../" />
+                      <Link to="../" />
                     </>
                   }
                 />
@@ -212,14 +240,21 @@ describe("trailing slashes", () => {
         let window = getWindowImpl("/app/");
         act(() => {
           ReactDOM.createRoot(node).render(
-            <BrowserRouter basename="/app/" window={window}>
+            <BrowserRouter
+              basename="/app/"
+              window={window}
+              future={{
+                v7_relativeSplatPath: true,
+                v7_startTransition: true,
+              }}
+            >
               <Routes>
                 <Route
                   path=""
                   element={
                     <>
-                      <Link to="" />
-                      <Link to="/" />
+                      <Link to="../" />
+                      <Link to="../" />
                     </>
                   }
                 />
@@ -244,13 +279,20 @@ describe("trailing slashes", () => {
         let window = getWindowImpl("/app/parent/child");
         act(() => {
           ReactDOM.createRoot(node).render(
-            <BrowserRouter basename="/app/" window={window}>
+            <BrowserRouter
+              basename="/app/"
+              window={window}
+              future={{
+                v7_relativeSplatPath: true,
+                v7_startTransition: true,
+              }}
+            >
               <Routes>
                 <Route
                   path="parent"
                   element={
                     <>
-                      <Link to=".." />
+                      <Link to="../.." />
                       <Link to="../" />
                       <Outlet />
                     </>
@@ -333,7 +375,14 @@ describe("trailing slashes", () => {
 
         act(() => {
           ReactDOM.createRoot(node).render(
-            <BrowserRouter basename="/foo" window={window}>
+            <BrowserRouter
+              basename="/foo"
+              window={window}
+              future={{
+                v7_relativeSplatPath: true,
+                v7_startTransition: true,
+              }}
+            >
               <Routes>
                 <Route index element={<h1>👋</h1>} />
                 <Route path="bar" element={<SingleNavigate to="/" />} />
@@ -351,7 +400,14 @@ describe("trailing slashes", () => {
 
         act(() => {
           ReactDOM.createRoot(node).render(
-            <BrowserRouter basename="/foo" window={window}>
+            <BrowserRouter
+              basename="/foo"
+              window={window}
+              future={{
+                v7_relativeSplatPath: true,
+                v7_startTransition: true,
+              }}
+            >
               <Routes>
                 <Route index element={<h1>👋</h1>} />
                 <Route path="bar" element={<SingleNavigate to="../" />} />
@@ -370,7 +426,14 @@ describe("trailing slashes", () => {
 
         act(() => {
           ReactDOM.createRoot(node).render(
-            <BrowserRouter basename="/foo" window={window}>
+            <BrowserRouter
+              basename="/foo"
+              window={window}
+              future={{
+                v7_relativeSplatPath: true,
+                v7_startTransition: true,
+              }}
+            >
               <Routes>
                 <Route index element={<SingleNavigate to="bar" />} />
                 <Route path="bar" element={<h1>👋</h1>} />
@@ -390,7 +453,14 @@ describe("trailing slashes", () => {
 
         act(() => {
           ReactDOM.createRoot(node).render(
-            <BrowserRouter basename="/foo" window={window}>
+            <BrowserRouter
+              basename="/foo"
+              window={window}
+              future={{
+                v7_relativeSplatPath: true,
+                v7_startTransition: true,
+              }}
+            >
               <Routes>
                 <Route index element={<SingleNavigate to="bar/" />} />
                 <Route path="bar" element={<h1>👋</h1>} />
@@ -411,7 +481,14 @@ describe("trailing slashes", () => {
 
         act(() => {
           ReactDOM.createRoot(node).render(
-            <BrowserRouter basename="/foo/" window={window}>
+            <BrowserRouter
+              basename="/foo/"
+              window={window}
+              future={{
+                v7_relativeSplatPath: true,
+                v7_startTransition: true,
+              }}
+            >
               <Routes>
                 <Route index element={<h1>👋</h1>} />
                 <Route path="bar" element={<SingleNavigate to="/" />} />
@@ -429,7 +506,14 @@ describe("trailing slashes", () => {
 
         act(() => {
           ReactDOM.createRoot(node).render(
-            <BrowserRouter basename="/foo/" window={window}>
+            <BrowserRouter
+              basename="/foo/"
+              window={window}
+              future={{
+                v7_relativeSplatPath: true,
+                v7_startTransition: true,
+              }}
+            >
               <Routes>
                 <Route index element={<h1>👋</h1>} />
                 <Route path="bar" element={<SingleNavigate to=".." />} />
@@ -448,7 +532,14 @@ describe("trailing slashes", () => {
 
         act(() => {
           ReactDOM.createRoot(node).render(
-            <BrowserRouter basename="/foo/" window={window}>
+            <BrowserRouter
+              basename="/foo/"
+              window={window}
+              future={{
+                v7_relativeSplatPath: true,
+                v7_startTransition: true,
+              }}
+            >
               <Routes>
                 <Route index element={<SingleNavigate to="bar" />} />
                 <Route path="bar" element={<h1>👋</h1>} />
@@ -468,7 +559,14 @@ describe("trailing slashes", () => {
 
         act(() => {
           ReactDOM.createRoot(node).render(
-            <BrowserRouter basename="/foo/" window={window}>
+            <BrowserRouter
+              basename="/foo/"
+              window={window}
+              future={{
+                v7_relativeSplatPath: true,
+                v7_startTransition: true,
+              }}
+            >
               <Routes>
                 <Route index element={<SingleNavigate to="bar/" />} />
                 <Route path="bar" element={<h1>👋</h1>} />
@@ -490,7 +588,14 @@ describe("trailing slashes", () => {
 
         act(() => {
           ReactDOM.createRoot(node).render(
-            <BrowserRouter basename="/foo" window={window}>
+            <BrowserRouter
+              basename="/foo"
+              window={window}
+              future={{
+                v7_relativeSplatPath: true,
+                v7_startTransition: true,
+              }}
+            >
               <Routes>
                 <Route index element={<h1>👋</h1>} />
                 <Route path="bar" element={<SingleNavigate to="" />} />
@@ -510,7 +615,14 @@ describe("trailing slashes", () => {
 
         act(() => {
           ReactDOM.createRoot(node).render(
-            <BrowserRouter basename="/foo" window={window}>
+            <BrowserRouter
+              basename="/foo"
+              window={window}
+              future={{
+                v7_relativeSplatPath: true,
+                v7_startTransition: true,
+              }}
+            >
               <Routes>
                 <Route index element={<h1>👋</h1>} />
                 <Route path="bar" element={<SingleNavigate to="" />} />
@@ -532,7 +644,14 @@ describe("trailing slashes", () => {
 
         act(() => {
           ReactDOM.createRoot(node).render(
-            <BrowserRouter basename="/foo/" window={window}>
+            <BrowserRouter
+              basename="/foo/"
+              window={window}
+              future={{
+                v7_relativeSplatPath: true,
+                v7_startTransition: true,
+              }}
+            >
               <Routes>
                 <Route index element={<h1>👋</h1>} />
                 <Route path="bar" element={<SingleNavigate to="." />} />
@@ -552,7 +671,14 @@ describe("trailing slashes", () => {
 
         act(() => {
           ReactDOM.createRoot(node).render(
-            <BrowserRouter basename="/foo/" window={window}>
+            <BrowserRouter
+              basename="/foo/"
+              window={window}
+              future={{
+                v7_relativeSplatPath: true,
+                v7_startTransition: true,
+              }}
+            >
               <Routes>
                 <Route index element={<h1>👋</h1>} />
                 <Route path="bar" element={<SingleNavigate to="." />} />
@@ -584,7 +710,14 @@ describe("trailing slashes", () => {
 
       act(() => {
         ReactDOM.createRoot(node).render(
-          <BrowserRouter basename="/foo" window={window}>
+          <BrowserRouter
+            basename="/foo"
+            window={window}
+            future={{
+              v7_relativeSplatPath: true,
+              v7_startTransition: true,
+            }}
+          >
             <Routes>
               <Route index element={<SetSearchParams />} />
             </Routes>
@@ -612,7 +745,14 @@ describe("trailing slashes", () => {
 
       act(() => {
         ReactDOM.createRoot(node).render(
-          <BrowserRouter basename="/foo/" window={window}>
+          <BrowserRouter
+            basename="/foo/"
+            window={window}
+            future={{
+              v7_relativeSplatPath: true,
+              v7_startTransition: true,
+            }}
+          >
             <Routes>
               <Route index element={<SetSearchParams />} />
             </Routes>

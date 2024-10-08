@@ -16,15 +16,13 @@ export default function App() {
   return (
     <div>
       <h1>Custom Filter Link Example</h1>
-
       <p>
         This example demonstrates how to create a "filter link" like one that is
         commonly used to filter a list of products on an e-commerce website. The
-        <code>&lt;BrandLink&gt;</code> component is a custom{" "}
-        <code>&lt;Link&gt;</code> that knows whether or not it is currently
+        <code>&lt;BrandLink&gt;</code>component is a custom{" "}
+        <code>&lt;Link&gt;</code>that knows whether or not it is currently
         "active" by what is in the URL query string.
       </p>
-
       <Routes>
         <Route path="/" element={<Layout />}>
           <Route index element={<SneakerGrid />} />
@@ -65,7 +63,7 @@ function Layout() {
         <h3>Filter by brand</h3>
         <ul>
           <li>
-            <Link to="/">All</Link>
+            <Link to="../">All</Link>
           </li>
           {brands.map((brand) => (
             <li key={brand}>
@@ -74,9 +72,7 @@ function Layout() {
           ))}
         </ul>
       </nav>
-
       <hr />
-
       <Outlet />
     </div>
   );
@@ -94,7 +90,6 @@ function SneakerGrid() {
   return (
     <main>
       <h2>Sneakers</h2>
-
       <div
         style={{
           display: "grid",
@@ -173,7 +168,7 @@ function NoMatch() {
     <div>
       <h2>Nothing to see here!</h2>
       <p>
-        <Link to="/">Go to the home page</Link>
+        <Link to="../">Go to the home page</Link>
       </p>
     </div>
   );

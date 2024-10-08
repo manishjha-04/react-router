@@ -143,14 +143,19 @@ describe("useResolvedPath", () => {
         renderer = TestRenderer.create(
           <MemoryRouter initialEntries={["/users/mj"]}>
             <Routes>
-              <Route
-                path="/users/*"
-                element={
-                  <Routes>
-                    <Route path="mj" element={<ShowResolvedPath path="." />} />
-                  </Routes>
-                }
-              />
+              <Route path="/users">
+                <Route
+                  path="*"
+                  element={
+                    <Routes>
+                      <Route
+                        path="mj"
+                        element={<ShowResolvedPath path="." />}
+                      />
+                    </Routes>
+                  }
+                />
+              </Route>
             </Routes>
           </MemoryRouter>
         );
@@ -169,14 +174,19 @@ describe("useResolvedPath", () => {
         renderer = TestRenderer.create(
           <MemoryRouter initialEntries={["/users/mj"]}>
             <Routes>
-              <Route
-                path="/users/*"
-                element={
-                  <Routes>
-                    <Route path="mj" element={<ShowResolvedPath path=".." />} />
-                  </Routes>
-                }
-              />
+              <Route path="/users">
+                <Route
+                  path="*"
+                  element={
+                    <Routes>
+                      <Route
+                        path="mj"
+                        element={<ShowResolvedPath path=".." />}
+                      />
+                    </Routes>
+                  }
+                />
+              </Route>
             </Routes>
           </MemoryRouter>
         );
@@ -268,10 +278,12 @@ describe("useResolvedPath", () => {
         },
         {
           routes: (
-            <Route
-              path="/foo/*"
-              element={<Component desc='<Route path="/foo/*" />' />}
-            />
+            <Route path="/foo">
+              <Route
+                path="*"
+                element={<Component desc='<Route path="/foo/*" />' />}
+              />
+            </Route>
           ),
         },
         {

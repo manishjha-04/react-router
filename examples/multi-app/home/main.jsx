@@ -7,7 +7,12 @@ import HomeApp from "./App";
 ReactDOM.createRoot(document.getElementById("root")).render(
   <React.StrictMode>
     {/* No basename for this router. This app renders at the root / URL. */}
-    <BrowserRouter>
+    <BrowserRouter
+      future={{
+        v7_relativeSplatPath: true,
+        v7_startTransition: true,
+      }}
+    >
       <HomeApp />
     </BrowserRouter>
   </React.StrictMode>

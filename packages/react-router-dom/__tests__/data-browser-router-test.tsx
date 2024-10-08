@@ -89,7 +89,14 @@ function testDomRouter(
       let router = createTestRouter(
         createRoutesFromElements(<Route path="/" element={<h1>Home</h1>} />)
       );
-      let { container } = render(<RouterProvider router={router} />);
+      let { container } = render(
+        <RouterProvider
+          router={router}
+          future={{
+            v7_startTransition: true,
+          }}
+        />
+      );
 
       expect(getHtml(container)).toMatchInlineSnapshot(`
          "<div>
@@ -113,7 +120,14 @@ function testDomRouter(
           window: getWindow("/my/base/path/thing"),
         }
       );
-      let { container } = render(<RouterProvider router={router} />);
+      let { container } = render(
+        <RouterProvider
+          router={router}
+          future={{
+            v7_startTransition: true,
+          }}
+        />
+      );
 
       expect(getHtml(container)).toMatchInlineSnapshot(`
          "<div>
@@ -134,7 +148,14 @@ function testDomRouter(
           window: getWindow("/my/base/path/thing"),
         }
       );
-      let { container } = render(<RouterProvider router={router} />);
+      let { container } = render(
+        <RouterProvider
+          router={router}
+          future={{
+            v7_startTransition: true,
+          }}
+        />
+      );
 
       expect(getHtml(container)).toMatchInlineSnapshot(`
         "<div>
@@ -165,7 +186,14 @@ function testDomRouter(
           },
         }
       );
-      let { container } = render(<RouterProvider router={router} />);
+      let { container } = render(
+        <RouterProvider
+          router={router}
+          future={{
+            v7_startTransition: true,
+          }}
+        />
+      );
 
       function Comp() {
         let data = useLoaderData();
@@ -216,7 +244,14 @@ function testDomRouter(
           window: getWindow("/child"),
         }
       );
-      let { container } = render(<RouterProvider router={router} />);
+      let { container } = render(
+        <RouterProvider
+          router={router}
+          future={{
+            v7_startTransition: true,
+          }}
+        />
+      );
 
       function Comp() {
         let data = useLoaderData();
@@ -266,7 +301,14 @@ function testDomRouter(
           <Route path="/" element={<h1>Nope</h1>} errorElement={<Boundary />} />
         )
       );
-      let { container } = render(<RouterProvider router={router} />);
+      let { container } = render(
+        <RouterProvider
+          router={router}
+          future={{
+            v7_startTransition: true,
+          }}
+        />
+      );
 
       function Boundary() {
         let error = useRouteError() as unknown;
@@ -302,7 +344,14 @@ function testDomRouter(
           <Route path="/" element={<h1>Nope</h1>} errorElement={<Boundary />} />
         )
       );
-      let { container } = render(<RouterProvider router={router} />);
+      let { container } = render(
+        <RouterProvider
+          router={router}
+          future={{
+            v7_startTransition: true,
+          }}
+        />
+      );
 
       function Boundary() {
         let error = useRouteError() as Error;
@@ -345,7 +394,14 @@ function testDomRouter(
           <Route path="/" element={<h1>Nope</h1>} errorElement={<Boundary />} />
         )
       );
-      let { container } = render(<RouterProvider router={router} />);
+      let { container } = render(
+        <RouterProvider
+          router={router}
+          future={{
+            v7_startTransition: true,
+          }}
+        />
+      );
 
       function Boundary() {
         let error = useRouteError() as Error;
@@ -389,7 +445,13 @@ function testDomRouter(
         }
       );
       let { container } = render(
-        <RouterProvider router={router} fallbackElement={<FallbackElement />} />
+        <RouterProvider
+          router={router}
+          fallbackElement={<FallbackElement />}
+          future={{
+            v7_startTransition: true,
+          }}
+        />
       );
 
       function FallbackElement() {
@@ -447,7 +509,13 @@ function testDomRouter(
         }
       );
       let { container } = render(
-        <RouterProvider router={router} fallbackElement={<FallbackElement />} />
+        <RouterProvider
+          router={router}
+          fallbackElement={<FallbackElement />}
+          future={{
+            v7_startTransition: true,
+          }}
+        />
       );
 
       function FallbackElement() {
@@ -501,7 +569,13 @@ function testDomRouter(
         }
       );
       let { container } = render(
-        <RouterProvider router={router} fallbackElement={<FallbackElement />} />
+        <RouterProvider
+          router={router}
+          fallbackElement={<FallbackElement />}
+          future={{
+            v7_startTransition: true,
+          }}
+        />
       );
 
       function FallbackElement() {
@@ -541,7 +615,13 @@ function testDomRouter(
         { window: getWindow("/foo") }
       );
       let { container } = render(
-        <RouterProvider router={router} fallbackElement={<FallbackElement />} />
+        <RouterProvider
+          router={router}
+          fallbackElement={<FallbackElement />}
+          future={{
+            v7_startTransition: true,
+          }}
+        />
       );
 
       function FallbackElement() {
@@ -585,13 +665,20 @@ function testDomRouter(
         ),
         { window: getWindow("/foo") }
       );
-      render(<RouterProvider router={router} />);
+      render(
+        <RouterProvider
+          router={router}
+          future={{
+            v7_startTransition: true,
+          }}
+        />
+      );
 
       function Layout() {
         return (
           <div>
-            <Link to="/foo">Link to Foo</Link>
-            <Link to="/bar">Link to Bar</Link>
+            <Link to="..//foo">Link to Foo</Link>
+            <Link to="..//bar">Link to Bar</Link>
             <Outlet />
           </div>
         );
@@ -619,13 +706,20 @@ function testDomRouter(
           basename: "/base/name",
         }
       );
-      render(<RouterProvider router={router} />);
+      render(
+        <RouterProvider
+          router={router}
+          future={{
+            v7_startTransition: true,
+          }}
+        />
+      );
 
       function Layout() {
         return (
           <div>
-            <Link to="/foo">Link to Foo</Link>
-            <Link to="/bar">Link to Bar</Link>
+            <Link to="..//foo">Link to Foo</Link>
+            <Link to="..//bar">Link to Bar</Link>
             <div id="output">
               <Outlet />
             </div>
@@ -661,13 +755,20 @@ function testDomRouter(
         ),
         { window: getWindow("/foo") }
       );
-      let { container } = render(<RouterProvider router={router} />);
+      let { container } = render(
+        <RouterProvider
+          router={router}
+          future={{
+            v7_startTransition: true,
+          }}
+        />
+      );
 
       function Layout() {
         let navigation = useNavigation();
         return (
           <div>
-            <Link to="/bar">Link to Bar</Link>
+            <Link to="..//bar">Link to Bar</Link>
             <div id="output">
               <p>{navigation.state}</p>
               <Outlet />
@@ -750,13 +851,20 @@ function testDomRouter(
           window: getWindow("/foo"),
         }
       );
-      let { container } = render(<RouterProvider router={router} />);
+      let { container } = render(
+        <RouterProvider
+          router={router}
+          future={{
+            v7_startTransition: true,
+          }}
+        />
+      );
 
       function Layout() {
         let navigation = useNavigation();
         return (
           <div>
-            <Link to="/bar">Link to Bar</Link>
+            <Link to="..//bar">Link to Bar</Link>
             <div id="output">
               <p>{navigation.state}</p>
               <Outlet />
@@ -829,16 +937,23 @@ function testDomRouter(
         ),
         { window: getWindow("/foo") }
       );
-      let { container } = render(<RouterProvider router={router} />);
+      let { container } = render(
+        <RouterProvider
+          router={router}
+          future={{
+            v7_startTransition: true,
+          }}
+        />
+      );
 
       function Layout() {
         let state = React.useContext(DataRouterStateContext);
         return (
           <div>
-            <Link to="/foo" preventScrollReset>
+            <Link to="..//foo" preventScrollReset>
               Link to Foo
             </Link>
-            <Link to="/bar">Link to Bar</Link>
+            <Link to="..//bar">Link to Bar</Link>
             <p id="preventScrollReset">{String(state?.preventScrollReset)}</p>
             <Outlet />
           </div>
@@ -878,16 +993,23 @@ function testDomRouter(
         ),
         { window: getWindow("/foo") }
       );
-      let { container } = render(<RouterProvider router={router} />);
+      let { container } = render(
+        <RouterProvider
+          router={router}
+          future={{
+            v7_startTransition: true,
+          }}
+        />
+      );
 
       function Layout() {
         let state = React.useContext(DataRouterStateContext);
         return (
           <div>
-            <Link to="/foo" preventScrollReset={true}>
+            <Link to="..//foo" preventScrollReset={true}>
               Link to Foo
             </Link>
-            <Link to="/bar">Link to Bar</Link>
+            <Link to="..//bar">Link to Bar</Link>
             <p id="preventScrollReset">{String(state?.preventScrollReset)}</p>
             <Outlet />
           </div>
@@ -935,7 +1057,14 @@ function testDomRouter(
           hydrationData: { loaderData: { "0": null } },
         }
       );
-      let { container } = render(<RouterProvider router={router} />);
+      let { container } = render(
+        <RouterProvider
+          router={router}
+          future={{
+            v7_startTransition: true,
+          }}
+        />
+      );
 
       function Home() {
         let data = useLoaderData() as string;
@@ -1058,7 +1187,14 @@ function testDomRouter(
           window: getWindow("/"),
         }
       );
-      let { container } = render(<RouterProvider router={router} />);
+      let { container } = render(
+        <RouterProvider
+          router={router}
+          future={{
+            v7_startTransition: true,
+          }}
+        />
+      );
 
       function Home() {
         let navigation = useNavigation();
@@ -1172,7 +1308,14 @@ function testDomRouter(
           hydrationData: { loaderData: { "0": null } },
         }
       );
-      let { container } = render(<RouterProvider router={router} />);
+      let { container } = render(
+        <RouterProvider
+          router={router}
+          future={{
+            v7_startTransition: true,
+          }}
+        />
+      );
 
       function Home() {
         let data = useLoaderData() as string;
@@ -1278,7 +1421,14 @@ function testDomRouter(
           window: getWindow("/"),
         }
       );
-      let { container } = render(<RouterProvider router={router} />);
+      let { container } = render(
+        <RouterProvider
+          router={router}
+          future={{
+            v7_startTransition: true,
+          }}
+        />
+      );
 
       function Home() {
         let navigation = useNavigation();
@@ -1370,7 +1520,14 @@ function testDomRouter(
           hydrationData: { loaderData: { "0": null } },
         }
       );
-      let { container } = render(<RouterProvider router={router} />);
+      let { container } = render(
+        <RouterProvider
+          router={router}
+          future={{
+            v7_startTransition: true,
+          }}
+        />
+      );
 
       function Home() {
         let data = useLoaderData() as string;
@@ -1494,7 +1651,14 @@ function testDomRouter(
           hydrationData: { loaderData: { "0": null } },
         }
       );
-      let { container } = render(<RouterProvider router={router} />);
+      let { container } = render(
+        <RouterProvider
+          router={router}
+          future={{
+            v7_startTransition: true,
+          }}
+        />
+      );
 
       function Home() {
         let navigation = useNavigation();
@@ -1607,7 +1771,14 @@ function testDomRouter(
         ],
         { window: testWindow }
       );
-      let { container } = render(<RouterProvider router={router} />);
+      let { container } = render(
+        <RouterProvider
+          router={router}
+          future={{
+            v7_startTransition: true,
+          }}
+        />
+      );
       expect(testWindow.history.state.usr).toBeUndefined();
 
       fireEvent.click(screen.getByText("Submit"));
@@ -1629,7 +1800,14 @@ function testDomRouter(
           <Route path="/" action={actionSpy} element={<Home />} />
         )
       );
-      render(<RouterProvider router={router} />);
+      render(
+        <RouterProvider
+          router={router}
+          future={{
+            v7_startTransition: true,
+          }}
+        />
+      );
 
       let handlerCalled;
       let defaultPrevented;
@@ -1667,7 +1845,14 @@ function testDomRouter(
         ),
         {}
       );
-      let { container } = render(<RouterProvider router={router} />);
+      let { container } = render(
+        <RouterProvider
+          router={router}
+          future={{
+            v7_startTransition: true,
+          }}
+        />
+      );
 
       function Layout() {
         let navigate = useNavigate();
@@ -1738,13 +1923,20 @@ function testDomRouter(
         ),
         {}
       );
-      let { container } = render(<RouterProvider router={router} />);
+      let { container } = render(
+        <RouterProvider
+          router={router}
+          future={{
+            v7_startTransition: true,
+          }}
+        />
+      );
 
       function Layout() {
         let navigate = useNavigate();
         return (
           <>
-            <Link to="form">Go to Form</Link>
+            <Link to="../form">Go to Form</Link>
             <button onClick={() => navigate(-1)}>Go back</button>
             <div className="output">
               <Outlet />
@@ -1806,13 +1998,20 @@ function testDomRouter(
         ),
         { hydrationData: {} }
       );
-      let { container } = render(<RouterProvider router={router} />);
+      let { container } = render(
+        <RouterProvider
+          router={router}
+          future={{
+            v7_startTransition: true,
+          }}
+        />
+      );
 
       function Layout() {
         let navigate = useNavigate();
         return (
           <>
-            <Link to="form">Go to Form</Link>
+            <Link to="../form">Go to Form</Link>
             <button onClick={() => navigate(-1)}>Go back</button>
             <div className="output">
               <Outlet />
@@ -1864,7 +2063,14 @@ function testDomRouter(
           window: getWindow("/"),
         }
       );
-      let { container } = render(<RouterProvider router={router} />);
+      let { container } = render(
+        <RouterProvider
+          router={router}
+          future={{
+            v7_startTransition: true,
+          }}
+        />
+      );
 
       function Layout() {
         let navigate = useNavigate();
@@ -1937,7 +2143,14 @@ function testDomRouter(
           window: getWindow("/"),
         }
       );
-      let { container } = render(<RouterProvider router={router} />);
+      let { container } = render(
+        <RouterProvider
+          router={router}
+          future={{
+            v7_startTransition: true,
+          }}
+        />
+      );
 
       function Layout() {
         let navigate = useNavigate();
@@ -1946,7 +2159,7 @@ function testDomRouter(
         formData.append("test", "value");
         return (
           <>
-            <Link to="1">Go to 1</Link>
+            <Link to="../1">Go to 1</Link>
             <button
               onClick={() => {
                 submit(formData, { action: "2", method: "post" });
@@ -2030,7 +2243,14 @@ function testDomRouter(
           window: getWindow("/"),
         }
       );
-      let { container } = render(<RouterProvider router={router} />);
+      let { container } = render(
+        <RouterProvider
+          router={router}
+          future={{
+            v7_startTransition: true,
+          }}
+        />
+      );
 
       function Layout() {
         let navigate = useNavigate();
@@ -2039,7 +2259,7 @@ function testDomRouter(
         formData.append("test", "value");
         return (
           <>
-            <Link to="1">Go to 1</Link>
+            <Link to="../1">Go to 1</Link>
             <button
               onClick={() => {
                 submit(formData, { action: "1", method: "post" });
@@ -2126,7 +2346,14 @@ function testDomRouter(
         createRoutesFromElements(<Route path="path" element={<Comp />} />),
         { basename: "/base", window: testWindow }
       );
-      let { container } = render(<RouterProvider router={router} />);
+      let { container } = render(
+        <RouterProvider
+          router={router}
+          future={{
+            v7_startTransition: true,
+          }}
+        />
+      );
 
       function Comp() {
         let location = useLocation();
@@ -2205,7 +2432,14 @@ function testDomRouter(
           window: testWindow,
         }
       );
-      let { container } = render(<RouterProvider router={router} />);
+      let { container } = render(
+        <RouterProvider
+          router={router}
+          future={{
+            v7_startTransition: true,
+          }}
+        />
+      );
 
       function Comp() {
         let location = useLocation();
@@ -2298,7 +2532,14 @@ function testDomRouter(
           window: getWindow("/"),
         }
       );
-      let { container } = render(<RouterProvider router={router} />);
+      let { container } = render(
+        <RouterProvider
+          router={router}
+          future={{
+            v7_startTransition: true,
+          }}
+        />
+      );
 
       function Home() {
         let data = useLoaderData() as string;
@@ -2399,7 +2640,14 @@ function testDomRouter(
           window: getWindow("/foo/bar"),
         }
       );
-      let { container } = render(<RouterProvider router={router} />);
+      let { container } = render(
+        <RouterProvider
+          router={router}
+          future={{
+            v7_startTransition: true,
+          }}
+        />
+      );
 
       expect(container.querySelector("form")?.getAttribute("action")).toBe(
         "/foo"
@@ -2453,7 +2701,14 @@ function testDomRouter(
           window: getWindow("/"),
         }
       );
-      let { container } = render(<RouterProvider router={router} />);
+      let { container } = render(
+        <RouterProvider
+          router={router}
+          future={{
+            v7_startTransition: true,
+          }}
+        />
+      );
 
       function Home() {
         let data = useLoaderData() as string;
@@ -2541,7 +2796,14 @@ function testDomRouter(
               window: getWindow("/foo/bar?a=1#hash"),
             }
           );
-          let { container } = render(<RouterProvider router={router} />);
+          let { container } = render(
+            <RouterProvider
+              router={router}
+              future={{
+                v7_startTransition: true,
+              }}
+            />
+          );
 
           expect(container.querySelector("form")?.getAttribute("action")).toBe(
             "/foo/bar?a=1"
@@ -2559,7 +2821,14 @@ function testDomRouter(
             ),
             { window: getWindow("/foo/bar?a=1#hash") }
           );
-          let { container } = render(<RouterProvider router={router} />);
+          let { container } = render(
+            <RouterProvider
+              router={router}
+              future={{
+                v7_startTransition: true,
+              }}
+            />
+          );
 
           expect(container.querySelector("form")?.getAttribute("action")).toBe(
             "/foo/bar"
@@ -2577,7 +2846,14 @@ function testDomRouter(
             ),
             { window: getWindow("/foo/bar?a=1#hash") }
           );
-          let { container } = render(<RouterProvider router={router} />);
+          let { container } = render(
+            <RouterProvider
+              router={router}
+              future={{
+                v7_startTransition: true,
+              }}
+            />
+          );
 
           expect(container.querySelector("form")?.getAttribute("action")).toBe(
             "/foo/bar"
@@ -2601,7 +2877,14 @@ function testDomRouter(
               window: getWindow("/foo/bar?a=1#hash"),
             }
           );
-          let { container } = render(<RouterProvider router={router} />);
+          let { container } = render(
+            <RouterProvider
+              router={router}
+              future={{
+                v7_startTransition: true,
+              }}
+            />
+          );
 
           expect(container.querySelector("form")?.getAttribute("action")).toBe(
             "/foo/bar?a=1"
@@ -2623,7 +2906,14 @@ function testDomRouter(
               window: getWindow("/foo/bar?a=1#hash"),
             }
           );
-          let { container } = render(<RouterProvider router={router} />);
+          let { container } = render(
+            <RouterProvider
+              router={router}
+              future={{
+                v7_startTransition: true,
+              }}
+            />
+          );
 
           expect(container.querySelector("form")?.getAttribute("action")).toBe(
             "/foo/bar"
@@ -2645,7 +2935,14 @@ function testDomRouter(
               window: getWindow("/foo/bar?a=1#hash"),
             }
           );
-          let { container } = render(<RouterProvider router={router} />);
+          let { container } = render(
+            <RouterProvider
+              router={router}
+              future={{
+                v7_startTransition: true,
+              }}
+            />
+          );
 
           expect(container.querySelector("form")?.getAttribute("action")).toBe(
             "/foo/bar"
@@ -2665,7 +2962,14 @@ function testDomRouter(
               window: getWindow("/foo/bar"),
             }
           );
-          let { container } = render(<RouterProvider router={router} />);
+          let { container } = render(
+            <RouterProvider
+              router={router}
+              future={{
+                v7_startTransition: true,
+              }}
+            />
+          );
 
           expect(container.querySelector("form")?.getAttribute("action")).toBe(
             "/foo"
@@ -2685,7 +2989,14 @@ function testDomRouter(
               window: getWindow("/foo/bar/baz/qux"),
             }
           );
-          let { container } = render(<RouterProvider router={router} />);
+          let { container } = render(
+            <RouterProvider
+              router={router}
+              future={{
+                v7_startTransition: true,
+              }}
+            />
+          );
 
           expect(container.querySelector("form")?.getAttribute("action")).toBe(
             "/foo"
@@ -2707,7 +3018,14 @@ function testDomRouter(
               window: getWindow("/foo/bar?index&a=1"),
             }
           );
-          let { container } = render(<RouterProvider router={router} />);
+          let { container } = render(
+            <RouterProvider
+              router={router}
+              future={{
+                v7_startTransition: true,
+              }}
+            />
+          );
 
           expect(container.querySelector("form")?.getAttribute("action")).toBe(
             "/foo/bar?a=1"
@@ -2731,7 +3049,14 @@ function testDomRouter(
               window: getWindow("/foo/bar?a=1#hash"),
             }
           );
-          let { container } = render(<RouterProvider router={router} />);
+          let { container } = render(
+            <RouterProvider
+              router={router}
+              future={{
+                v7_startTransition: true,
+              }}
+            />
+          );
 
           expect(container.querySelector("form")?.getAttribute("action")).toBe(
             "/foo/bar?index&a=1"
@@ -2753,7 +3078,14 @@ function testDomRouter(
               window: getWindow("/foo/bar?a=1#hash"),
             }
           );
-          let { container } = render(<RouterProvider router={router} />);
+          let { container } = render(
+            <RouterProvider
+              router={router}
+              future={{
+                v7_startTransition: true,
+              }}
+            />
+          );
 
           expect(container.querySelector("form")?.getAttribute("action")).toBe(
             "/foo/bar?index"
@@ -2775,7 +3107,14 @@ function testDomRouter(
               window: getWindow("/foo/bar?a=1#hash"),
             }
           );
-          let { container } = render(<RouterProvider router={router} />);
+          let { container } = render(
+            <RouterProvider
+              router={router}
+              future={{
+                v7_startTransition: true,
+              }}
+            />
+          );
 
           expect(container.querySelector("form")?.getAttribute("action")).toBe(
             "/foo/bar?index"
@@ -2807,7 +3146,14 @@ function testDomRouter(
               window: testWindow,
             }
           );
-          render(<RouterProvider router={router} />);
+          render(
+            <RouterProvider
+              router={router}
+              future={{
+                v7_startTransition: true,
+              }}
+            />
+          );
 
           assertLocation(testWindow, "/form", "");
 
@@ -2835,7 +3181,14 @@ function testDomRouter(
             ),
             { window: getWindow("/foo/bar?a=1#hash") }
           );
-          let { container } = render(<RouterProvider router={router} />);
+          let { container } = render(
+            <RouterProvider
+              router={router}
+              future={{
+                v7_startTransition: true,
+              }}
+            />
+          );
 
           expect(container.querySelector("form")?.getAttribute("action")).toBe(
             "/foo/bar?index&a=1"
@@ -2866,7 +3219,14 @@ function testDomRouter(
               window: testWindow,
             }
           );
-          render(<RouterProvider router={router} />);
+          render(
+            <RouterProvider
+              router={router}
+              future={{
+                v7_startTransition: true,
+              }}
+            />
+          );
 
           assertLocation(testWindow, "/form", "");
 
@@ -2890,7 +3250,14 @@ function testDomRouter(
               window: getWindow("/foo/bar?a=1#hash"),
             }
           );
-          let { container } = render(<RouterProvider router={router} />);
+          let { container } = render(
+            <RouterProvider
+              router={router}
+              future={{
+                v7_startTransition: true,
+              }}
+            />
+          );
 
           expect(container.querySelector("form")?.getAttribute("action")).toBe(
             "/foo/bar?a=1"
@@ -2910,7 +3277,14 @@ function testDomRouter(
               window: getWindow("/foo/bar?a=1#hash"),
             }
           );
-          let { container } = render(<RouterProvider router={router} />);
+          let { container } = render(
+            <RouterProvider
+              router={router}
+              future={{
+                v7_startTransition: true,
+              }}
+            />
+          );
 
           expect(container.querySelector("form")?.getAttribute("action")).toBe(
             "/foo/bar"
@@ -2930,7 +3304,14 @@ function testDomRouter(
               window: getWindow("/foo/bar?a=1#hash"),
             }
           );
-          let { container } = render(<RouterProvider router={router} />);
+          let { container } = render(
+            <RouterProvider
+              router={router}
+              future={{
+                v7_startTransition: true,
+              }}
+            />
+          );
 
           expect(container.querySelector("form")?.getAttribute("action")).toBe(
             "/foo/bar"
@@ -2952,7 +3333,14 @@ function testDomRouter(
               window: getWindow("/foo/bar?a=1#hash"),
             }
           );
-          let { container } = render(<RouterProvider router={router} />);
+          let { container } = render(
+            <RouterProvider
+              router={router}
+              future={{
+                v7_startTransition: true,
+              }}
+            />
+          );
 
           expect(container.querySelector("form")?.getAttribute("action")).toBe(
             "/foo?a=1"
@@ -2972,7 +3360,14 @@ function testDomRouter(
               window: getWindow("/foo/bar?a=1#hash"),
             }
           );
-          let { container } = render(<RouterProvider router={router} />);
+          let { container } = render(
+            <RouterProvider
+              router={router}
+              future={{
+                v7_startTransition: true,
+              }}
+            />
+          );
 
           expect(container.querySelector("form")?.getAttribute("action")).toBe(
             "/foo"
@@ -2992,7 +3387,14 @@ function testDomRouter(
               window: getWindow("/foo/bar?a=1#hash"),
             }
           );
-          let { container } = render(<RouterProvider router={router} />);
+          let { container } = render(
+            <RouterProvider
+              router={router}
+              future={{
+                v7_startTransition: true,
+              }}
+            />
+          );
 
           expect(container.querySelector("form")?.getAttribute("action")).toBe(
             "/foo"
@@ -3022,7 +3424,14 @@ function testDomRouter(
               window: getWindow("/parent?index&index=keep"),
             }
           );
-          let { container } = render(<RouterProvider router={router} />);
+          let { container } = render(
+            <RouterProvider
+              router={router}
+              future={{
+                v7_startTransition: true,
+              }}
+            />
+          );
 
           function Parent() {
             let actionData = useActionData();
@@ -3087,7 +3496,14 @@ function testDomRouter(
               window: getWindow("/parent?index&index=keep"),
             }
           );
-          let { container } = render(<RouterProvider router={router} />);
+          let { container } = render(
+            <RouterProvider
+              router={router}
+              future={{
+                v7_startTransition: true,
+              }}
+            />
+          );
 
           function Parent() {
             let actionData = useActionData();
@@ -3157,7 +3573,14 @@ function testDomRouter(
               window: getWindow("/parent?index&index=keep"),
             }
           );
-          let { container } = render(<RouterProvider router={router} />);
+          let { container } = render(
+            <RouterProvider
+              router={router}
+              future={{
+                v7_startTransition: true,
+              }}
+            />
+          );
 
           function Parent() {
             let fetcher = useFetcher();
@@ -3222,7 +3645,14 @@ function testDomRouter(
               window: getWindow("/parent?index&index=keep"),
             }
           );
-          let { container } = render(<RouterProvider router={router} />);
+          let { container } = render(
+            <RouterProvider
+              router={router}
+              future={{
+                v7_startTransition: true,
+              }}
+            />
+          );
 
           function Parent() {
             let fetcher = useFetcher();
@@ -3285,7 +3715,14 @@ function testDomRouter(
           ),
           { window: getWindow("/foo/bar?a=1#hash") }
         );
-        let { container } = render(<RouterProvider router={router} />);
+        let { container } = render(
+          <RouterProvider
+            router={router}
+            future={{
+              v7_startTransition: true,
+            }}
+          />
+        );
 
         expect(container.querySelector("form")?.getAttribute("action")).toBe(
           "/foo/bar?a=1#newhash"
@@ -3309,7 +3746,14 @@ function testDomRouter(
             window: getWindow("/inbox/messages/edit"),
           }
         );
-        let { container } = render(<RouterProvider router={router} />);
+        let { container } = render(
+          <RouterProvider
+            router={router}
+            future={{
+              v7_startTransition: true,
+            }}
+          />
+        );
 
         expect(container.querySelector("form")?.getAttribute("action")).toBe(
           "/inbox/messages"
@@ -3331,7 +3775,14 @@ function testDomRouter(
             window: getWindow("/inbox/messages/1"),
           }
         );
-        let { container } = render(<RouterProvider router={router} />);
+        let { container } = render(
+          <RouterProvider
+            router={router}
+            future={{
+              v7_startTransition: true,
+            }}
+          />
+        );
 
         expect(container.querySelector("form")?.getAttribute("action")).toBe(
           "/inbox/messages"
@@ -3360,7 +3811,14 @@ function testDomRouter(
             window: getWindow("/inbox/messages/1"),
           }
         );
-        let { container } = render(<RouterProvider router={router} />);
+        let { container } = render(
+          <RouterProvider
+            router={router}
+            future={{
+              v7_startTransition: true,
+            }}
+          />
+        );
 
         expect(container.querySelector("form")?.getAttribute("action")).toBe(
           "/inbox/messages"
@@ -3381,7 +3839,14 @@ function testDomRouter(
             window: getWindow("/inbox/messages/1"),
           }
         );
-        let { container } = render(<RouterProvider router={router} />);
+        let { container } = render(
+          <RouterProvider
+            router={router}
+            future={{
+              v7_startTransition: true,
+            }}
+          />
+        );
 
         expect(container.querySelector("form")?.getAttribute("action")).toBe(
           "/inbox/messages"
@@ -3391,16 +3856,22 @@ function testDomRouter(
       it("navigates relative to the URL for splat routes", async () => {
         let router = createTestRouter(
           createRoutesFromElements(
-            <Route
-              path="inbox/messages/*"
-              element={<Form action=".." relative="path" />}
-            />
+            <Route path="inbox/messages">
+              <Route path="*" element={<Form action=".." relative="path" />} />
+            </Route>
           ),
           {
             window: getWindow("/inbox/messages/1/2/3"),
           }
         );
-        let { container } = render(<RouterProvider router={router} />);
+        let { container } = render(
+          <RouterProvider
+            router={router}
+            future={{
+              v7_startTransition: true,
+            }}
+          />
+        );
 
         expect(container.querySelector("form")?.getAttribute("action")).toBe(
           "/inbox"
@@ -3417,7 +3888,14 @@ function testDomRouter(
           ),
           { window: getWindow("/") }
         );
-        render(<RouterProvider router={router} />);
+        render(
+          <RouterProvider
+            router={router}
+            future={{
+              v7_startTransition: true,
+            }}
+          />
+        );
 
         function FormPage() {
           return (
@@ -3443,7 +3921,14 @@ function testDomRouter(
           ),
           { window: getWindow("/") }
         );
-        render(<RouterProvider router={router} />);
+        render(
+          <RouterProvider
+            router={router}
+            future={{
+              v7_startTransition: true,
+            }}
+          />
+        );
 
         function FormPage() {
           let submit = useSubmit();
@@ -3473,7 +3958,14 @@ function testDomRouter(
           ),
           { window: getWindow("/") }
         );
-        render(<RouterProvider router={router} />);
+        render(
+          <RouterProvider
+            router={router}
+            future={{
+              v7_startTransition: true,
+            }}
+          />
+        );
 
         function FormPage() {
           let submit = useSubmit();
@@ -3509,7 +4001,14 @@ function testDomRouter(
           ),
           { window: getWindow("/") }
         );
-        render(<RouterProvider router={router} />);
+        render(
+          <RouterProvider
+            router={router}
+            future={{
+              v7_startTransition: true,
+            }}
+          />
+        );
 
         function FormPage() {
           let submit = useSubmit();
@@ -3545,7 +4044,14 @@ function testDomRouter(
           ),
           { window: getWindow("/") }
         );
-        render(<RouterProvider router={router} />);
+        render(
+          <RouterProvider
+            router={router}
+            future={{
+              v7_startTransition: true,
+            }}
+          />
+        );
 
         function FormPage() {
           let submit = useSubmit();
@@ -3590,7 +4096,14 @@ function testDomRouter(
           ],
           { window: getWindow("/") }
         );
-        render(<RouterProvider router={router} />);
+        render(
+          <RouterProvider
+            router={router}
+            future={{
+              v7_startTransition: true,
+            }}
+          />
+        );
 
         fireEvent.click(screen.getByText("Submit"));
         expect(navigation.formData?.get("a")).toBe("1");
@@ -3638,7 +4151,14 @@ function testDomRouter(
           ],
           { window: getWindow("/") }
         );
-        render(<RouterProvider router={router} />);
+        render(
+          <RouterProvider
+            router={router}
+            future={{
+              v7_startTransition: true,
+            }}
+          />
+        );
 
         fireEvent.click(screen.getByText("Submit"));
         expect(navigation.formData?.get("a")).toBe("1");
@@ -3686,7 +4206,14 @@ function testDomRouter(
           ],
           { window: getWindow("/") }
         );
-        render(<RouterProvider router={router} />);
+        render(
+          <RouterProvider
+            router={router}
+            future={{
+              v7_startTransition: true,
+            }}
+          />
+        );
 
         fireEvent.click(screen.getByText("Submit"));
         expect(navigation.json).toBe(body);
@@ -3729,7 +4256,14 @@ function testDomRouter(
           ],
           { window: getWindow("/") }
         );
-        render(<RouterProvider router={router} />);
+        render(
+          <RouterProvider
+            router={router}
+            future={{
+              v7_startTransition: true,
+            }}
+          />
+        );
 
         fireEvent.click(screen.getByText("Submit"));
         expect(navigation.text).toBe(body);
@@ -3750,7 +4284,14 @@ function testDomRouter(
           ),
           { window: getWindow("/") }
         );
-        render(<RouterProvider router={router} />);
+        render(
+          <RouterProvider
+            router={router}
+            future={{
+              v7_startTransition: true,
+            }}
+          />
+        );
 
         function FormPage() {
           return (
@@ -3779,7 +4320,14 @@ function testDomRouter(
           ),
           { window: getWindow("/") }
         );
-        render(<RouterProvider router={router} />);
+        render(
+          <RouterProvider
+            router={router}
+            future={{
+              v7_startTransition: true,
+            }}
+          />
+        );
 
         function FormPage() {
           return (
@@ -3808,7 +4356,14 @@ function testDomRouter(
           ),
           { window: getWindow("/") }
         );
-        render(<RouterProvider router={router} />);
+        render(
+          <RouterProvider
+            router={router}
+            future={{
+              v7_startTransition: true,
+            }}
+          />
+        );
 
         function FormPage() {
           let submit = useSubmit();
@@ -3845,7 +4400,14 @@ function testDomRouter(
           ),
           { window: getWindow("/") }
         );
-        render(<RouterProvider router={router} />);
+        render(
+          <RouterProvider
+            router={router}
+            future={{
+              v7_startTransition: true,
+            }}
+          />
+        );
 
         function FormPage() {
           return (
@@ -3873,7 +4435,14 @@ function testDomRouter(
           ),
           { window: getWindow("/") }
         );
-        render(<RouterProvider router={router} />);
+        render(
+          <RouterProvider
+            router={router}
+            future={{
+              v7_startTransition: true,
+            }}
+          />
+        );
 
         function FormPage() {
           let submit = useSubmit();
@@ -3917,7 +4486,14 @@ function testDomRouter(
           ),
           { window: getWindow("/") }
         );
-        render(<RouterProvider router={router} />);
+        render(
+          <RouterProvider
+            router={router}
+            future={{
+              v7_startTransition: true,
+            }}
+          />
+        );
 
         function FormPage() {
           return (
@@ -3928,14 +4504,12 @@ function testDomRouter(
               <Form id="myform" method="post">
                 <input type="text" name="tasks" defaultValue="first" />
                 <input type="text" name="tasks" defaultValue="second" />
-
                 <button name="tasks" value="">
                   Add Task
                 </button>
                 <button value="">No Name</button>
                 <input type="image" name="tasks" alt="Add Task" />
                 <input type="image" alt="No Name" />
-
                 <input type="text" name="tasks" defaultValue="last" />
               </Form>
             </>
@@ -4006,7 +4580,14 @@ function testDomRouter(
             hydrationData: { loaderData: { "0": null } },
           }
         );
-        let { container } = render(<RouterProvider router={router} />);
+        let { container } = render(
+          <RouterProvider
+            router={router}
+            future={{
+              v7_startTransition: true,
+            }}
+          />
+        );
 
         function Comp() {
           let fetcher = useFetcher();
@@ -4128,7 +4709,14 @@ function testDomRouter(
             hydrationData: { loaderData: { parent: null, index: null } },
           }
         );
-        let { container } = render(<RouterProvider router={router} />);
+        let { container } = render(
+          <RouterProvider
+            router={router}
+            future={{
+              v7_startTransition: true,
+            }}
+          />
+        );
 
         function Index() {
           let fetcher = useFetcher();
@@ -4213,7 +4801,14 @@ function testDomRouter(
             hydrationData: { loaderData: { "0": null } },
           }
         );
-        let { container } = render(<RouterProvider router={router} />);
+        let { container } = render(
+          <RouterProvider
+            router={router}
+            future={{
+              v7_startTransition: true,
+            }}
+          />
+        );
 
         function Comp() {
           let fetcher = useFetcher();
@@ -4282,7 +4877,14 @@ function testDomRouter(
             hydrationData: { loaderData: { "0": null } },
           }
         );
-        let { container } = render(<RouterProvider router={router} />);
+        let { container } = render(
+          <RouterProvider
+            router={router}
+            future={{
+              v7_startTransition: true,
+            }}
+          />
+        );
 
         function Comp() {
           let fetcher = useFetcher();
@@ -4353,7 +4955,14 @@ function testDomRouter(
             hydrationData: { loaderData: { "0": null } },
           }
         );
-        let { container } = render(<RouterProvider router={router} />);
+        let { container } = render(
+          <RouterProvider
+            router={router}
+            future={{
+              v7_startTransition: true,
+            }}
+          />
+        );
 
         function Comp() {
           let fetcher = useFetcher();
@@ -4442,7 +5051,14 @@ function testDomRouter(
             hydrationData: { loaderData: { "0": null } },
           }
         );
-        let { container } = render(<RouterProvider router={router} />);
+        let { container } = render(
+          <RouterProvider
+            router={router}
+            future={{
+              v7_startTransition: true,
+            }}
+          />
+        );
 
         function Comp() {
           let fetcher = useFetcher();
@@ -4534,7 +5150,14 @@ function testDomRouter(
             hydrationData: { loaderData: { "0": null } },
           }
         );
-        let { container } = render(<RouterProvider router={router} />);
+        let { container } = render(
+          <RouterProvider
+            router={router}
+            future={{
+              v7_startTransition: true,
+            }}
+          />
+        );
 
         function Comp() {
           let fetcher = useFetcher();
@@ -4602,7 +5225,14 @@ function testDomRouter(
             hydrationData: { loaderData: { "0": null } },
           }
         );
-        let { container } = render(<RouterProvider router={router} />);
+        let { container } = render(
+          <RouterProvider
+            router={router}
+            future={{
+              v7_startTransition: true,
+            }}
+          />
+        );
 
         function Comp() {
           let fetcher = useFetcher();
@@ -4678,7 +5308,14 @@ function testDomRouter(
           }
         );
 
-        render(<RouterProvider router={router} />);
+        render(
+          <RouterProvider
+            router={router}
+            future={{
+              v7_startTransition: true,
+            }}
+          />
+        );
         fireEvent.click(screen.getByText("Submit"));
         // @ts-expect-error
         expect(fetcher.formData?.get("key")).toBe("value");
@@ -4722,7 +5359,14 @@ function testDomRouter(
           }
         );
 
-        render(<RouterProvider router={router} />);
+        render(
+          <RouterProvider
+            router={router}
+            future={{
+              v7_startTransition: true,
+            }}
+          />
+        );
         fireEvent.click(screen.getByText("Submit"));
         // @ts-expect-error
         expect(fetcher.formData?.get("key")).toBe("value");
@@ -4766,7 +5410,14 @@ function testDomRouter(
           }
         );
 
-        render(<RouterProvider router={router} />);
+        render(
+          <RouterProvider
+            router={router}
+            future={{
+              v7_startTransition: true,
+            }}
+          />
+        );
         fireEvent.click(screen.getByText("Submit"));
         // @ts-expect-error
         expect(fetcher.json).toBe(body);
@@ -4810,7 +5461,14 @@ function testDomRouter(
           }
         );
 
-        render(<RouterProvider router={router} />);
+        render(
+          <RouterProvider
+            router={router}
+            future={{
+              v7_startTransition: true,
+            }}
+          />
+        );
         fireEvent.click(screen.getByText("Submit"));
         // @ts-expect-error
         expect(fetcher.text).toBe(body);
@@ -4844,14 +5502,21 @@ function testDomRouter(
             hydrationData: { loaderData: { "0": null, "0-0": null } },
           }
         );
-        let { container } = render(<RouterProvider router={router} />);
+        let { container } = render(
+          <RouterProvider
+            router={router}
+            future={{
+              v7_startTransition: true,
+            }}
+          />
+        );
 
         function Parent() {
           let fetchers = useFetchers();
           return (
             <>
-              <Link to="/1">Link to 1</Link>
-              <Link to="/2">Link to 2</Link>
+              <Link to="..//1">Link to 1</Link>
+              <Link to="..//2">Link to 2</Link>
               <div id="output">
                 <p>{JSON.stringify(fetchers.map((f) => f.state))}</p>
                 <Outlet />
@@ -5065,7 +5730,14 @@ function testDomRouter(
             hydrationData: { loaderData: { index: null } },
           }
         );
-        let { container } = render(<RouterProvider router={router} />);
+        let { container } = render(
+          <RouterProvider
+            router={router}
+            future={{
+              v7_startTransition: true,
+            }}
+          />
+        );
 
         function Comp() {
           let fetcher = useFetcher();
@@ -5141,7 +5813,14 @@ function testDomRouter(
             hydrationData: { loaderData: { "0": null } },
           }
         );
-        let { container } = render(<RouterProvider router={router} />);
+        let { container } = render(
+          <RouterProvider
+            router={router}
+            future={{
+              v7_startTransition: true,
+            }}
+          />
+        );
 
         function Comp() {
           let fetcher = useFetcher();
@@ -5198,7 +5877,14 @@ function testDomRouter(
             hydrationData: { loaderData: { "0": null } },
           }
         );
-        let { container } = render(<RouterProvider router={router} />);
+        let { container } = render(
+          <RouterProvider
+            router={router}
+            future={{
+              v7_startTransition: true,
+            }}
+          />
+        );
 
         function Comp() {
           let fetcher = useFetcher();
@@ -5253,7 +5939,14 @@ function testDomRouter(
             hydrationData: { loaderData: { "0": null } },
           }
         );
-        let { container } = render(<RouterProvider router={router} />);
+        let { container } = render(
+          <RouterProvider
+            router={router}
+            future={{
+              v7_startTransition: true,
+            }}
+          />
+        );
 
         function Comp() {
           let fetcher = useFetcher();
@@ -5319,7 +6012,14 @@ function testDomRouter(
             hydrationData: { loaderData: { "0": null } },
           }
         );
-        let { container } = render(<RouterProvider router={router} />);
+        let { container } = render(
+          <RouterProvider
+            router={router}
+            future={{
+              v7_startTransition: true,
+            }}
+          />
+        );
 
         function Comp() {
           let fetcher = useFetcher();
@@ -5402,10 +6102,24 @@ function testDomRouter(
           ],
           {
             window: getWindow("/"),
+
+            future: {
+              v7_fetcherPersist: true,
+              v7_normalizeFormMethod: true,
+              v7_partialHydration: true,
+              v7_skipActionStatusRevalidation: true,
+            },
           }
         );
 
-        let { container } = render(<RouterProvider router={router} />);
+        let { container } = render(
+          <RouterProvider
+            router={router}
+            future={{
+              v7_startTransition: true,
+            }}
+          />
+        );
 
         let html = getHtml(container);
         expect(html).toContain("render count:0");
@@ -5457,7 +6171,14 @@ function testDomRouter(
             ],
             { window: getWindow("/") }
           );
-          let { container } = render(<RouterProvider router={router} />);
+          let { container } = render(
+            <RouterProvider
+              router={router}
+              future={{
+                v7_startTransition: true,
+              }}
+            />
+          );
 
           expect(container.querySelector("pre")!.innerHTML).toBe(
             "0, idle/undefined, idle/undefined"
@@ -5519,7 +6240,14 @@ function testDomRouter(
             ],
             { window: getWindow("/") }
           );
-          let { container } = render(<RouterProvider router={router} />);
+          let { container } = render(
+            <RouterProvider
+              router={router}
+              future={{
+                v7_startTransition: true,
+              }}
+            />
+          );
 
           expect(container.querySelector("pre")!.innerHTML).toBe(
             "0, idle/undefined, idle/undefined"
@@ -5590,7 +6318,14 @@ function testDomRouter(
             );
           }
 
-          let { container } = render(<RouterProvider router={router} />);
+          let { container } = render(
+            <RouterProvider
+              router={router}
+              future={{
+                v7_startTransition: true,
+              }}
+            />
+          );
 
           // Start with idle fetcher 'a'
           expect(getHtml(container)).toContain('{"Form":{},"state":"idle"}');
@@ -5641,7 +6376,14 @@ function testDomRouter(
             ],
             { window: getWindow("/") }
           );
-          let { container } = render(<RouterProvider router={router} />);
+          let { container } = render(
+            <RouterProvider
+              router={router}
+              future={{
+                v7_startTransition: true,
+              }}
+            />
+          );
           expect(container.innerHTML).not.toMatch(/my-key/);
           await waitFor(() =>
             // React `useId()` results in something such as `:r2a:`, `:r2i:`,
@@ -5665,7 +6407,7 @@ function testDomRouter(
                     return (
                       <>
                         <pre>{`Num fetchers: ${fetchers.length}`}</pre>
-                        <Link to="/page">Go to /page</Link>
+                        <Link to="..//page">Go to /page</Link>
                         <Outlet />
                       </>
                     );
@@ -5676,9 +6418,9 @@ function testDomRouter(
                       Component() {
                         let fetcher = useFetcher();
                         return (
-                          <button onClick={() => fetcher.load("/fetch")}>
-                            {`Load (${fetcher.state})`}
-                          </button>
+                          <button
+                            onClick={() => fetcher.load("/fetch")}
+                          >{`Load (${fetcher.state})`}</button>
                         );
                       },
                     },
@@ -5700,7 +6442,14 @@ function testDomRouter(
               ],
               { window: getWindow("/") }
             );
-            let { container } = render(<RouterProvider router={router} />);
+            let { container } = render(
+              <RouterProvider
+                router={router}
+                future={{
+                  v7_startTransition: true,
+                }}
+              />
+            );
 
             expect(getHtml(container)).toMatch("Num fetchers: 0");
 
@@ -5733,7 +6482,7 @@ function testDomRouter(
                     return (
                       <>
                         <pre>{`Num fetchers: ${fetchers.length}`}</pre>
-                        <Link to="/page">Go to /page</Link>
+                        <Link to="..//page">Go to /page</Link>
                         <Outlet />
                       </>
                     );
@@ -5751,9 +6500,7 @@ function testDomRouter(
                                 { method: "post", action: "/fetch" }
                               )
                             }
-                          >
-                            {`Submit (${fetcher.state})`}
-                          </button>
+                          >{`Submit (${fetcher.state})`}</button>
                         );
                       },
                     },
@@ -5772,7 +6519,14 @@ function testDomRouter(
               ],
               { window: getWindow("/") }
             );
-            let { container } = render(<RouterProvider router={router} />);
+            let { container } = render(
+              <RouterProvider
+                router={router}
+                future={{
+                  v7_startTransition: true,
+                }}
+              />
+            );
 
             expect(getHtml(container)).toMatch("Num fetchers: 0");
 
@@ -5802,7 +6556,7 @@ function testDomRouter(
                     return (
                       <>
                         <pre>{`Num fetchers: ${fetchers.length}`}</pre>
-                        <Link to="/page">Go to /page</Link>
+                        <Link to="..//page">Go to /page</Link>
                         <Outlet />
                       </>
                     );
@@ -5813,9 +6567,9 @@ function testDomRouter(
                       Component() {
                         let fetcher = useFetcher();
                         return (
-                          <button onClick={() => fetcher.load("/fetch")}>
-                            {`Load (${fetcher.state})`}
-                          </button>
+                          <button
+                            onClick={() => fetcher.load("/fetch")}
+                          >{`Load (${fetcher.state})`}</button>
                         );
                       },
                     },
@@ -5834,7 +6588,14 @@ function testDomRouter(
               ],
               { window: getWindow("/"), future: { v7_fetcherPersist: true } }
             );
-            let { container } = render(<RouterProvider router={router} />);
+            let { container } = render(
+              <RouterProvider
+                router={router}
+                future={{
+                  v7_startTransition: true,
+                }}
+              />
+            );
 
             expect(getHtml(container)).toMatch("Num fetchers: 0");
 
@@ -5864,7 +6625,7 @@ function testDomRouter(
                     return (
                       <>
                         <pre>{`Num fetchers: ${fetchers.length}`}</pre>
-                        <Link to="/page">Go to /page</Link>
+                        <Link to="..//page">Go to /page</Link>
                         <Outlet />
                       </>
                     );
@@ -5882,9 +6643,7 @@ function testDomRouter(
                                 { method: "post", action: "/fetch" }
                               )
                             }
-                          >
-                            {`Submit (${fetcher.state})`}
-                          </button>
+                          >{`Submit (${fetcher.state})`}</button>
                         );
                       },
                     },
@@ -5903,7 +6662,14 @@ function testDomRouter(
               ],
               { window: getWindow("/"), future: { v7_fetcherPersist: true } }
             );
-            let { container } = render(<RouterProvider router={router} />);
+            let { container } = render(
+              <RouterProvider
+                router={router}
+                future={{
+                  v7_startTransition: true,
+                }}
+              />
+            );
 
             expect(getHtml(container)).toMatch("Num fetchers: 0");
 
@@ -5932,7 +6698,7 @@ function testDomRouter(
                     return (
                       <>
                         <pre>{`Num fetchers: ${fetchers.length}`}</pre>
-                        <Link to="/page">Go to /page</Link>
+                        <Link to="..//page">Go to /page</Link>
                         <Outlet />
                       </>
                     );
@@ -5950,9 +6716,7 @@ function testDomRouter(
                                 { method: "post", action: "/fetch" }
                               )
                             }
-                          >
-                            {`Submit (${fetcher.state})`}
-                          </button>
+                          >{`Submit (${fetcher.state})`}</button>
                         );
                       },
                     },
@@ -5976,7 +6740,14 @@ function testDomRouter(
               ],
               { window: getWindow("/"), future: { v7_fetcherPersist: true } }
             );
-            let { container } = render(<RouterProvider router={router} />);
+            let { container } = render(
+              <RouterProvider
+                router={router}
+                future={{
+                  v7_startTransition: true,
+                }}
+              />
+            );
 
             expect(getHtml(container)).toMatch("Num fetchers: 0");
 
@@ -6006,7 +6777,7 @@ function testDomRouter(
                     return (
                       <>
                         <pre>{`Num fetchers: ${fetchers.length}`}</pre>
-                        <Link to="/page">Go to /page</Link>
+                        <Link to="..//page">Go to /page</Link>
                         <Outlet />
                       </>
                     );
@@ -6024,9 +6795,7 @@ function testDomRouter(
                                 { method: "post", action: "/fetch" }
                               )
                             }
-                          >
-                            {`Submit (${fetcher.state})`}
-                          </button>
+                          >{`Submit (${fetcher.state})`}</button>
                         );
                       },
                     },
@@ -6056,7 +6825,14 @@ function testDomRouter(
               ],
               { window: getWindow("/"), future: { v7_fetcherPersist: true } }
             );
-            let { container } = render(<RouterProvider router={router} />);
+            let { container } = render(
+              <RouterProvider
+                router={router}
+                future={{
+                  v7_startTransition: true,
+                }}
+              />
+            );
 
             expect(getHtml(container)).toMatch("Num fetchers: 0");
 
@@ -6086,7 +6862,7 @@ function testDomRouter(
                     return (
                       <>
                         <pre>{`Num fetchers: ${fetchers.length}`}</pre>
-                        <Link to="/page">Go to /page</Link>
+                        <Link to="..//page">Go to /page</Link>
                         <Outlet />
                       </>
                     );
@@ -6104,9 +6880,7 @@ function testDomRouter(
                                 { method: "post", action: "/fetch" }
                               )
                             }
-                          >
-                            {`Submit (${fetcher.state})`}
-                          </button>
+                          >{`Submit (${fetcher.state})`}</button>
                         );
                       },
                     },
@@ -6131,7 +6905,14 @@ function testDomRouter(
               ],
               { window: getWindow("/"), future: { v7_fetcherPersist: true } }
             );
-            let { container } = render(<RouterProvider router={router} />);
+            let { container } = render(
+              <RouterProvider
+                router={router}
+                future={{
+                  v7_startTransition: true,
+                }}
+              />
+            );
 
             expect(getHtml(container)).toMatch("Num fetchers: 0");
 
@@ -6162,7 +6943,7 @@ function testDomRouter(
                     return (
                       <>
                         <pre>{`Num fetchers: ${fetchers.length}`}</pre>
-                        <Link to="/page">Go to /page</Link>
+                        <Link to="..//page">Go to /page</Link>
                         <Outlet />
                       </>
                     );
@@ -6174,9 +6955,7 @@ function testDomRouter(
                         let fetcher = useFetcher();
                         return (
                           <fetcher.Form method="post" action="/fetch">
-                            <button type="submit">
-                              {`Submit (${fetcher.state})`}
-                            </button>
+                            <button type="submit">{`Submit (${fetcher.state})`}</button>
                           </fetcher.Form>
                         );
                       },
@@ -6196,7 +6975,14 @@ function testDomRouter(
               ],
               { window: getWindow("/"), future: { v7_fetcherPersist: true } }
             );
-            let { container } = render(<RouterProvider router={router} />);
+            let { container } = render(
+              <RouterProvider
+                router={router}
+                future={{
+                  v7_startTransition: true,
+                }}
+              />
+            );
 
             expect(getHtml(container)).toMatch("Num fetchers: 0");
 
@@ -6224,7 +7010,7 @@ function testDomRouter(
                     return (
                       <>
                         <pre>{`Num fetchers: ${fetchers.length}`}</pre>
-                        <Link to="/page">Go to /page</Link>
+                        <Link to="..//page">Go to /page</Link>
                         <Outlet />
                       </>
                     );
@@ -6235,9 +7021,9 @@ function testDomRouter(
                       Component() {
                         let fetcher = useFetcher();
                         return (
-                          <button onClick={() => fetcher.load("/fetch")}>
-                            {`Load (${fetcher.state})`}
-                          </button>
+                          <button
+                            onClick={() => fetcher.load("/fetch")}
+                          >{`Load (${fetcher.state})`}</button>
                         );
                       },
                     },
@@ -6256,7 +7042,14 @@ function testDomRouter(
               ],
               { window: getWindow("/"), future: { v7_fetcherPersist: true } }
             );
-            let { container } = render(<RouterProvider router={router} />);
+            let { container } = render(
+              <RouterProvider
+                router={router}
+                future={{
+                  v7_startTransition: true,
+                }}
+              />
+            );
 
             expect(getHtml(container)).toMatch("Num fetchers: 0");
 
@@ -6290,7 +7083,7 @@ function testDomRouter(
                     return (
                       <>
                         <pre>{`Num fetchers: ${fetchers.length}`}</pre>
-                        <Link to="/page">Go to /page</Link>
+                        <Link to="..//page">Go to /page</Link>
                         <Outlet />
                       </>
                     );
@@ -6303,9 +7096,9 @@ function testDomRouter(
                         return (
                           <>
                             <h1>Index</h1>
-                            <button onClick={() => fetcher.load("/fetch")}>
-                              {`Load (${fetcher.state})`}
-                            </button>
+                            <button
+                              onClick={() => fetcher.load("/fetch")}
+                            >{`Load (${fetcher.state})`}</button>
                           </>
                         );
                       },
@@ -6331,7 +7124,14 @@ function testDomRouter(
               ],
               { window: getWindow("/"), future: { v7_fetcherPersist: true } }
             );
-            let { container } = render(<RouterProvider router={router} />);
+            let { container } = render(
+              <RouterProvider
+                router={router}
+                future={{
+                  v7_startTransition: true,
+                }}
+              />
+            );
 
             await waitFor(() => screen.getByText("Index"));
             expect(getHtml(container)).toMatch("Num fetchers: 0");
@@ -6363,7 +7163,7 @@ function testDomRouter(
                     return (
                       <>
                         <pre>{`Num fetchers: ${fetchers.length}`}</pre>
-                        <Link to="/page">Go to /page</Link>
+                        <Link to="..//page">Go to /page</Link>
                         <Outlet />
                       </>
                     );
@@ -6381,9 +7181,7 @@ function testDomRouter(
                                 { method: "post", action: "/fetch" }
                               )
                             }
-                          >
-                            {`Submit (${fetcher.state})`}
-                          </button>
+                          >{`Submit (${fetcher.state})`}</button>
                         );
                       },
                     },
@@ -6402,7 +7200,14 @@ function testDomRouter(
               ],
               { window: getWindow("/"), future: { v7_fetcherPersist: true } }
             );
-            let { container } = render(<RouterProvider router={router} />);
+            let { container } = render(
+              <RouterProvider
+                router={router}
+                future={{
+                  v7_startTransition: true,
+                }}
+              />
+            );
 
             expect(getHtml(container)).toMatch("Num fetchers: 0");
 
@@ -6436,7 +7241,7 @@ function testDomRouter(
                     return (
                       <>
                         <pre>{`Num fetchers: ${fetchers.length}`}</pre>
-                        <Link to="/page">Go to /page</Link>
+                        <Link to="..//page">Go to /page</Link>
                         <Outlet />
                       </>
                     );
@@ -6456,9 +7261,7 @@ function testDomRouter(
                                   { method: "post", action: "/fetch" }
                                 )
                               }
-                            >
-                              {`Submit (${fetcher.state})`}
-                            </button>
+                            >{`Submit (${fetcher.state})`}</button>
                           </>
                         );
                       },
@@ -6484,7 +7287,14 @@ function testDomRouter(
               ],
               { window: getWindow("/"), future: { v7_fetcherPersist: true } }
             );
-            let { container } = render(<RouterProvider router={router} />);
+            let { container } = render(
+              <RouterProvider
+                router={router}
+                future={{
+                  v7_startTransition: true,
+                }}
+              />
+            );
 
             await waitFor(() => screen.getByText("Index"));
             expect(getHtml(container)).toMatch("Num fetchers: 0");
@@ -6574,7 +7384,14 @@ function testDomRouter(
               );
             }
 
-            render(<RouterProvider router={router} />);
+            render(
+              <RouterProvider
+                router={router}
+                future={{
+                  v7_startTransition: true,
+                }}
+              />
+            );
 
             fireEvent.click(screen.getByText("Load Fetcher"));
             await waitFor(
@@ -6679,7 +7496,14 @@ function testDomRouter(
             }
           );
 
-          let { container } = render(<RouterProvider router={router} />);
+          let { container } = render(
+            <RouterProvider
+              router={router}
+              future={{
+                v7_startTransition: true,
+              }}
+            />
+          );
 
           return { container, loaderDefer, actionDefer };
         }
@@ -6815,7 +7639,14 @@ function testDomRouter(
               window: getWindow("/base"),
             }
           );
-          let { container } = render(<RouterProvider router={router} />);
+          let { container } = render(
+            <RouterProvider
+              router={router}
+              future={{
+                v7_startTransition: true,
+              }}
+            />
+          );
 
           function Comp() {
             let fetcher = useFetcher();
@@ -6864,7 +7695,14 @@ function testDomRouter(
               window: getWindow("/base"),
             }
           );
-          let { container } = render(<RouterProvider router={router} />);
+          let { container } = render(
+            <RouterProvider
+              router={router}
+              future={{
+                v7_startTransition: true,
+              }}
+            />
+          );
 
           function Comp() {
             let fetcher = useFetcher();
@@ -6919,7 +7757,14 @@ function testDomRouter(
               window: getWindow("/base"),
             }
           );
-          let { container } = render(<RouterProvider router={router} />);
+          let { container } = render(
+            <RouterProvider
+              router={router}
+              future={{
+                v7_startTransition: true,
+              }}
+            />
+          );
 
           function Comp() {
             let fetcher = useFetcher();
@@ -6973,7 +7818,14 @@ function testDomRouter(
               window: getWindow("/base"),
             }
           );
-          let { container } = render(<RouterProvider router={router} />);
+          let { container } = render(
+            <RouterProvider
+              router={router}
+              future={{
+                v7_startTransition: true,
+              }}
+            />
+          );
 
           function Comp() {
             let fetcher = useFetcher();
@@ -7055,7 +7907,14 @@ function testDomRouter(
             },
           }
         );
-        let { container } = render(<RouterProvider router={router} />);
+        let { container } = render(
+          <RouterProvider
+            router={router}
+            future={{
+              v7_startTransition: true,
+            }}
+          />
+        );
 
         function Comp() {
           let data = useLoaderData();
@@ -7131,7 +7990,14 @@ function testDomRouter(
           },
         });
 
-        let { container } = render(<RouterProvider router={router} />);
+        let { container } = render(
+          <RouterProvider
+            router={router}
+            future={{
+              v7_startTransition: true,
+            }}
+          />
+        );
 
         function Comp() {
           let data = useLoaderData();
@@ -7184,7 +8050,14 @@ function testDomRouter(
             },
           }
         );
-        let { container } = render(<RouterProvider router={router} />);
+        let { container } = render(
+          <RouterProvider
+            router={router}
+            future={{
+              v7_startTransition: true,
+            }}
+          />
+        );
 
         function Comp() {
           let data = useLoaderData();
@@ -7251,7 +8124,14 @@ function testDomRouter(
           },
         });
 
-        let { container } = render(<RouterProvider router={router} />);
+        let { container } = render(
+          <RouterProvider
+            router={router}
+            future={{
+              v7_startTransition: true,
+            }}
+          />
+        );
 
         function Comp() {
           let data = useLoaderData();
@@ -7313,14 +8193,21 @@ function testDomRouter(
             },
           }
         );
-        let { container } = render(<RouterProvider router={router} />);
+        let { container } = render(
+          <RouterProvider
+            router={router}
+            future={{
+              v7_startTransition: true,
+            }}
+          />
+        );
 
         function Layout() {
           let navigation = useNavigation();
           return (
             <div>
-              <Link to="/foo">Link to Foo</Link>
-              <Link to="/bar">Link to Bar</Link>
+              <Link to="..//foo">Link to Foo</Link>
+              <Link to="..//bar">Link to Bar</Link>
               <div id="output">
                 <p>{navigation.state}</p>
                 <Outlet />
@@ -7429,14 +8316,21 @@ function testDomRouter(
             },
           }
         );
-        let { container } = render(<RouterProvider router={router} />);
+        let { container } = render(
+          <RouterProvider
+            router={router}
+            future={{
+              v7_startTransition: true,
+            }}
+          />
+        );
 
         function Layout() {
           let navigation = useNavigation();
           return (
             <div>
-              <Link to="/foo">Link to Foo</Link>
-              <Link to="/bar">Link to Bar</Link>
+              <Link to="..//foo">Link to Foo</Link>
+              <Link to="..//bar">Link to Bar</Link>
               <div id="output">
                 <p>{navigation.state}</p>
                 <Outlet />
@@ -7513,13 +8407,20 @@ function testDomRouter(
         ];
 
         let router = createTestRouter(routes, { window: getWindow("/foo") });
-        let { container } = render(<RouterProvider router={router} />);
+        let { container } = render(
+          <RouterProvider
+            router={router}
+            future={{
+              v7_startTransition: true,
+            }}
+          />
+        );
 
         function Layout() {
           let navigation = useNavigation();
           return (
             <div>
-              <Link to="/bar">Link to Bar</Link>
+              <Link to="..//bar">Link to Bar</Link>
               <div id="output">
                 <p>{navigation.state}</p>
                 <Outlet />
@@ -7598,13 +8499,20 @@ function testDomRouter(
         ];
 
         let router = createTestRouter(routes, { window: getWindow("/foo") });
-        let { container } = render(<RouterProvider router={router} />);
+        let { container } = render(
+          <RouterProvider
+            router={router}
+            future={{
+              v7_startTransition: true,
+            }}
+          />
+        );
 
         function Layout() {
           let navigation = useNavigation();
           return (
             <div>
-              <Link to="/bar">Link to Bar</Link>
+              <Link to="..//bar">Link to Bar</Link>
               <div id="output">
                 <p>{navigation.state}</p>
                 <Outlet />
@@ -7678,8 +8586,8 @@ function testDomRouter(
               Component() {
                 return (
                   <div>
-                    <Link to="/a">/a</Link>
-                    <Link to="/b" viewTransition>
+                    <Link to="..//a">/a</Link>
+                    <Link to="..//b" viewTransition>
                       /b
                     </Link>
                     <Form action="/c">
@@ -7720,7 +8628,14 @@ function testDomRouter(
           ],
           { window: testWindow }
         );
-        render(<RouterProvider router={router} />);
+        render(
+          <RouterProvider
+            router={router}
+            future={{
+              v7_startTransition: true,
+            }}
+          />
+        );
 
         expect(screen.getByText("Home")).toBeDefined();
         fireEvent.click(screen.getByText("/a"));
@@ -7760,7 +8675,7 @@ function testDomRouter(
               Component() {
                 return (
                   <>
-                    <Link to="/page" viewTransition>
+                    <Link to="..//page" viewTransition>
                       /page
                     </Link>
                     <Outlet />
@@ -7795,7 +8710,14 @@ function testDomRouter(
           ],
           { window: testWindow }
         );
-        render(<RouterProvider router={router} />);
+        render(
+          <RouterProvider
+            router={router}
+            future={{
+              v7_startTransition: true,
+            }}
+          />
+        );
         await waitFor(() => screen.getByText("INDEX"));
 
         renders = [];

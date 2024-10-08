@@ -13,14 +13,19 @@ describe("Descendant <Routes>", () => {
       renderer = TestRenderer.create(
         <MemoryRouter initialEntries={["/users/mj/messages/123"]}>
           <Routes>
-            <Route
-              path="users/:userId/*"
-              element={
-                <Routes>
-                  <Route path="messages/:messageId" element={<ShowParams />} />
-                </Routes>
-              }
-            />
+            <Route path="users/:userId">
+              <Route
+                path="*"
+                element={
+                  <Routes>
+                    <Route
+                      path="messages/:messageId"
+                      element={<ShowParams />}
+                    />
+                  </Routes>
+                }
+              />
+            </Route>
           </Routes>
         </MemoryRouter>
       );
@@ -44,14 +49,16 @@ describe("Descendant <Routes>", () => {
       renderer = TestRenderer.create(
         <MemoryRouter initialEntries={["/users/mj/messages/123"]}>
           <Routes>
-            <Route
-              path="users/:id/*"
-              element={
-                <Routes>
-                  <Route path="messages/:id" element={<ShowParams />} />
-                </Routes>
-              }
-            />
+            <Route path="users/:id">
+              <Route
+                path="*"
+                element={
+                  <Routes>
+                    <Route path="messages/:id" element={<ShowParams />} />
+                  </Routes>
+                }
+              />
+            </Route>
           </Routes>
         </MemoryRouter>
       );

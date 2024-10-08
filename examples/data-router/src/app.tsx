@@ -24,45 +24,64 @@ import { addTodo, deleteTodo, getTodos } from "./todos";
 
 import "./index.css";
 
-let router = createBrowserRouter([
+let router = createBrowserRouter(
+  [
+    {
+      path: "/",
+      Component: Layout,
+      children: [
+        {
+          index: true,
+          loader: homeLoader,
+          Component: Home,
+        },
+        {
+          path: "todos",
+          action: todosAction,
+          loader: todosLoader,
+          Component: TodosList,
+          ErrorBoundary: TodosBoundary,
+          children: [
+            {
+              path: ":id",
+              loader: todoLoader,
+              Component: Todo,
+            },
+          ],
+        },
+        {
+          path: "deferred",
+          loader: deferredLoader,
+          Component: DeferredPage,
+        },
+      ],
+    },
+  ],
   {
-    path: "/",
-    Component: Layout,
-    children: [
-      {
-        index: true,
-        loader: homeLoader,
-        Component: Home,
-      },
-      {
-        path: "todos",
-        action: todosAction,
-        loader: todosLoader,
-        Component: TodosList,
-        ErrorBoundary: TodosBoundary,
-        children: [
-          {
-            path: ":id",
-            loader: todoLoader,
-            Component: Todo,
-          },
-        ],
-      },
-      {
-        path: "deferred",
-        loader: deferredLoader,
-        Component: DeferredPage,
-      },
-    ],
-  },
-]);
+    future: {
+      v7_relativeSplatPath: true,
+      v7_fetcherPersist: true,
+      v7_normalizeFormMethod: true,
+      v7_partialHydration: true,
+      v7_skipActionStatusRevalidation: true,
+    },
+  }
+);
 
 if (import.meta.hot) {
   import.meta.hot.dispose(() => router.dispose());
 }
 
 export default function App() {
-  return <RouterProvider router={router} fallbackElement={<Fallback />} />;
+  return (
+    <RouterProvider
+      router={router}
+      fallbackElement={<Fallback />}
+      future={{
+        v7_startTransition: true,
+      }}
+    />
+  );
 }
 
 export function sleep(n: number = 500) {
@@ -85,27 +104,25 @@ export function Layout() {
   return (
     <>
       <h1>Data Router Example</h1>
-
       <p>
         This example demonstrates some of the core features of React Router
         including nested &lt;Route&gt;s, &lt;Outlet&gt;s, &lt;Link&gt;s, and
         using a "*" route (aka "splat route") to render a "not found" page when
         someone visits an unrecognized URL.
       </p>
-
       <nav>
         <ul>
           <li>
-            <Link to="/">Home</Link>
+            <Link to="../">Home</Link>
           </li>
           <li>
-            <Link to="/todos">Todos</Link>
+            <Link to="..//todos">Todos</Link>
           </li>
           <li>
-            <Link to="/deferred">Deferred</Link>
+            <Link to="..//deferred">Deferred</Link>
           </li>
           <li>
-            <Link to="/404">404 Link</Link>
+            <Link to="..//404">404 Link</Link>
           </li>
           <li>
             <button onClick={() => revalidator.revalidate()}>
@@ -120,11 +137,11 @@ export function Layout() {
         {fetcherInProgress && <p>Fetcher in progress...</p>}
       </div>
       <p>
-        Click on over to <Link to="/todos">/todos</Link> and check out these
+        Click on over to <Link to="..//todos">/todos</Link> and check out these
         data loading APIs!
       </p>
       <p>
-        Or, checkout <Link to="/deferred">/deferred</Link> to see how to
+        Or, checkout <Link to="..//deferred">/deferred</Link> to see how to
         separate critical and lazily loaded data in your loaders.
       </p>
       <p>
@@ -218,7 +235,7 @@ export function TodosList() {
       </p>
       <ul>
         <li>
-          <Link to="/todos/junk">
+          <Link to="..//todos/junk">
             Click this link to force an error in the loader
           </Link>
         </li>
@@ -230,7 +247,7 @@ export function TodosList() {
       </ul>
       <Form method="post" ref={formRef}>
         <input type="hidden" name="action" value="add" />
-        <input name="todo"></input>
+        <input name="todo" />
         <button type="submit" disabled={isAdding}>
           {isAdding ? "Adding..." : "Add"}
         </button>
@@ -262,7 +279,6 @@ export function TodoItem({ id, todo }: TodoItemProps) {
   return (
     <>
       <Link to={`/todos/${id}`}>{todo}</Link>
-      &nbsp;
       <fetcher.Form method="post" style={{ display: "inline" }}>
         <input type="hidden" name="action" value="delete" />
         <button type="submit" name="todoId" value={id} disabled={isDeleting}>
@@ -346,32 +362,27 @@ export function DeferredPage() {
       {/* Critical data renders immediately */}
       <p>{data.critical1}</p>
       <p>{data.critical2}</p>
-
       {/* Pre-resolved deferred data never triggers the fallback */}
       <React.Suspense fallback={<p>should not see me!</p>}>
         <Await resolve={data.lazyResolved}>
           <RenderAwaitedData />
         </Await>
       </React.Suspense>
-
       {/* Deferred data can be rendered using a component + the useAsyncValue() hook */}
       <React.Suspense fallback={<p>loading 1...</p>}>
         <Await resolve={data.lazy1}>
           <RenderAwaitedData />
         </Await>
       </React.Suspense>
-
       <React.Suspense fallback={<p>loading 2...</p>}>
         <Await resolve={data.lazy2}>
           <RenderAwaitedData />
         </Await>
       </React.Suspense>
-
       {/* Or you can bypass the hook and use a render function */}
       <React.Suspense fallback={<p>loading 3...</p>}>
         <Await resolve={data.lazy3}>{(data: string) => <p>{data}</p>}</Await>
       </React.Suspense>
-
       {/* Deferred rejections render using the useAsyncError hook */}
       <React.Suspense fallback={<p>loading (error)...</p>}>
         <Await resolve={data.lazyError} errorElement={<RenderAwaitedError />}>
@@ -393,7 +404,8 @@ function RenderAwaitedError() {
     <p style={{ color: "red" }}>
       Error (errorElement)!
       <br />
-      {error.message} {error.stack}
+      {error.message}
+      {error.stack}
     </p>
   );
 }

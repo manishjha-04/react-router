@@ -8,32 +8,50 @@ import Note, {
   action as noteAction,
 } from "./routes/note";
 
-let router = createBrowserRouter([
+let router = createBrowserRouter(
+  [
+    {
+      path: "/",
+      element: <Root />,
+      loader: rootLoader,
+      children: [
+        {
+          path: "new",
+          element: <NewNote />,
+          action: newNoteAction,
+        },
+        {
+          path: "note/:noteId",
+          element: <Note />,
+          loader: noteLoader,
+          action: noteAction,
+          errorElement: <h2>Note not found</h2>,
+        },
+      ],
+    },
+  ],
   {
-    path: "/",
-    element: <Root />,
-    loader: rootLoader,
-    children: [
-      {
-        path: "new",
-        element: <NewNote />,
-        action: newNoteAction,
-      },
-      {
-        path: "note/:noteId",
-        element: <Note />,
-        loader: noteLoader,
-        action: noteAction,
-        errorElement: <h2>Note not found</h2>,
-      },
-    ],
-  },
-]);
+    future: {
+      v7_relativeSplatPath: true,
+      v7_fetcherPersist: true,
+      v7_normalizeFormMethod: true,
+      v7_partialHydration: true,
+      v7_skipActionStatusRevalidation: true,
+    },
+  }
+);
 
 if (import.meta.hot) {
   import.meta.hot.dispose(() => router.dispose());
 }
 
 export default function App() {
-  return <RouterProvider router={router} />;
+  return (
+    <RouterProvider
+      router={router}
+      future={{
+        v7_startTransition: true,
+      }}
+    />
+  );
 }

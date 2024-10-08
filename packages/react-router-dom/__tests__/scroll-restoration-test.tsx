@@ -39,9 +39,26 @@ describe(`ScrollRestoration`, () => {
           children: testPages,
         },
       ],
-      { basename: "/base", window: testWindow }
+      {
+        basename: "/base",
+        window: testWindow,
+
+        future: {
+          v7_fetcherPersist: true,
+          v7_normalizeFormMethod: true,
+          v7_partialHydration: true,
+          v7_skipActionStatusRevalidation: true,
+        },
+      }
     );
-    let { container } = render(<RouterProvider router={router} />);
+    let { container } = render(
+      <RouterProvider
+        router={router}
+        future={{
+          v7_startTransition: true,
+        }}
+      />
+    );
 
     expect(getHtml(container)).toMatch("On page 1");
 
@@ -91,7 +108,7 @@ describe(`ScrollRestoration`, () => {
             {
               index: true,
               Component() {
-                return <Link to="/page">/page</Link>;
+                return <Link to="..//page">/page</Link>;
               },
             },
             {
@@ -103,9 +120,26 @@ describe(`ScrollRestoration`, () => {
           ],
         },
       ],
-      { basename: "/base", window: testWindow }
+      {
+        basename: "/base",
+        window: testWindow,
+
+        future: {
+          v7_fetcherPersist: true,
+          v7_normalizeFormMethod: true,
+          v7_partialHydration: true,
+          v7_skipActionStatusRevalidation: true,
+        },
+      }
     );
-    let { container } = render(<RouterProvider router={router} />);
+    let { container } = render(
+      <RouterProvider
+        router={router}
+        future={{
+          v7_startTransition: true,
+        }}
+      />
+    );
 
     expect(getKey.mock.calls.length).toBe(1);
     // @ts-expect-error
@@ -152,9 +186,26 @@ describe(`ScrollRestoration`, () => {
           children: testPages,
         },
       ],
-      { basename: "/base", window: testWindow }
+      {
+        basename: "/base",
+        window: testWindow,
+
+        future: {
+          v7_fetcherPersist: true,
+          v7_normalizeFormMethod: true,
+          v7_partialHydration: true,
+          v7_skipActionStatusRevalidation: true,
+        },
+      }
     );
-    let { container } = render(<RouterProvider router={router} />);
+    let { container } = render(
+      <RouterProvider
+        router={router}
+        future={{
+          v7_startTransition: true,
+        }}
+      />
+    );
 
     expect(getHtml(container)).toMatch("On page 1");
 
@@ -196,7 +247,7 @@ const testPages = [
       return (
         <p>
           On page 1<br />
-          <Link to="/page">Go to page 2</Link>
+          <Link to="..//page">Go to page 2</Link>
         </p>
       );
     },
@@ -207,7 +258,7 @@ const testPages = [
       return (
         <p>
           On page 2<br />
-          <Link to="/">Go to page 1</Link>
+          <Link to="../">Go to page 1</Link>
         </p>
       );
     },
