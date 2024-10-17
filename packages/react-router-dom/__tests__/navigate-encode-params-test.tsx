@@ -44,6 +44,7 @@ describe("navigate with params", () => {
           <BrowserRouter
             future={{
               v7_relativeSplatPath: true,
+              v7_startTransition: true,
             }}
           >
             <Routes>
@@ -81,6 +82,7 @@ describe("navigate with params", () => {
           <BrowserRouter
             future={{
               v7_relativeSplatPath: true,
+              v7_startTransition: true,
             }}
           >
             <Routes>

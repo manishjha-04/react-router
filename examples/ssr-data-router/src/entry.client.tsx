@@ -30,14 +30,20 @@ async function hydrate() {
   let router = createBrowserRouter(routes, {
     future: {
       v7_relativeSplatPath: true,
-      v7_normalizeFormMethod: true
+      v7_normalizeFormMethod: true,
     },
   });
 
   ReactDOM.hydrateRoot(
     document.getElementById("app")!,
     <React.StrictMode>
-      <RouterProvider router={router} fallbackElement={null} />
+      <RouterProvider
+        router={router}
+        fallbackElement={null}
+        future={{
+          v7_startTransition: true,
+        }}
+      />
     </React.StrictMode>
   );
 }

@@ -216,6 +216,7 @@ describe("NavLink", () => {
             window={getWindow("/users/matt brophy")}
             future={{
               v7_relativeSplatPath: true,
+              v7_startTransition: true,
             }}
           >
             <Routes>
@@ -663,7 +664,14 @@ describe("NavLink using a data router", () => {
         window: getWindow("/foo"),
       }
     );
-    render(<RouterProvider router={router} />);
+    render(
+      <RouterProvider
+        router={router}
+        future={{
+          v7_startTransition: true,
+        }}
+      />
+    );
 
     function Layout() {
       return (
@@ -702,7 +710,14 @@ describe("NavLink using a data router", () => {
         window: getWindow("/foo"),
       }
     );
-    render(<RouterProvider router={router} />);
+    render(
+      <RouterProvider
+        router={router}
+        future={{
+          v7_startTransition: true,
+        }}
+      />
+    );
 
     function Layout() {
       return (
@@ -756,7 +771,14 @@ describe("NavLink using a data router", () => {
         window: getWindow("/foo"),
       }
     );
-    render(<RouterProvider router={router} />);
+    render(
+      <RouterProvider
+        router={router}
+        future={{
+          v7_startTransition: true,
+        }}
+      />
+    );
 
     function Layout() {
       return (
@@ -810,7 +832,14 @@ describe("NavLink using a data router", () => {
         window: getWindow("/foo"),
       }
     );
-    render(<RouterProvider router={router} />);
+    render(
+      <RouterProvider
+        router={router}
+        future={{
+          v7_startTransition: true,
+        }}
+      />
+    );
 
     function Layout() {
       return (
@@ -858,7 +887,14 @@ describe("NavLink using a data router", () => {
         window: getWindow("/foo"),
       }
     );
-    render(<RouterProvider router={router} />);
+    render(
+      <RouterProvider
+        router={router}
+        future={{
+          v7_startTransition: true,
+        }}
+      />
+    );
 
     function Layout() {
       return (
@@ -904,7 +940,14 @@ describe("NavLink using a data router", () => {
         window: getWindow("/foo"),
       }
     );
-    render(<RouterProvider router={router} />);
+    render(
+      <RouterProvider
+        router={router}
+        future={{
+          v7_startTransition: true,
+        }}
+      />
+    );
 
     function Layout() {
       return (
@@ -957,7 +1000,14 @@ describe("NavLink using a data router", () => {
         basename: "/base",
       }
     );
-    render(<RouterProvider router={router} />);
+    render(
+      <RouterProvider
+        router={router}
+        future={{
+          v7_startTransition: true,
+        }}
+      />
+    );
 
     function Layout() {
       return (

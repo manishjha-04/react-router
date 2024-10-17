@@ -60,7 +60,14 @@ function testDomRouter(
           ),
           { window: getWindow("/") }
         );
-        render(<RouterProvider router={router} />);
+        render(
+          <RouterProvider
+            router={router}
+            future={{
+              v7_startTransition: true,
+            }}
+          />
+        );
 
         function FormPage() {
           return (

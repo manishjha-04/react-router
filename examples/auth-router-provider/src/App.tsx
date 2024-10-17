@@ -54,14 +54,20 @@ const router = createBrowserRouter(
   {
     future: {
       v7_relativeSplatPath: true,
-      v7_normalizeFormMethod: true
+      v7_normalizeFormMethod: true,
     },
   }
 );
 
 export default function App() {
   return (
-    <RouterProvider router={router} fallbackElement={<p>Initial Load...</p>} />
+    <RouterProvider
+      router={router}
+      fallbackElement={<p>Initial Load...</p>}
+      future={{
+        v7_startTransition: true,
+      }}
+    />
   );
 }
 

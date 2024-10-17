@@ -43,7 +43,14 @@ describe("useRevalidator", () => {
         },
       }
     );
-    let { container } = render(<RouterProvider router={router} />);
+    let { container } = render(
+      <RouterProvider
+        router={router}
+        future={{
+          v7_startTransition: true,
+        }}
+      />
+    );
 
     function Layout() {
       let navigation = useNavigation();
@@ -163,7 +170,12 @@ describe("useRevalidator", () => {
 
     let { container } = render(
       <div>
-        <RouterProvider router={router} />
+        <RouterProvider
+          router={router}
+          future={{
+            v7_startTransition: true,
+          }}
+        />
       </div>
     );
 
@@ -220,7 +232,12 @@ describe("useRevalidator", () => {
 
     let { container } = render(
       <div>
-        <RouterProvider router={router} />
+        <RouterProvider
+          router={router}
+          future={{
+            v7_startTransition: true,
+          }}
+        />
       </div>
     );
 
@@ -273,7 +290,14 @@ describe("useRevalidator", () => {
       },
     ]);
 
-    render(<RouterProvider router={router} />);
+    render(
+      <RouterProvider
+        router={router}
+        future={{
+          v7_startTransition: true,
+        }}
+      />
+    );
 
     fireEvent.click(screen.getByText("Link to Foo"));
     await waitFor(() => screen.getByText("Foo Page"));

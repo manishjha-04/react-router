@@ -232,6 +232,7 @@ describe("special character tests", () => {
           window={testWindow}
           future={{
             v7_relativeSplatPath: true,
+            v7_startTransition: true,
           }}
         >
           <Routes>{routeElements}</Routes>
@@ -281,7 +282,14 @@ describe("special character tests", () => {
       // and confirm all the same assertions
       let routes = createRoutesFromElements(routeElements);
       let router = createBrowserRouter(routes, { window: testWindow });
-      ctx = render(<RouterProvider router={router} />);
+      ctx = render(
+        <RouterProvider
+          router={router}
+          future={{
+            v7_startTransition: true,
+          }}
+        />
+      );
 
       expect(ctx.container.querySelector("h1")?.innerHTML).toBe(
         expectedHeading
@@ -547,6 +555,7 @@ describe("special character tests", () => {
           window={getWindow("/parent/child/%20%20param%20%20")}
           future={{
             v7_relativeSplatPath: true,
+            v7_startTransition: true,
           }}
         >
           <App />
@@ -708,6 +717,7 @@ describe("special character tests", () => {
           window={testWindow}
           future={{
             v7_relativeSplatPath: true,
+            v7_startTransition: true,
           }}
         >
           <Routes>{routeElements}</Routes>
@@ -736,7 +746,14 @@ describe("special character tests", () => {
       // and confirm all the same assertions
       let routes = createRoutesFromElements(routeElements);
       let router = createBrowserRouter(routes, { window: testWindow });
-      ctx = render(<RouterProvider router={router} />);
+      ctx = render(
+        <RouterProvider
+          router={router}
+          future={{
+            v7_startTransition: true,
+          }}
+        />
+      );
 
       expect(ctx.container.querySelector("h1")!.innerHTML).toBe(
         expectedHeading
@@ -881,7 +898,14 @@ describe("special character tests", () => {
           [{ path: "/with space", element: <ShowPath /> }],
           { initialEntries: ["/with space"] }
         );
-        let ctx = render(<RouterProvider router={router} />);
+        let ctx = render(
+          <RouterProvider
+            router={router}
+            future={{
+              v7_startTransition: true,
+            }}
+          />
+        );
 
         expect(ctx.container.innerHTML).toMatchInlineSnapshot(
           `"<pre>{"pathname":"/with space","search":"","hash":""}</pre>"`
@@ -899,7 +923,14 @@ describe("special character tests", () => {
           { path: "/", element: <Start /> },
           { path: "/with space", element: <ShowPath /> },
         ]);
-        let ctx = render(<RouterProvider router={router} />);
+        let ctx = render(
+          <RouterProvider
+            router={router}
+            future={{
+              v7_startTransition: true,
+            }}
+          />
+        );
 
         expect(ctx.container.innerHTML).toMatchInlineSnapshot(
           `"<pre>{"pathname":"/with space","search":"","hash":""}</pre>"`
@@ -916,6 +947,7 @@ describe("special character tests", () => {
             window={testWindow}
             future={{
               v7_relativeSplatPath: true,
+              v7_startTransition: true,
             }}
           >
             <Routes>
@@ -945,6 +977,7 @@ describe("special character tests", () => {
             window={testWindow}
             future={{
               v7_relativeSplatPath: true,
+              v7_startTransition: true,
             }}
           >
             <Routes>
@@ -967,7 +1000,14 @@ describe("special character tests", () => {
           [{ path: "/with space", element: <ShowPath /> }],
           { window: testWindow }
         );
-        let ctx = render(<RouterProvider router={router} />);
+        let ctx = render(
+          <RouterProvider
+            router={router}
+            future={{
+              v7_startTransition: true,
+            }}
+          />
+        );
 
         expect(testWindow.location.pathname).toBe("/with%20space");
         expect(ctx.container.innerHTML).toMatchInlineSnapshot(
@@ -992,7 +1032,14 @@ describe("special character tests", () => {
           ],
           { window: testWindow }
         );
-        let ctx = render(<RouterProvider router={router} />);
+        let ctx = render(
+          <RouterProvider
+            router={router}
+            future={{
+              v7_startTransition: true,
+            }}
+          />
+        );
 
         expect(testWindow.location.pathname).toBe("/with%20space");
         expect(ctx.container.innerHTML).toMatchInlineSnapshot(
@@ -1026,7 +1073,14 @@ describe("special character tests", () => {
           ],
           { window: testWindow }
         );
-        let ctx = render(<RouterProvider router={router} />);
+        let ctx = render(
+          <RouterProvider
+            router={router}
+            future={{
+              v7_startTransition: true,
+            }}
+          />
+        );
 
         expect(testWindow.location.pathname).toBe("/user/b%C3%BCcherwurm");
         expect(ctx.container.innerHTML).toMatchInlineSnapshot(`
@@ -1098,7 +1152,14 @@ describe("special character tests", () => {
           [{ path: "/with space", element: <ShowPath /> }],
           { window: testWindow }
         );
-        let ctx = render(<RouterProvider router={router} />);
+        let ctx = render(
+          <RouterProvider
+            router={router}
+            future={{
+              v7_startTransition: true,
+            }}
+          />
+        );
 
         expect(testWindow.location.pathname).toBe("/");
         expect(testWindow.location.hash).toBe("#/with%20space");
@@ -1124,7 +1185,14 @@ describe("special character tests", () => {
           ],
           { window: testWindow }
         );
-        let ctx = render(<RouterProvider router={router} />);
+        let ctx = render(
+          <RouterProvider
+            router={router}
+            future={{
+              v7_startTransition: true,
+            }}
+          />
+        );
 
         expect(testWindow.location.pathname).toBe("/");
         expect(testWindow.location.hash).toBe("#/with%20space");

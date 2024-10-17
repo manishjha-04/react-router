@@ -45,7 +45,13 @@ describe("flushSync", () => {
       }
     );
     render(
-      <RouterProvider router={router} future={{ v7_startTransition: true }} />
+      <RouterProvider
+        router={router}
+        future={{
+          v7_startTransition: true,
+          v7_startTransition: true,
+        }}
+      />
     );
 
     // This isn't the best way to test this but it seems that startTransition is
@@ -121,7 +127,13 @@ describe("flushSync", () => {
       }
     );
     render(
-      <RouterProvider router={router} future={{ v7_startTransition: true }} />
+      <RouterProvider
+        router={router}
+        future={{
+          v7_startTransition: true,
+          v7_startTransition: true,
+        }}
+      />
     );
 
     // This isn't the best way to test this but it seems that startTransition is
@@ -183,7 +195,13 @@ describe("flushSync", () => {
       }
     );
     render(
-      <RouterProvider router={router} future={{ v7_startTransition: true }} />
+      <RouterProvider
+        router={router}
+        future={{
+          v7_startTransition: true,
+          v7_startTransition: true,
+        }}
+      />
     );
 
     // This isn't the best way to test this but it seems that startTransition is
@@ -248,7 +266,13 @@ describe("flushSync", () => {
       }
     );
     render(
-      <RouterProvider router={router} future={{ v7_startTransition: true }} />
+      <RouterProvider
+        router={router}
+        future={{
+          v7_startTransition: true,
+          v7_startTransition: true,
+        }}
+      />
     );
 
     // This isn't the best way to test this but it seems that startTransition is

@@ -60,7 +60,7 @@ let router = createBrowserRouter(
   {
     future: {
       v7_relativeSplatPath: true,
-      v7_normalizeFormMethod: true
+      v7_normalizeFormMethod: true,
     },
   }
 );
@@ -70,7 +70,15 @@ if (import.meta.hot) {
 }
 
 export default function App() {
-  return <RouterProvider router={router} fallbackElement={<Fallback />} />;
+  return (
+    <RouterProvider
+      router={router}
+      fallbackElement={<Fallback />}
+      future={{
+        v7_startTransition: true,
+      }}
+    />
+  );
 }
 
 export function sleep(n: number = 500) {

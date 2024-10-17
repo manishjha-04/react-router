@@ -263,7 +263,14 @@ function testPartialHydration(
         },
       }
     );
-    let { container } = render(<RouterProvider router={router} />);
+    let { container } = render(
+      <RouterProvider
+        router={router}
+        future={{
+          v7_startTransition: true,
+        }}
+      />
+    );
 
     expect(getHtml(container)).toMatchInlineSnapshot(`
       "<div>
@@ -319,7 +326,14 @@ function testPartialHydration(
         },
       }
     );
-    let { container } = render(<RouterProvider router={router} />);
+    let { container } = render(
+      <RouterProvider
+        router={router}
+        future={{
+          v7_startTransition: true,
+        }}
+      />
+    );
 
     expect(getHtml(container)).toMatchInlineSnapshot(`
       "<div>
@@ -388,7 +402,14 @@ function testPartialHydration(
         },
       }
     );
-    let { container } = render(<RouterProvider router={router} />);
+    let { container } = render(
+      <RouterProvider
+        router={router}
+        future={{
+          v7_startTransition: true,
+        }}
+      />
+    );
 
     expect(getHtml(container)).toMatchInlineSnapshot(`
       "<div>
@@ -453,7 +474,14 @@ function testPartialHydration(
         },
       }
     );
-    let { container } = render(<RouterProvider router={router} />);
+    let { container } = render(
+      <RouterProvider
+        router={router}
+        future={{
+          v7_startTransition: true,
+        }}
+      />
+    );
 
     expect(getHtml(container)).toMatchInlineSnapshot(`"<div />"`);
 
@@ -528,6 +556,9 @@ function testPartialHydration(
       <RouterProvider
         router={router}
         fallbackElement={<p>fallbackElement...</p>}
+        future={{
+          v7_startTransition: true,
+        }}
       />
     );
 
@@ -608,7 +639,14 @@ function testPartialHydration(
         },
       }
     );
-    let { container } = render(<RouterProvider router={router} />);
+    let { container } = render(
+      <RouterProvider
+        router={router}
+        future={{
+          v7_startTransition: true,
+        }}
+      />
+    );
 
     expect(getHtml(container)).toMatchInlineSnapshot(`
       "<div>
@@ -669,7 +707,14 @@ function testPartialHydration(
         },
       }
     );
-    let { container } = render(<RouterProvider router={router} />);
+    let { container } = render(
+      <RouterProvider
+        router={router}
+        future={{
+          v7_startTransition: true,
+        }}
+      />
+    );
 
     expect(getHtml(container)).toMatchInlineSnapshot(`
       "<div>
@@ -735,7 +780,14 @@ function testPartialHydration(
         },
       }
     );
-    let { container } = render(<RouterProvider router={router} />);
+    let { container } = render(
+      <RouterProvider
+        router={router}
+        future={{
+          v7_startTransition: true,
+        }}
+      />
+    );
 
     expect(getHtml(container)).toMatchInlineSnapshot(`
       "<div>
@@ -801,7 +853,14 @@ function testPartialHydration(
         },
       }
     );
-    let { container } = render(<RouterProvider router={router} />);
+    let { container } = render(
+      <RouterProvider
+        router={router}
+        future={{
+          v7_startTransition: true,
+        }}
+      />
+    );
 
     expect(getHtml(container)).toMatchInlineSnapshot(`
       "<div>
@@ -878,7 +937,14 @@ function testPartialHydration(
         },
       }
     );
-    let { container } = render(<RouterProvider router={router} />);
+    let { container } = render(
+      <RouterProvider
+        router={router}
+        future={{
+          v7_startTransition: true,
+        }}
+      />
+    );
 
     expect(getHtml(container)).toMatchInlineSnapshot(`
       "<div>

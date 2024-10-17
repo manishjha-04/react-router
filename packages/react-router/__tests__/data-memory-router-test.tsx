@@ -53,7 +53,14 @@ describe("createMemoryRouter", () => {
     let router = createMemoryRouter(
       createRoutesFromElements(<Route path="/" element={<h1>Home</h1>} />)
     );
-    let { container } = render(<RouterProvider router={router} />);
+    let { container } = render(
+      <RouterProvider
+        router={router}
+        future={{
+          v7_startTransition: true,
+        }}
+      />
+    );
 
     expect(getHtml(container)).toMatchInlineSnapshot(`
       "<div>
@@ -70,7 +77,14 @@ describe("createMemoryRouter", () => {
         <Route path="/" Component={() => <h1>Home</h1>} />
       )
     );
-    let { container } = render(<RouterProvider router={router} />);
+    let { container } = render(
+      <RouterProvider
+        router={router}
+        future={{
+          v7_startTransition: true,
+        }}
+      />
+    );
 
     expect(getHtml(container)).toMatchInlineSnapshot(`
       "<div>
@@ -88,7 +102,14 @@ describe("createMemoryRouter", () => {
         element: <h1>Home</h1>,
       },
     ]);
-    let { container } = render(<RouterProvider router={router} />);
+    let { container } = render(
+      <RouterProvider
+        router={router}
+        future={{
+          v7_startTransition: true,
+        }}
+      />
+    );
 
     expect(getHtml(container)).toMatchInlineSnapshot(`
       "<div>
@@ -110,7 +131,14 @@ describe("createMemoryRouter", () => {
         initialEntries: ["/my/base/path/thing"],
       }
     );
-    let { container } = render(<RouterProvider router={router} />);
+    let { container } = render(
+      <RouterProvider
+        router={router}
+        future={{
+          v7_startTransition: true,
+        }}
+      />
+    );
 
     expect(getHtml(container)).toMatchInlineSnapshot(`
       "<div>
@@ -131,7 +159,14 @@ describe("createMemoryRouter", () => {
         initialEntries: ["/my/base/path/thing"],
       }
     );
-    let { container } = render(<RouterProvider router={router} />);
+    let { container } = render(
+      <RouterProvider
+        router={router}
+        future={{
+          v7_startTransition: true,
+        }}
+      />
+    );
 
     expect(getHtml(container)).toMatchInlineSnapshot(`
       "<div>
@@ -155,7 +190,14 @@ describe("createMemoryRouter", () => {
         initialEntries: ["/my/base/path"],
       }
     );
-    let { container } = render(<RouterProvider router={router} />);
+    let { container } = render(
+      <RouterProvider
+        router={router}
+        future={{
+          v7_startTransition: true,
+        }}
+      />
+    );
 
     function Root() {
       return (
@@ -207,7 +249,14 @@ describe("createMemoryRouter", () => {
         initialEntries: ["/my/base/path"],
       }
     );
-    let { container } = render(<RouterProvider router={router} />);
+    let { container } = render(
+      <RouterProvider
+        router={router}
+        future={{
+          v7_startTransition: true,
+        }}
+      />
+    );
 
     function Root() {
       return (
@@ -276,7 +325,14 @@ describe("createMemoryRouter", () => {
         },
       }
     );
-    let { container } = render(<RouterProvider router={router} />);
+    let { container } = render(
+      <RouterProvider
+        router={router}
+        future={{
+          v7_startTransition: true,
+        }}
+      />
+    );
 
     function Comp() {
       let data = useLoaderData() as { message: string };
@@ -321,7 +377,13 @@ describe("createMemoryRouter", () => {
       }
     );
     let { container } = render(
-      <RouterProvider router={router} fallbackElement={<FallbackElement />} />
+      <RouterProvider
+        router={router}
+        fallbackElement={<FallbackElement />}
+        future={{
+          v7_startTransition: true,
+        }}
+      />
     );
 
     function FallbackElement() {
@@ -370,7 +432,14 @@ describe("createMemoryRouter", () => {
         initialEntries: ["/foo"],
       }
     );
-    let { container } = render(<RouterProvider router={router} />);
+    let { container } = render(
+      <RouterProvider
+        router={router}
+        future={{
+          v7_startTransition: true,
+        }}
+      />
+    );
 
     function Foo() {
       let data = useLoaderData() as { message: string };
@@ -410,7 +479,13 @@ describe("createMemoryRouter", () => {
       }
     );
     let { container } = render(
-      <RouterProvider router={router} fallbackElement={<FallbackElement />} />
+      <RouterProvider
+        router={router}
+        fallbackElement={<FallbackElement />}
+        future={{
+          v7_startTransition: true,
+        }}
+      />
     );
 
     function FallbackElement() {
@@ -446,7 +521,13 @@ describe("createMemoryRouter", () => {
       { initialEntries: ["/foo"] }
     );
     let { container } = render(
-      <RouterProvider router={router} fallbackElement={<FallbackElement />} />
+      <RouterProvider
+        router={router}
+        fallbackElement={<FallbackElement />}
+        future={{
+          v7_startTransition: true,
+        }}
+      />
     );
 
     function FallbackElement() {
@@ -494,7 +575,14 @@ describe("createMemoryRouter", () => {
       ),
       { initialEntries: ["/foo"] }
     );
-    render(<RouterProvider router={router} />);
+    render(
+      <RouterProvider
+        router={router}
+        future={{
+          v7_startTransition: true,
+        }}
+      />
+    );
 
     function Layout() {
       return (
@@ -533,7 +621,14 @@ describe("createMemoryRouter", () => {
       ),
       { initialEntries: ["/foo"] }
     );
-    let { container } = render(<RouterProvider router={router} />);
+    let { container } = render(
+      <RouterProvider
+        router={router}
+        future={{
+          v7_startTransition: true,
+        }}
+      />
+    );
 
     function Layout() {
       let navigation = useNavigation();
@@ -632,7 +727,14 @@ describe("createMemoryRouter", () => {
       ),
       { initialEntries: ["/foo"] }
     );
-    let { container } = render(<RouterProvider router={router} />);
+    let { container } = render(
+      <RouterProvider
+        router={router}
+        future={{
+          v7_startTransition: true,
+        }}
+      />
+    );
 
     function Layout() {
       let navigation = useNavigation();
@@ -752,7 +854,14 @@ describe("createMemoryRouter", () => {
         </Route>
       )
     );
-    render(<RouterProvider router={router} />);
+    render(
+      <RouterProvider
+        router={router}
+        future={{
+          v7_startTransition: true,
+        }}
+      />
+    );
 
     function Layout() {
       spy("Layout", useMatches());
@@ -849,7 +958,14 @@ describe("createMemoryRouter", () => {
         },
       }
     );
-    let { container } = render(<RouterProvider router={router} />);
+    let { container } = render(
+      <RouterProvider
+        router={router}
+        future={{
+          v7_startTransition: true,
+        }}
+      />
+    );
 
     function Layout() {
       spy({
@@ -922,7 +1038,14 @@ describe("createMemoryRouter", () => {
         initialEntries: ["/deep/path/to/descendant/routes"],
       }
     );
-    let { container } = render(<RouterProvider router={router} />);
+    let { container } = render(
+      <RouterProvider
+        router={router}
+        future={{
+          v7_startTransition: true,
+        }}
+      />
+    );
 
     function GrandChild() {
       return (
@@ -992,7 +1115,14 @@ describe("createMemoryRouter", () => {
         },
       }
     );
-    let { container } = render(<RouterProvider router={router} />);
+    let { container } = render(
+      <RouterProvider
+        router={router}
+        future={{
+          v7_startTransition: true,
+        }}
+      />
+    );
 
     expect(getHtml(container)).toMatchInlineSnapshot(`
       "<div>
@@ -1033,7 +1163,14 @@ describe("createMemoryRouter", () => {
           },
         }
       );
-      let { container } = render(<RouterProvider router={router} />);
+      let { container } = render(
+        <RouterProvider
+          router={router}
+          future={{
+            v7_startTransition: true,
+          }}
+        />
+      );
 
       function Comp() {
         let data = useLoaderData() as { message: string };
@@ -1094,7 +1231,14 @@ describe("createMemoryRouter", () => {
           },
         }
       );
-      let { container } = render(<RouterProvider router={router} />);
+      let { container } = render(
+        <RouterProvider
+          router={router}
+          future={{
+            v7_startTransition: true,
+          }}
+        />
+      );
 
       function Comp() {
         let data = useLoaderData() as { message: string };
@@ -1142,7 +1286,14 @@ describe("createMemoryRouter", () => {
           },
         }
       );
-      let { container } = render(<RouterProvider router={router} />);
+      let { container } = render(
+        <RouterProvider
+          router={router}
+          future={{
+            v7_startTransition: true,
+          }}
+        />
+      );
 
       function Comp() {
         let data = useLoaderData() as { message: string };
@@ -1204,7 +1355,14 @@ describe("createMemoryRouter", () => {
           },
         }
       );
-      let { container } = render(<RouterProvider router={router} />);
+      let { container } = render(
+        <RouterProvider
+          router={router}
+          future={{
+            v7_startTransition: true,
+          }}
+        />
+      );
 
       function Layout() {
         let navigation = useNavigation();
@@ -1346,7 +1504,14 @@ describe("createMemoryRouter", () => {
           },
         }
       );
-      let { container } = render(<RouterProvider router={router} />);
+      let { container } = render(
+        <RouterProvider
+          router={router}
+          future={{
+            v7_startTransition: true,
+          }}
+        />
+      );
 
       function Layout() {
         let navigation = useNavigation();
@@ -1487,7 +1652,14 @@ describe("createMemoryRouter", () => {
           },
         }
       );
-      let { container } = render(<RouterProvider router={router} />);
+      let { container } = render(
+        <RouterProvider
+          router={router}
+          future={{
+            v7_startTransition: true,
+          }}
+        />
+      );
 
       function Layout() {
         let navigation = useNavigation();
@@ -1586,7 +1758,14 @@ describe("createMemoryRouter", () => {
           },
         }
       );
-      let { container } = render(<RouterProvider router={router} />);
+      let { container } = render(
+        <RouterProvider
+          router={router}
+          future={{
+            v7_startTransition: true,
+          }}
+        />
+      );
 
       function Boundary() {
         let error = useRouteError() as ErrorResponse;
@@ -1642,7 +1821,14 @@ describe("createMemoryRouter", () => {
           },
         }
       );
-      let { container } = render(<RouterProvider router={router} />);
+      let { container } = render(
+        <RouterProvider
+          router={router}
+          future={{
+            v7_startTransition: true,
+          }}
+        />
+      );
 
       function Boundary() {
         let error = useRouteError() as ErrorResponse;
@@ -1693,7 +1879,14 @@ describe("createMemoryRouter", () => {
           },
         }
       );
-      let { container } = render(<RouterProvider router={router} />);
+      let { container } = render(
+        <RouterProvider
+          router={router}
+          future={{
+            v7_startTransition: true,
+          }}
+        />
+      );
 
       let html = getHtml(container);
       expect(html).toMatch("Unexpected Application Error!");
@@ -1732,7 +1925,14 @@ describe("createMemoryRouter", () => {
           },
         }
       );
-      let { container } = render(<RouterProvider router={router} />);
+      let { container } = render(
+        <RouterProvider
+          router={router}
+          future={{
+            v7_startTransition: true,
+          }}
+        />
+      );
 
       function Layout() {
         let navigation = useNavigation();
@@ -1814,7 +2014,14 @@ describe("createMemoryRouter", () => {
       ];
 
       let router = createMemoryRouter(routes, { initialEntries: ["/foo"] });
-      let { container } = render(<RouterProvider router={router} />);
+      let { container } = render(
+        <RouterProvider
+          router={router}
+          future={{
+            v7_startTransition: true,
+          }}
+        />
+      );
 
       function Layout() {
         let navigation = useNavigation();
@@ -1894,7 +2101,14 @@ describe("createMemoryRouter", () => {
         ),
         { initialEntries: ["/child"] }
       );
-      let { container } = render(<RouterProvider router={router} />);
+      let { container } = render(
+        <RouterProvider
+          router={router}
+          future={{
+            v7_startTransition: true,
+          }}
+        />
+      );
 
       function ChildComp(): React.ReactElement {
         throw new Error("Kaboom!");
@@ -1936,7 +2150,14 @@ describe("createMemoryRouter", () => {
         ),
         { initialEntries: ["/child"] }
       );
-      let { container } = render(<RouterProvider router={router} />);
+      let { container } = render(
+        <RouterProvider
+          router={router}
+          future={{
+            v7_startTransition: true,
+          }}
+        />
+      );
 
       function ChildComp(): React.ReactElement {
         throw new Error("Kaboom!");
@@ -1978,7 +2199,14 @@ describe("createMemoryRouter", () => {
         ),
         { initialEntries: ["/child"] }
       );
-      let { container } = render(<RouterProvider router={router} />);
+      let { container } = render(
+        <RouterProvider
+          router={router}
+          future={{
+            v7_startTransition: true,
+          }}
+        />
+      );
 
       function ChildComp(): React.ReactElement {
         let error = new Error("Kaboom!");
@@ -2032,7 +2260,14 @@ describe("createMemoryRouter", () => {
           },
         },
       ]);
-      let { container } = render(<RouterProvider router={router} />);
+      let { container } = render(
+        <RouterProvider
+          router={router}
+          future={{
+            v7_startTransition: true,
+          }}
+        />
+      );
 
       await waitFor(() => screen.getByText("Yes"));
       expect(getHtml(container)).toMatch("Yes");
@@ -2058,7 +2293,14 @@ describe("createMemoryRouter", () => {
           },
         },
       ]);
-      let { container } = render(<RouterProvider router={router} />);
+      let { container } = render(
+        <RouterProvider
+          router={router}
+          future={{
+            v7_startTransition: true,
+          }}
+        />
+      );
 
       await waitFor(() => screen.getByText("Yes"));
       expect(getHtml(container)).toMatch("Yes");
@@ -2083,7 +2325,12 @@ describe("createMemoryRouter", () => {
 
       let { container } = render(
         <div>
-          <RouterProvider router={router} />
+          <RouterProvider
+            router={router}
+            future={{
+              v7_startTransition: true,
+            }}
+          />
         </div>
       );
 
@@ -2154,7 +2401,12 @@ describe("createMemoryRouter", () => {
       );
       let { container } = render(
         <div>
-          <RouterProvider router={router} />
+          <RouterProvider
+            router={router}
+            future={{
+              v7_startTransition: true,
+            }}
+          />
         </div>
       );
 
@@ -2221,7 +2473,14 @@ describe("createMemoryRouter", () => {
           </Route>
         )
       );
-      let { container } = render(<RouterProvider router={router} />);
+      let { container } = render(
+        <RouterProvider
+          router={router}
+          future={{
+            v7_startTransition: true,
+          }}
+        />
+      );
 
       function Layout() {
         let navigation = useNavigation();
@@ -2319,7 +2578,14 @@ describe("createMemoryRouter", () => {
           },
         }
       );
-      let { container } = render(<RouterProvider router={router} />);
+      let { container } = render(
+        <RouterProvider
+          router={router}
+          future={{
+            v7_startTransition: true,
+          }}
+        />
+      );
 
       function Layout() {
         let navigation = useNavigation();
@@ -2413,7 +2679,14 @@ describe("createMemoryRouter", () => {
         ),
         { initialEntries: ["/foo"] }
       );
-      let { container } = render(<RouterProvider router={router} />);
+      let { container } = render(
+        <RouterProvider
+          router={router}
+          future={{
+            v7_startTransition: true,
+          }}
+        />
+      );
 
       function Layout() {
         let navigation = useNavigation();
@@ -3049,7 +3322,14 @@ describe("createMemoryRouter", () => {
         ),
         { initialEntries: ["/foo"] }
       );
-      let { container } = render(<RouterProvider router={router} />);
+      let { container } = render(
+        <RouterProvider
+          router={router}
+          future={{
+            v7_startTransition: true,
+          }}
+        />
+      );
 
       let count = 0;
       function Bar() {
@@ -3216,7 +3496,14 @@ describe("createMemoryRouter", () => {
         ),
         { initialEntries: ["/foo"], dataStrategy: urlDataStrategy }
       );
-      let { container } = render(<RouterProvider router={router} />);
+      let { container } = render(
+        <RouterProvider
+          router={router}
+          future={{
+            v7_startTransition: true,
+          }}
+        />
+      );
 
       function Layout() {
         let navigation = useNavigation();

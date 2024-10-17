@@ -41,7 +41,14 @@ describe(`ScrollRestoration`, () => {
       ],
       { basename: "/base", window: testWindow }
     );
-    let { container } = render(<RouterProvider router={router} />);
+    let { container } = render(
+      <RouterProvider
+        router={router}
+        future={{
+          v7_startTransition: true,
+        }}
+      />
+    );
 
     expect(getHtml(container)).toMatch("On page 1");
 
@@ -105,7 +112,14 @@ describe(`ScrollRestoration`, () => {
       ],
       { basename: "/base", window: testWindow }
     );
-    let { container } = render(<RouterProvider router={router} />);
+    let { container } = render(
+      <RouterProvider
+        router={router}
+        future={{
+          v7_startTransition: true,
+        }}
+      />
+    );
 
     expect(getKey.mock.calls.length).toBe(1);
     // @ts-expect-error
@@ -154,7 +168,14 @@ describe(`ScrollRestoration`, () => {
       ],
       { basename: "/base", window: testWindow }
     );
-    let { container } = render(<RouterProvider router={router} />);
+    let { container } = render(
+      <RouterProvider
+        router={router}
+        future={{
+          v7_startTransition: true,
+        }}
+      />
+    );
 
     expect(getHtml(container)).toMatch("On page 1");
 

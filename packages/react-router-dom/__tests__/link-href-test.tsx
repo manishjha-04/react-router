@@ -868,6 +868,7 @@ describe("<Link> href", () => {
           <BrowserRouter
             future={{
               v7_relativeSplatPath: true,
+              v7_startTransition: true,
             }}
           >
             <Routes>
@@ -897,11 +898,18 @@ describe("<Link> href", () => {
           {
             future: {
               v7_relativeSplatPath: true,
-              v7_normalizeFormMethod: true
+              v7_normalizeFormMethod: true,
             },
           }
         );
-        renderer = TestRenderer.create(<RouterProvider router={router} />);
+        renderer = TestRenderer.create(
+          <RouterProvider
+            router={router}
+            future={{
+              v7_startTransition: true,
+            }}
+          />
+        );
       });
       expect(renderer.root.findByType("a").props.href).toEqual(
         "/path?search=value#hash"
@@ -938,7 +946,14 @@ describe("<Link> href", () => {
             element: <Link to="..//path?search=value#hash">Link</Link>,
           },
         ]);
-        renderer = TestRenderer.create(<RouterProvider router={router} />);
+        renderer = TestRenderer.create(
+          <RouterProvider
+            router={router}
+            future={{
+              v7_startTransition: true,
+            }}
+          />
+        );
       });
       expect(renderer.root.findByType("a").props.href).toEqual(
         "#/path?search=value#hash"

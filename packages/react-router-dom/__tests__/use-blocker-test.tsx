@@ -53,7 +53,14 @@ describe("navigation blocking with useBlocker", () => {
     router = createMemoryRouter(routes, { initialEntries });
     act(() => {
       root = ReactDOM.createRoot(node);
-      root.render(<RouterProvider router={router} />);
+      root.render(
+        <RouterProvider
+          router={router}
+          future={{
+            v7_startTransition: true,
+          }}
+        />
+      );
     });
     expect(blocker).toEqual({
       state: "unblocked",
@@ -99,7 +106,14 @@ describe("navigation blocking with useBlocker", () => {
 
     act(() => {
       root = ReactDOM.createRoot(node);
-      root.render(<RouterProvider router={router} />);
+      root.render(
+        <RouterProvider
+          router={router}
+          future={{
+            v7_startTransition: true,
+          }}
+        />
+      );
     });
 
     act(() => click(node.querySelector("a[href='/base/about']")));
@@ -147,7 +161,14 @@ describe("navigation blocking with useBlocker", () => {
 
     act(() => {
       root = ReactDOM.createRoot(node);
-      root.render(<RouterProvider router={router} />);
+      root.render(
+        <RouterProvider
+          router={router}
+          future={{
+            v7_startTransition: true,
+          }}
+        />
+      );
     });
 
     expect(node.querySelector("h1")?.textContent).toBe("Home");
@@ -194,7 +215,14 @@ describe("navigation blocking with useBlocker", () => {
 
     act(() => {
       root = ReactDOM.createRoot(node);
-      root.render(<RouterProvider router={router} />);
+      root.render(
+        <RouterProvider
+          router={router}
+          future={{
+            v7_startTransition: true,
+          }}
+        />
+      );
     });
 
     // Start on /
@@ -268,7 +296,14 @@ describe("navigation blocking with useBlocker", () => {
         );
         act(() => {
           root = ReactDOM.createRoot(node);
-          root.render(<RouterProvider router={router} />);
+          root.render(
+            <RouterProvider
+              router={router}
+              future={{
+                v7_startTransition: true,
+              }}
+            />
+          );
         });
       });
 
@@ -349,7 +384,14 @@ describe("navigation blocking with useBlocker", () => {
         );
         act(() => {
           root = ReactDOM.createRoot(node);
-          root.render(<RouterProvider router={router} />);
+          root.render(
+            <RouterProvider
+              router={router}
+              future={{
+                v7_startTransition: true,
+              }}
+            />
+          );
         });
       });
 
@@ -440,7 +482,14 @@ describe("navigation blocking with useBlocker", () => {
         );
         act(() => {
           root = ReactDOM.createRoot(node);
-          root.render(<RouterProvider router={router} />);
+          root.render(
+            <RouterProvider
+              router={router}
+              future={{
+                v7_startTransition: true,
+              }}
+            />
+          );
         });
       });
 
@@ -564,7 +613,14 @@ describe("navigation blocking with useBlocker", () => {
         );
         act(() => {
           root = ReactDOM.createRoot(node);
-          root.render(<RouterProvider router={router} />);
+          root.render(
+            <RouterProvider
+              router={router}
+              future={{
+                v7_startTransition: true,
+              }}
+            />
+          );
         });
       });
 
@@ -649,7 +705,14 @@ describe("navigation blocking with useBlocker", () => {
         );
         act(() => {
           root = ReactDOM.createRoot(node);
-          root.render(<RouterProvider router={router} />);
+          root.render(
+            <RouterProvider
+              router={router}
+              future={{
+                v7_startTransition: true,
+              }}
+            />
+          );
         });
       });
 
@@ -744,7 +807,14 @@ describe("navigation blocking with useBlocker", () => {
         );
         act(() => {
           root = ReactDOM.createRoot(node);
-          root.render(<RouterProvider router={router} />);
+          root.render(
+            <RouterProvider
+              router={router}
+              future={{
+                v7_startTransition: true,
+              }}
+            />
+          );
         });
       });
 
@@ -876,7 +946,14 @@ describe("navigation blocking with useBlocker", () => {
         );
         act(() => {
           root = ReactDOM.createRoot(node);
-          root.render(<RouterProvider router={router} />);
+          root.render(
+            <RouterProvider
+              router={router}
+              future={{
+                v7_startTransition: true,
+              }}
+            />
+          );
         });
       });
 
@@ -969,7 +1046,14 @@ describe("navigation blocking with useBlocker", () => {
         );
         act(() => {
           root = ReactDOM.createRoot(node);
-          root.render(<RouterProvider router={router} />);
+          root.render(
+            <RouterProvider
+              router={router}
+              future={{
+                v7_startTransition: true,
+              }}
+            />
+          );
         });
       });
 
@@ -1072,7 +1156,14 @@ describe("navigation blocking with useBlocker", () => {
         );
         act(() => {
           root = ReactDOM.createRoot(node);
-          root.render(<RouterProvider router={router} />);
+          root.render(
+            <RouterProvider
+              router={router}
+              future={{
+                v7_startTransition: true,
+              }}
+            />
+          );
         });
       });
 

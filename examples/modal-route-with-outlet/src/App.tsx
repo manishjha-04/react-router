@@ -38,13 +38,20 @@ const router = createBrowserRouter(
   {
     future: {
       v7_relativeSplatPath: true,
-      v7_normalizeFormMethod: true
+      v7_normalizeFormMethod: true,
     },
   }
 );
 
 export default function App() {
-  return <RouterProvider router={router} />;
+  return (
+    <RouterProvider
+      router={router}
+      future={{
+        v7_startTransition: true,
+      }}
+    />
+  );
 }
 
 export function Layout() {

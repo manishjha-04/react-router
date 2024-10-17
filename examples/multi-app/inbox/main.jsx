@@ -12,6 +12,7 @@ ReactDOM.createRoot(document.getElementById("root")).render(
       basename="inbox"
       future={{
         v7_relativeSplatPath: true,
+        v7_startTransition: true,
       }}
     >
       <InboxApp />

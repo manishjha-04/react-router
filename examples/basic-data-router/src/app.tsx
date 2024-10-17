@@ -20,13 +20,21 @@ let router = createBrowserRouter(
   {
     future: {
       v7_relativeSplatPath: true,
-      v7_normalizeFormMethod: true
+      v7_normalizeFormMethod: true,
     },
   }
 );
 
 export default function App() {
-  return <RouterProvider router={router} fallbackElement={<p>Loading...</p>} />;
+  return (
+    <RouterProvider
+      router={router}
+      fallbackElement={<p>Loading...</p>}
+      future={{
+        v7_startTransition: true,
+      }}
+    />
+  );
 }
 
 if (import.meta.hot) {

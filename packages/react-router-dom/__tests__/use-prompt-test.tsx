@@ -38,7 +38,14 @@ describe("usePrompt", () => {
         { window: testWindow }
       );
 
-      render(<RouterProvider router={router} />);
+      render(
+        <RouterProvider
+          router={router}
+          future={{
+            v7_startTransition: true,
+          }}
+        />
+      );
       expect(screen.getByText("Navigate")).toBeInTheDocument();
 
       fireEvent.click(screen.getByText("Navigate"));
@@ -71,7 +78,14 @@ describe("usePrompt", () => {
         { window: testWindow }
       );
 
-      render(<RouterProvider router={router} />);
+      render(
+        <RouterProvider
+          router={router}
+          future={{
+            v7_startTransition: true,
+          }}
+        />
+      );
       expect(screen.getByText("Navigate")).toBeInTheDocument();
 
       fireEvent.click(screen.getByText("Navigate"));
@@ -106,7 +120,14 @@ describe("usePrompt", () => {
         { window: testWindow }
       );
 
-      render(<RouterProvider router={router} />);
+      render(
+        <RouterProvider
+          router={router}
+          future={{
+            v7_startTransition: true,
+          }}
+        />
+      );
       expect(screen.getByText("Navigate")).toBeInTheDocument();
 
       fireEvent.click(screen.getByText("Navigate"));

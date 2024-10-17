@@ -37,6 +37,7 @@ describe("trailing slashes", () => {
               window={window}
               future={{
                 v7_relativeSplatPath: true,
+                v7_startTransition: true,
               }}
             >
               <Routes>
@@ -75,6 +76,7 @@ describe("trailing slashes", () => {
               window={window}
               future={{
                 v7_relativeSplatPath: true,
+                v7_startTransition: true,
               }}
             >
               <Routes>
@@ -113,6 +115,7 @@ describe("trailing slashes", () => {
               window={window}
               future={{
                 v7_relativeSplatPath: true,
+                v7_startTransition: true,
               }}
             >
               <Routes>
@@ -203,6 +206,7 @@ describe("trailing slashes", () => {
               window={window}
               future={{
                 v7_relativeSplatPath: true,
+                v7_startTransition: true,
               }}
             >
               <Routes>
@@ -241,6 +245,7 @@ describe("trailing slashes", () => {
               window={window}
               future={{
                 v7_relativeSplatPath: true,
+                v7_startTransition: true,
               }}
             >
               <Routes>
@@ -279,6 +284,7 @@ describe("trailing slashes", () => {
               window={window}
               future={{
                 v7_relativeSplatPath: true,
+                v7_startTransition: true,
               }}
             >
               <Routes>
@@ -374,6 +380,7 @@ describe("trailing slashes", () => {
               window={window}
               future={{
                 v7_relativeSplatPath: true,
+                v7_startTransition: true,
               }}
             >
               <Routes>
@@ -398,6 +405,7 @@ describe("trailing slashes", () => {
               window={window}
               future={{
                 v7_relativeSplatPath: true,
+                v7_startTransition: true,
               }}
             >
               <Routes>
@@ -423,6 +431,7 @@ describe("trailing slashes", () => {
               window={window}
               future={{
                 v7_relativeSplatPath: true,
+                v7_startTransition: true,
               }}
             >
               <Routes>
@@ -449,6 +458,7 @@ describe("trailing slashes", () => {
               window={window}
               future={{
                 v7_relativeSplatPath: true,
+                v7_startTransition: true,
               }}
             >
               <Routes>
@@ -476,6 +486,7 @@ describe("trailing slashes", () => {
               window={window}
               future={{
                 v7_relativeSplatPath: true,
+                v7_startTransition: true,
               }}
             >
               <Routes>
@@ -500,6 +511,7 @@ describe("trailing slashes", () => {
               window={window}
               future={{
                 v7_relativeSplatPath: true,
+                v7_startTransition: true,
               }}
             >
               <Routes>
@@ -525,6 +537,7 @@ describe("trailing slashes", () => {
               window={window}
               future={{
                 v7_relativeSplatPath: true,
+                v7_startTransition: true,
               }}
             >
               <Routes>
@@ -551,6 +564,7 @@ describe("trailing slashes", () => {
               window={window}
               future={{
                 v7_relativeSplatPath: true,
+                v7_startTransition: true,
               }}
             >
               <Routes>
@@ -579,6 +593,7 @@ describe("trailing slashes", () => {
               window={window}
               future={{
                 v7_relativeSplatPath: true,
+                v7_startTransition: true,
               }}
             >
               <Routes>
@@ -605,6 +620,7 @@ describe("trailing slashes", () => {
               window={window}
               future={{
                 v7_relativeSplatPath: true,
+                v7_startTransition: true,
               }}
             >
               <Routes>
@@ -633,6 +649,7 @@ describe("trailing slashes", () => {
               window={window}
               future={{
                 v7_relativeSplatPath: true,
+                v7_startTransition: true,
               }}
             >
               <Routes>
@@ -659,6 +676,7 @@ describe("trailing slashes", () => {
               window={window}
               future={{
                 v7_relativeSplatPath: true,
+                v7_startTransition: true,
               }}
             >
               <Routes>
@@ -697,6 +715,7 @@ describe("trailing slashes", () => {
             window={window}
             future={{
               v7_relativeSplatPath: true,
+              v7_startTransition: true,
             }}
           >
             <Routes>
@@ -731,6 +750,7 @@ describe("trailing slashes", () => {
             window={window}
             future={{
               v7_relativeSplatPath: true,
+              v7_startTransition: true,
             }}
           >
             <Routes>

@@ -354,7 +354,14 @@ describe("useNavigate", () => {
 
     let renderer: TestRenderer.ReactTestRenderer;
     TestRenderer.act(() => {
-      renderer = TestRenderer.create(<RouterProvider router={router} />);
+      renderer = TestRenderer.create(
+        <RouterProvider
+          router={router}
+          future={{
+            v7_startTransition: true,
+          }}
+        />
+      );
     });
 
     expect(router.state.location.pathname).toBe("/");
@@ -597,7 +604,14 @@ describe("useNavigate", () => {
         ]);
         let renderer: TestRenderer.ReactTestRenderer;
         TestRenderer.act(() => {
-          renderer = TestRenderer.create(<RouterProvider router={router} />);
+          renderer = TestRenderer.create(
+            <RouterProvider
+              router={router}
+              future={{
+                v7_startTransition: true,
+              }}
+            />
+          );
         });
 
         // @ts-expect-error
@@ -628,7 +642,14 @@ describe("useNavigate", () => {
         ]);
         let renderer: TestRenderer.ReactTestRenderer;
         TestRenderer.act(() => {
-          renderer = TestRenderer.create(<RouterProvider router={router} />);
+          renderer = TestRenderer.create(
+            <RouterProvider
+              router={router}
+              future={{
+                v7_startTransition: true,
+              }}
+            />
+          );
         });
 
         // @ts-expect-error
@@ -660,7 +681,14 @@ describe("useNavigate", () => {
         ]);
         let renderer: TestRenderer.ReactTestRenderer;
         TestRenderer.act(() => {
-          renderer = TestRenderer.create(<RouterProvider router={router} />);
+          renderer = TestRenderer.create(
+            <RouterProvider
+              router={router}
+              future={{
+                v7_startTransition: true,
+              }}
+            />
+          );
         });
 
         function Child({ onChildRendered }) {
@@ -1381,7 +1409,14 @@ describe("useNavigate", () => {
 
         let renderer: TestRenderer.ReactTestRenderer;
         TestRenderer.act(() => {
-          renderer = TestRenderer.create(<RouterProvider router={router} />);
+          renderer = TestRenderer.create(
+            <RouterProvider
+              router={router}
+              future={{
+                v7_startTransition: true,
+              }}
+            />
+          );
         });
 
         // @ts-expect-error
@@ -1414,7 +1449,14 @@ describe("useNavigate", () => {
 
         let renderer: TestRenderer.ReactTestRenderer;
         TestRenderer.act(() => {
-          renderer = TestRenderer.create(<RouterProvider router={router} />);
+          renderer = TestRenderer.create(
+            <RouterProvider
+              router={router}
+              future={{
+                v7_startTransition: true,
+              }}
+            />
+          );
         });
 
         // @ts-expect-error
@@ -1444,7 +1486,14 @@ describe("useNavigate", () => {
 
         let renderer: TestRenderer.ReactTestRenderer;
         TestRenderer.act(() => {
-          renderer = TestRenderer.create(<RouterProvider router={router} />);
+          renderer = TestRenderer.create(
+            <RouterProvider
+              router={router}
+              future={{
+                v7_startTransition: true,
+              }}
+            />
+          );
         });
 
         // @ts-expect-error
@@ -1477,7 +1526,14 @@ describe("useNavigate", () => {
 
         let renderer: TestRenderer.ReactTestRenderer;
         TestRenderer.act(() => {
-          renderer = TestRenderer.create(<RouterProvider router={router} />);
+          renderer = TestRenderer.create(
+            <RouterProvider
+              router={router}
+              future={{
+                v7_startTransition: true,
+              }}
+            />
+          );
         });
 
         // @ts-expect-error
@@ -1516,7 +1572,14 @@ describe("useNavigate", () => {
 
         let renderer: TestRenderer.ReactTestRenderer;
         TestRenderer.act(() => {
-          renderer = TestRenderer.create(<RouterProvider router={router} />);
+          renderer = TestRenderer.create(
+            <RouterProvider
+              router={router}
+              future={{
+                v7_startTransition: true,
+              }}
+            />
+          );
         });
 
         // @ts-expect-error
@@ -1555,7 +1618,14 @@ describe("useNavigate", () => {
 
         let renderer: TestRenderer.ReactTestRenderer;
         TestRenderer.act(() => {
-          renderer = TestRenderer.create(<RouterProvider router={router} />);
+          renderer = TestRenderer.create(
+            <RouterProvider
+              router={router}
+              future={{
+                v7_startTransition: true,
+              }}
+            />
+          );
         });
 
         // @ts-expect-error
@@ -1607,7 +1677,14 @@ describe("useNavigate", () => {
 
         let renderer: TestRenderer.ReactTestRenderer;
         TestRenderer.act(() => {
-          renderer = TestRenderer.create(<RouterProvider router={router} />);
+          renderer = TestRenderer.create(
+            <RouterProvider
+              router={router}
+              future={{
+                v7_startTransition: true,
+              }}
+            />
+          );
         });
 
         // @ts-expect-error
@@ -1640,7 +1717,14 @@ describe("useNavigate", () => {
 
         let renderer: TestRenderer.ReactTestRenderer;
         TestRenderer.act(() => {
-          renderer = TestRenderer.create(<RouterProvider router={router} />);
+          renderer = TestRenderer.create(
+            <RouterProvider
+              router={router}
+              future={{
+                v7_startTransition: true,
+              }}
+            />
+          );
         });
 
         // @ts-expect-error
@@ -1673,7 +1757,14 @@ describe("useNavigate", () => {
 
         let renderer: TestRenderer.ReactTestRenderer;
         TestRenderer.act(() => {
-          renderer = TestRenderer.create(<RouterProvider router={router} />);
+          renderer = TestRenderer.create(
+            <RouterProvider
+              router={router}
+              future={{
+                v7_startTransition: true,
+              }}
+            />
+          );
         });
 
         // @ts-expect-error
@@ -1706,7 +1797,14 @@ describe("useNavigate", () => {
 
         let renderer: TestRenderer.ReactTestRenderer;
         TestRenderer.act(() => {
-          renderer = TestRenderer.create(<RouterProvider router={router} />);
+          renderer = TestRenderer.create(
+            <RouterProvider
+              router={router}
+              future={{
+                v7_startTransition: true,
+              }}
+            />
+          );
         });
 
         // @ts-expect-error
@@ -1739,7 +1837,14 @@ describe("useNavigate", () => {
 
         let renderer: TestRenderer.ReactTestRenderer;
         TestRenderer.act(() => {
-          renderer = TestRenderer.create(<RouterProvider router={router} />);
+          renderer = TestRenderer.create(
+            <RouterProvider
+              router={router}
+              future={{
+                v7_startTransition: true,
+              }}
+            />
+          );
         });
 
         // @ts-expect-error
@@ -1778,7 +1883,14 @@ describe("useNavigate", () => {
 
         let renderer: TestRenderer.ReactTestRenderer;
         TestRenderer.act(() => {
-          renderer = TestRenderer.create(<RouterProvider router={router} />);
+          renderer = TestRenderer.create(
+            <RouterProvider
+              router={router}
+              future={{
+                v7_startTransition: true,
+              }}
+            />
+          );
         });
 
         // @ts-expect-error
@@ -1817,7 +1929,14 @@ describe("useNavigate", () => {
 
         let renderer: TestRenderer.ReactTestRenderer;
         TestRenderer.act(() => {
-          renderer = TestRenderer.create(<RouterProvider router={router} />);
+          renderer = TestRenderer.create(
+            <RouterProvider
+              router={router}
+              future={{
+                v7_startTransition: true,
+              }}
+            />
+          );
         });
 
         // @ts-expect-error
@@ -1853,7 +1972,14 @@ describe("useNavigate", () => {
 
         let renderer: TestRenderer.ReactTestRenderer;
         TestRenderer.act(() => {
-          renderer = TestRenderer.create(<RouterProvider router={router} />);
+          renderer = TestRenderer.create(
+            <RouterProvider
+              router={router}
+              future={{
+                v7_startTransition: true,
+              }}
+            />
+          );
         });
 
         // @ts-expect-error
@@ -1899,7 +2025,14 @@ describe("useNavigate", () => {
 
         let renderer: TestRenderer.ReactTestRenderer;
         TestRenderer.act(() => {
-          renderer = TestRenderer.create(<RouterProvider router={router} />);
+          renderer = TestRenderer.create(
+            <RouterProvider
+              router={router}
+              future={{
+                v7_startTransition: true,
+              }}
+            />
+          );
         });
 
         // @ts-expect-error
@@ -1949,7 +2082,14 @@ describe("useNavigate", () => {
 
       let renderer: TestRenderer.ReactTestRenderer;
       TestRenderer.act(() => {
-        renderer = TestRenderer.create(<RouterProvider router={router} />);
+        renderer = TestRenderer.create(
+          <RouterProvider
+            router={router}
+            future={{
+              v7_startTransition: true,
+            }}
+          />
+        );
       });
 
       function NavBar() {
@@ -2159,7 +2299,14 @@ describe("useNavigate", () => {
 
         let renderer: TestRenderer.ReactTestRenderer;
         TestRenderer.act(() => {
-          renderer = TestRenderer.create(<RouterProvider router={router} />);
+          renderer = TestRenderer.create(
+            <RouterProvider
+              router={router}
+              future={{
+                v7_startTransition: true,
+              }}
+            />
+          );
         });
 
         // @ts-expect-error
@@ -2206,7 +2353,14 @@ describe("useNavigate", () => {
 
         let renderer: TestRenderer.ReactTestRenderer;
         TestRenderer.act(() => {
-          renderer = TestRenderer.create(<RouterProvider router={router} />);
+          renderer = TestRenderer.create(
+            <RouterProvider
+              router={router}
+              future={{
+                v7_startTransition: true,
+              }}
+            />
+          );
         });
 
         // @ts-expect-error
