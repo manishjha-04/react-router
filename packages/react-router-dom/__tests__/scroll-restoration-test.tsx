@@ -45,7 +45,8 @@ describe(`ScrollRestoration`, () => {
 
         future: {
           v7_fetcherPersist: true,
-          v7_partialHydration: true
+          v7_partialHydration: true,
+          v7_skipActionStatusRevalidation: true
         }
       }
     );
@@ -124,7 +125,8 @@ describe(`ScrollRestoration`, () => {
 
         future: {
           v7_fetcherPersist: true,
-          v7_partialHydration: true
+          v7_partialHydration: true,
+          v7_skipActionStatusRevalidation: true
         }
       }
     );
@@ -188,7 +190,8 @@ describe(`ScrollRestoration`, () => {
 
         future: {
           v7_fetcherPersist: true,
-          v7_partialHydration: true
+          v7_partialHydration: true,
+          v7_skipActionStatusRevalidation: true
         }
       }
     );

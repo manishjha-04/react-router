@@ -45,7 +45,8 @@ describe("flushSync", () => {
 
         future: {
           v7_fetcherPersist: true,
-          v7_partialHydration: true
+          v7_partialHydration: true,
+          v7_skipActionStatusRevalidation: true
         }
       }
     );
@@ -132,7 +133,8 @@ describe("flushSync", () => {
 
         future: {
           v7_fetcherPersist: true,
-          v7_partialHydration: true
+          v7_partialHydration: true,
+          v7_skipActionStatusRevalidation: true
         }
       }
     );
@@ -205,7 +207,8 @@ describe("flushSync", () => {
 
         future: {
           v7_fetcherPersist: true,
-          v7_partialHydration: true
+          v7_partialHydration: true,
+          v7_skipActionStatusRevalidation: true
         }
       }
     );
@@ -281,7 +284,8 @@ describe("flushSync", () => {
 
         future: {
           v7_fetcherPersist: true,
-          v7_partialHydration: true
+          v7_partialHydration: true,
+          v7_skipActionStatusRevalidation: true
         }
       }
     );

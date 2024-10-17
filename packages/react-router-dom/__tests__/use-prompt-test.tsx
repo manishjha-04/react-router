@@ -40,7 +40,8 @@ describe("usePrompt", () => {
 
           future: {
             v7_fetcherPersist: true,
-            v7_partialHydration: true
+            v7_partialHydration: true,
+            v7_skipActionStatusRevalidation: true
           }
         }
       );
@@ -87,7 +88,8 @@ describe("usePrompt", () => {
 
           future: {
             v7_fetcherPersist: true,
-            v7_partialHydration: true
+            v7_partialHydration: true,
+            v7_skipActionStatusRevalidation: true
           }
         }
       );
@@ -136,7 +138,8 @@ describe("usePrompt", () => {
 
           future: {
             v7_fetcherPersist: true,
-            v7_partialHydration: true
+            v7_partialHydration: true,
+            v7_skipActionStatusRevalidation: true
           }
         }
       );
