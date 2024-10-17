@@ -17,27 +17,29 @@ import {
   useLocation,
 } from "react-router-dom";
 
-let router = createBrowserRouter(
-  createRoutesFromElements(
-    <Route path="/" element={<Layout />}>
-      <Route index element={<h2>Index</h2>} />
-      <Route path="one" element={<h2>One</h2>} />
-      <Route path="two" element={<h2>Two</h2>} />
-      <Route
-        path="three"
-        action={() => json({ ok: true })}
-        element={
-          <>
-            <h2>Three</h2>
-            <ImportantForm />
-          </>
-        }
-      />
-      <Route path="four" element={<h2>Four</h2>} />
-      <Route path="five" element={<h2>Five</h2>} />
-    </Route>
-  )
-);
+let router = createBrowserRouter(createRoutesFromElements(
+  <Route path="/" element={<Layout />}>
+    <Route index element={<h2>Index</h2>} />
+    <Route path="one" element={<h2>One</h2>} />
+    <Route path="two" element={<h2>Two</h2>} />
+    <Route
+      path="three"
+      action={() => json({ ok: true })}
+      element={
+        <>
+          <h2>Three</h2>
+          <ImportantForm />
+        </>
+      }
+    />
+    <Route path="four" element={<h2>Four</h2>} />
+    <Route path="five" element={<h2>Five</h2>} />
+  </Route>
+), {
+  future: {
+    v7_relativeSplatPath: true
+  }
+});
 
 if (import.meta.hot) {
   import.meta.hot.dispose(() => router.dispose());

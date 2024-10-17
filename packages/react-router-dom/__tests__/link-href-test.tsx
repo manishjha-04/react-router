@@ -845,7 +845,10 @@ describe("<Link> href", () => {
       let renderer: TestRenderer.ReactTestRenderer;
       TestRenderer.act(() => {
         renderer = TestRenderer.create(
-          <BrowserRouter>
+          <BrowserRouter
+            future={{
+              v7_relativeSplatPath: true
+            }}>
             <Routes>
               <Route path="/" element={<Link to="/path?search=value#hash" />} />
             </Routes>
@@ -865,7 +868,11 @@ describe("<Link> href", () => {
             path: "/",
             element: <Link to="/path?search=value#hash">Link</Link>,
           },
-        ]);
+        ], {
+          future: {
+            v7_relativeSplatPath: true
+          }
+        });
         renderer = TestRenderer.create(<RouterProvider router={router} />);
       });
       expect(renderer.root.findByType("a").props.href).toEqual(

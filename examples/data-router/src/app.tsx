@@ -55,7 +55,11 @@ let router = createBrowserRouter([
       },
     ],
   },
-]);
+], {
+  future: {
+    v7_relativeSplatPath: true
+  }
+});
 
 if (import.meta.hot) {
   import.meta.hot.dispose(() => router.dispose());

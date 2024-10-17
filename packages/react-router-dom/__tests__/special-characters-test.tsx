@@ -222,7 +222,11 @@ describe("special character tests", () => {
       // the right route match, window.location, useLocation(), and useParams()
       // values
       let ctx = render(
-        <BrowserRouter window={testWindow}>
+        <BrowserRouter
+          window={testWindow}
+          future={{
+            v7_relativeSplatPath: true
+          }}>
           <Routes>{routeElements}</Routes>
         </BrowserRouter>
       );
@@ -532,7 +536,11 @@ describe("special character tests", () => {
 
     it("does not trim trailing spaces on ancestor splat route segments", async () => {
       let ctx = render(
-        <BrowserRouter window={getWindow("/parent/child/%20%20param%20%20")}>
+        <BrowserRouter
+          window={getWindow("/parent/child/%20%20param%20%20")}
+          future={{
+            v7_relativeSplatPath: true
+          }}>
           <App />
         </BrowserRouter>
       );
@@ -684,7 +692,11 @@ describe("special character tests", () => {
       // the right route match, window.location, useLocation(), and useParams()
       // values
       let ctx = render(
-        <BrowserRouter window={testWindow}>
+        <BrowserRouter
+          window={testWindow}
+          future={{
+            v7_relativeSplatPath: true
+          }}>
           <Routes>{routeElements}</Routes>
         </BrowserRouter>
       );
@@ -887,7 +899,11 @@ describe("special character tests", () => {
         let testWindow = getWindow("/with space");
 
         let ctx = render(
-          <BrowserRouter window={testWindow}>
+          <BrowserRouter
+            window={testWindow}
+            future={{
+              v7_relativeSplatPath: true
+            }}>
             <Routes>
               <Route path="/with space" element={<ShowPath />} />
             </Routes>
@@ -911,7 +927,11 @@ describe("special character tests", () => {
         }
 
         let ctx = render(
-          <BrowserRouter window={testWindow}>
+          <BrowserRouter
+            window={testWindow}
+            future={{
+              v7_relativeSplatPath: true
+            }}>
             <Routes>
               <Route path="/" element={<Start />} />
               <Route path="/with space" element={<ShowPath />} />

@@ -49,7 +49,11 @@ const router = createBrowserRouter([
       return redirect("/");
     },
   },
-]);
+], {
+  future: {
+    v7_relativeSplatPath: true
+  }
+});
 
 export default function App() {
   return (

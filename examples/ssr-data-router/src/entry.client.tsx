@@ -27,7 +27,11 @@ async function hydrate() {
     );
   }
 
-  let router = createBrowserRouter(routes);
+  let router = createBrowserRouter(routes, {
+    future: {
+      v7_relativeSplatPath: true
+    }
+  });
 
   ReactDOM.hydrateRoot(
     document.getElementById("app")!,

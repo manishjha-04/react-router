@@ -212,7 +212,11 @@ describe("NavLink", () => {
 
       TestRenderer.act(() => {
         renderer = TestRenderer.create(
-          <BrowserRouter window={getWindow("/users/matt brophy")}>
+          <BrowserRouter
+            window={getWindow("/users/matt brophy")}
+            future={{
+              v7_relativeSplatPath: true
+            }}>
             <Routes>
               <Route
                 path="/users/:name"

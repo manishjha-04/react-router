@@ -7,7 +7,10 @@ import "./index.css";
 
 ReactDOM.render(
   <React.StrictMode>
-    <BrowserRouter>
+    <BrowserRouter
+      future={{
+        v7_relativeSplatPath: true
+      }}>
       <App />
     </BrowserRouter>
   </React.StrictMode>,

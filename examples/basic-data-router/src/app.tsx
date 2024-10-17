@@ -15,7 +15,11 @@ let router = createBrowserRouter([
       return <h1>{data.message}</h1>;
     },
   },
-]);
+], {
+  future: {
+    v7_relativeSplatPath: true
+  }
+});
 
 export default function App() {
   return <RouterProvider router={router} fallbackElement={<p>Loading...</p>} />;

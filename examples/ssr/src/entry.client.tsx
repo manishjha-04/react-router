@@ -8,7 +8,10 @@ import App from "./App";
 ReactDOM.hydrateRoot(
   document.getElementById("app"),
   <React.StrictMode>
-    <BrowserRouter>
+    <BrowserRouter
+      future={{
+        v7_relativeSplatPath: true
+      }}>
       <App />
     </BrowserRouter>
   </React.StrictMode>

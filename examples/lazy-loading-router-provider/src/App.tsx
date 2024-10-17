@@ -55,7 +55,11 @@ const router = createBrowserRouter([
       },
     ],
   },
-]);
+], {
+  future: {
+    v7_relativeSplatPath: true
+  }
+});
 
 export default function App() {
   return <RouterProvider router={router} fallbackElement={<p>Loading...</p>} />;
