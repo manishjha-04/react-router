@@ -1,14 +1,13 @@
 import type { LoaderFunctionArgs } from "react-router-dom";
+import { Link, useLocation } from "react-router";
+import { RouterProvider } from "react-router/dom";
 import {
   Form,
-  Link,
   Outlet,
-  RouterProvider,
   createBrowserRouter,
   redirect,
   useActionData,
   useFetcher,
-  useLocation,
   useNavigation,
   useRouteLoaderData,
 } from "react-router-dom";
@@ -57,7 +56,7 @@ const router = createBrowserRouter(
       v7_normalizeFormMethod: true,
       v7_fetcherPersist: true,
       v7_partialHydration: true,
-      v7_skipActionStatusRevalidation: true
+      v7_skipActionStatusRevalidation: true,
     },
   }
 );

@@ -10,13 +10,12 @@ import {
 import { JSDOM } from "jsdom";
 import * as React from "react";
 import type { RouteObject } from "react-router-dom";
+import { Link, Route, useLocation } from "react-router";
+import { RouterProvider } from "react-router/dom";
 import {
   UNSAFE_DataRouterStateContext as DataRouterStateContext,
   Form,
-  Link,
   Outlet,
-  Route,
-  RouterProvider,
   createBrowserRouter,
   createHashRouter,
   createRoutesFromElements,
@@ -28,7 +27,6 @@ import {
   useFetcher,
   useFetchers,
   useLoaderData,
-  useLocation,
   useNavigate,
   useNavigation,
   useRouteError,
@@ -6106,8 +6104,8 @@ function testDomRouter(
             future: {
               v7_fetcherPersist: true,
               v7_partialHydration: true,
-              v7_skipActionStatusRevalidation: true
-            }
+              v7_skipActionStatusRevalidation: true,
+            },
           }
         );
 

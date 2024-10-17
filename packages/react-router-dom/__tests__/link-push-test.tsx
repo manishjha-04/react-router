@@ -1,12 +1,7 @@
 import * as React from "react";
 import * as TestRenderer from "react-test-renderer";
-import {
-  MemoryRouter,
-  Routes,
-  Route,
-  Link,
-  useNavigationType,
-} from "react-router-dom";
+import { Routes, Route, Link } from "react-router";
+import { MemoryRouter, useNavigationType } from "react-router-dom";
 
 function ShowNavigationType() {
   return <p>{useNavigationType()}</p>;

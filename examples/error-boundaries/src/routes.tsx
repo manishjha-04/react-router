@@ -1,8 +1,8 @@
 import type { LoaderFunctionArgs } from "react-router-dom";
+import { Link } from "react-router";
 import {
   isRouteErrorResponse,
   json,
-  Link,
   Outlet,
   useLoaderData,
   useRouteError,

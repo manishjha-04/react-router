@@ -2,10 +2,10 @@ import { JSDOM } from "jsdom";
 import * as React from "react";
 import { render, fireEvent, screen } from "@testing-library/react";
 import "@testing-library/jest-dom";
+import { Link } from "react-router";
+import { RouterProvider } from "react-router/dom";
 import {
-  Link,
   Outlet,
-  RouterProvider,
   ScrollRestoration,
   createBrowserRouter,
 } from "react-router-dom";
@@ -46,8 +46,8 @@ describe(`ScrollRestoration`, () => {
         future: {
           v7_fetcherPersist: true,
           v7_partialHydration: true,
-          v7_skipActionStatusRevalidation: true
-        }
+          v7_skipActionStatusRevalidation: true,
+        },
       }
     );
     let { container } = render(
@@ -126,8 +126,8 @@ describe(`ScrollRestoration`, () => {
         future: {
           v7_fetcherPersist: true,
           v7_partialHydration: true,
-          v7_skipActionStatusRevalidation: true
-        }
+          v7_skipActionStatusRevalidation: true,
+        },
       }
     );
     let { container } = render(
@@ -191,8 +191,8 @@ describe(`ScrollRestoration`, () => {
         future: {
           v7_fetcherPersist: true,
           v7_partialHydration: true,
-          v7_skipActionStatusRevalidation: true
-        }
+          v7_skipActionStatusRevalidation: true,
+        },
       }
     );
     let { container } = render(

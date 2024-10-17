@@ -1,4 +1,5 @@
-import { Routes, Route, Outlet, Link } from "react-router-dom";
+import { Routes, Route, Link } from "react-router";
+import { Outlet } from "react-router-dom";
 import { NoMatch } from "../inbox/no-match";
 import "./index.css";
 

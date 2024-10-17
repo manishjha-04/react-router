@@ -4,15 +4,8 @@ import * as ReactDOM from "react-dom/client";
 import { act } from "react-dom/test-utils";
 
 import type { To } from "react-router-dom";
-import {
-  BrowserRouter,
-  Routes,
-  Route,
-  Link,
-  Outlet,
-  useSearchParams,
-  useNavigate,
-} from "react-router-dom";
+import { BrowserRouter, Routes, Route, Link } from "react-router";
+import { Outlet, useSearchParams, useNavigate } from "react-router-dom";
 
 describe("trailing slashes", () => {
   let node: HTMLDivElement;

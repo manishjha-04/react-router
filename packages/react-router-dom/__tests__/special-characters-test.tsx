@@ -10,20 +10,16 @@ import {
   screen,
 } from "@testing-library/react";
 import type { Location, Params } from "react-router-dom";
+import { BrowserRouter, Link, Routes, Route, useLocation } from "react-router";
+import { RouterProvider } from "react-router/dom";
 import {
-  BrowserRouter,
   HashRouter,
   MemoryRouter,
-  Link,
   Outlet,
-  Routes,
-  Route,
-  RouterProvider,
   createBrowserRouter,
   createHashRouter,
   createMemoryRouter,
   createRoutesFromElements,
-  useLocation,
   useMatch,
   useNavigate,
   useParams,
@@ -287,8 +283,8 @@ describe("special character tests", () => {
         future: {
           v7_fetcherPersist: true,
           v7_partialHydration: true,
-          v7_skipActionStatusRevalidation: true
-        }
+          v7_skipActionStatusRevalidation: true,
+        },
       });
       ctx = render(
         <RouterProvider
@@ -759,8 +755,8 @@ describe("special character tests", () => {
         future: {
           v7_fetcherPersist: true,
           v7_partialHydration: true,
-          v7_skipActionStatusRevalidation: true
-        }
+          v7_skipActionStatusRevalidation: true,
+        },
       });
       ctx = render(
         <RouterProvider
@@ -1020,8 +1016,8 @@ describe("special character tests", () => {
             future: {
               v7_fetcherPersist: true,
               v7_partialHydration: true,
-              v7_skipActionStatusRevalidation: true
-            }
+              v7_skipActionStatusRevalidation: true,
+            },
           }
         );
         let ctx = render(
@@ -1060,8 +1056,8 @@ describe("special character tests", () => {
             future: {
               v7_fetcherPersist: true,
               v7_partialHydration: true,
-              v7_skipActionStatusRevalidation: true
-            }
+              v7_skipActionStatusRevalidation: true,
+            },
           }
         );
         let ctx = render(
@@ -1109,8 +1105,8 @@ describe("special character tests", () => {
             future: {
               v7_fetcherPersist: true,
               v7_partialHydration: true,
-              v7_skipActionStatusRevalidation: true
-            }
+              v7_skipActionStatusRevalidation: true,
+            },
           }
         );
         let ctx = render(

@@ -1,10 +1,6 @@
-import {
-  Outlet,
-  Link,
-  createBrowserRouter,
-  RouterProvider,
-  useNavigation,
-} from "react-router-dom";
+import { Link } from "react-router";
+import { RouterProvider } from "react-router/dom";
+import { Outlet, createBrowserRouter, useNavigation } from "react-router-dom";
 
 const router = createBrowserRouter(
   [
@@ -62,7 +58,7 @@ const router = createBrowserRouter(
       v7_normalizeFormMethod: true,
       v7_fetcherPersist: true,
       v7_partialHydration: true,
-      v7_skipActionStatusRevalidation: true
+      v7_skipActionStatusRevalidation: true,
     },
   }
 );

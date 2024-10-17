@@ -1,19 +1,18 @@
 import * as React from "react";
 import * as ReactDOMClient from "react-dom/client";
+import { Link, useLocation } from "react-router";
+import { RouterProvider } from "react-router/dom";
 import {
   Await,
   createBrowserRouter,
   defer,
   Form,
   json,
-  Link,
   NavLink,
   Outlet,
-  RouterProvider,
   unstable_useViewTransitionState,
   useActionData,
   useLoaderData,
-  useLocation,
   useNavigate,
   useNavigation,
   useParams,
@@ -169,19 +168,19 @@ const router = createBrowserRouter(
               document.title = "Images";
             }, []);
             return (
-              (<div className="image-list">
+              <div className="image-list">
                 <h1>Image List</h1>
                 <div>
                   {images.map((src, idx) => (
                     // Adds 'transitioning' class to the <a> during the transition
-                    (<NavLink
+                    <NavLink
                       key={src}
                       to={`/images/${idx}`}
                       unstable_viewTransition
                     >
                       <p>Image Number {idx}</p>
                       <img src={src} alt={`Img ${idx}`} />
-                    </NavLink>)
+                    </NavLink>
 
                     // Render prop approach similar to isActive/isPending
                     // <NavLink
@@ -201,7 +200,7 @@ const router = createBrowserRouter(
                     // <NavImage key={src} src={src} idx={idx} />
                   ))}
                 </div>
-              </div>)
+              </div>
             );
           },
         },
@@ -229,7 +228,7 @@ const router = createBrowserRouter(
       v7_normalizeFormMethod: true,
       v7_fetcherPersist: true,
       v7_partialHydration: true,
-      v7_skipActionStatusRevalidation: true
+      v7_skipActionStatusRevalidation: true,
     },
   }
 );

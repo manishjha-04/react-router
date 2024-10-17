@@ -1,5 +1,6 @@
 import "./index.css";
-import { createBrowserRouter, RouterProvider } from "react-router-dom";
+import { RouterProvider } from "react-router/dom";
+import { createBrowserRouter } from "react-router-dom";
 
 import Root, { loader as rootLoader } from "./routes/root";
 import NewNote, { action as newNoteAction } from "./routes/new";
@@ -36,7 +37,7 @@ let router = createBrowserRouter(
       v7_normalizeFormMethod: true,
       v7_fetcherPersist: true,
       v7_partialHydration: true,
-      v7_skipActionStatusRevalidation: true
+      v7_skipActionStatusRevalidation: true,
     },
   }
 );

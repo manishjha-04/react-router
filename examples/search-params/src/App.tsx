@@ -1,5 +1,6 @@
 import * as React from "react";
-import { Link, Route, Routes, useSearchParams } from "react-router-dom";
+import { Link, Route, Routes } from "react-router";
+import { useSearchParams } from "react-router-dom";
 
 export default function App() {
   return (

@@ -3,9 +3,9 @@ import { act, render, screen, waitFor } from "@testing-library/react";
 import * as React from "react";
 import type { LoaderFunction } from "react-router";
 import { RouterProvider as ReactRouter_RouterProvider } from "react-router";
+import { RouterProvider as ReactRouterDom_RouterProvider } from "react-router/dom";
 import {
   Outlet,
-  RouterProvider as ReactRouterDom_RouterProvider,
   createBrowserRouter,
   createHashRouter,
   createMemoryRouter,

@@ -1,13 +1,8 @@
 import * as React from "react";
 import * as ReactDOM from "react-dom/client";
 import { act } from "react-dom/test-utils";
-import {
-  BrowserRouter,
-  Routes,
-  Route,
-  useNavigate,
-  useParams,
-} from "react-router-dom";
+import { BrowserRouter, Routes, Route } from "react-router";
+import { useNavigate, useParams } from "react-router-dom";
 
 describe("navigate with params", () => {
   let node: HTMLDivElement;

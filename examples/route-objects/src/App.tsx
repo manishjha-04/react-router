@@ -1,5 +1,6 @@
 import type { RouteObject } from "react-router-dom";
-import { Outlet, Link, useRoutes, useParams } from "react-router-dom";
+import { Link } from "react-router";
+import { Outlet, useRoutes, useParams } from "react-router-dom";
 
 export default function App() {
   let routes: RouteObject[] = [

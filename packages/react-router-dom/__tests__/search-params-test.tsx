@@ -1,7 +1,8 @@
 import * as React from "react";
 import * as ReactDOM from "react-dom/client";
 import { act } from "react-dom/test-utils";
-import { MemoryRouter, Routes, Route, useSearchParams } from "react-router-dom";
+import { Routes, Route } from "react-router";
+import { MemoryRouter, useSearchParams } from "react-router-dom";
 
 describe("useSearchParams", () => {
   let node: HTMLDivElement;

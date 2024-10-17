@@ -1,13 +1,6 @@
 import * as React from "react";
-import {
-  Routes,
-  Route,
-  Link,
-  useNavigate,
-  useLocation,
-  Navigate,
-  Outlet,
-} from "react-router-dom";
+import { Routes, Route, Link, useLocation } from "react-router";
+import { useNavigate, Navigate, Outlet } from "react-router-dom";
 import { fakeAuthProvider } from "./auth";
 
 export default function App() {

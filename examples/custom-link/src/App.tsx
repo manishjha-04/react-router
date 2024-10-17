@@ -1,11 +1,5 @@
-import {
-  Routes,
-  Route,
-  Outlet,
-  Link,
-  useMatch,
-  useResolvedPath,
-} from "react-router-dom";
+import { Routes, Route, Link } from "react-router";
+import { Outlet, useMatch, useResolvedPath } from "react-router-dom";
 import type { LinkProps } from "react-router-dom";
 
 export default function App() {

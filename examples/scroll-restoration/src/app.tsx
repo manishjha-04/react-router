@@ -1,13 +1,12 @@
 import * as React from "react";
 import type { Location, useMatches } from "react-router-dom";
+import { Link, useLocation } from "react-router";
+import { RouterProvider } from "react-router/dom";
 import {
   createBrowserRouter,
-  Link,
   Outlet,
-  RouterProvider,
   ScrollRestoration,
   useLoaderData,
-  useLocation,
   useNavigation,
 } from "react-router-dom";
 
@@ -48,7 +47,7 @@ let router = createBrowserRouter(
       v7_normalizeFormMethod: true,
       v7_fetcherPersist: true,
       v7_partialHydration: true,
-      v7_skipActionStatusRevalidation: true
+      v7_skipActionStatusRevalidation: true,
     },
   }
 );

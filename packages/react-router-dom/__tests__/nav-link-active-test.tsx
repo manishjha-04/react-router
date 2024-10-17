@@ -3,12 +3,10 @@ import "@testing-library/jest-dom";
 import { JSDOM } from "jsdom";
 import * as React from "react";
 import * as TestRenderer from "react-test-renderer";
+import { BrowserRouter, Routes, Route } from "react-router";
+import { RouterProvider } from "react-router/dom";
 import {
-  BrowserRouter,
   MemoryRouter,
-  Routes,
-  Route,
-  RouterProvider,
   NavLink,
   Outlet,
   createBrowserRouter,
@@ -666,8 +664,8 @@ describe("NavLink using a data router", () => {
         future: {
           v7_fetcherPersist: true,
           v7_partialHydration: true,
-          v7_skipActionStatusRevalidation: true
-        }
+          v7_skipActionStatusRevalidation: true,
+        },
       }
     );
     render(
@@ -718,8 +716,8 @@ describe("NavLink using a data router", () => {
         future: {
           v7_fetcherPersist: true,
           v7_partialHydration: true,
-          v7_skipActionStatusRevalidation: true
-        }
+          v7_skipActionStatusRevalidation: true,
+        },
       }
     );
     render(
@@ -785,8 +783,8 @@ describe("NavLink using a data router", () => {
         future: {
           v7_fetcherPersist: true,
           v7_partialHydration: true,
-          v7_skipActionStatusRevalidation: true
-        }
+          v7_skipActionStatusRevalidation: true,
+        },
       }
     );
     render(
@@ -852,8 +850,8 @@ describe("NavLink using a data router", () => {
         future: {
           v7_fetcherPersist: true,
           v7_partialHydration: true,
-          v7_skipActionStatusRevalidation: true
-        }
+          v7_skipActionStatusRevalidation: true,
+        },
       }
     );
     render(
@@ -913,8 +911,8 @@ describe("NavLink using a data router", () => {
         future: {
           v7_fetcherPersist: true,
           v7_partialHydration: true,
-          v7_skipActionStatusRevalidation: true
-        }
+          v7_skipActionStatusRevalidation: true,
+        },
       }
     );
     render(
@@ -972,8 +970,8 @@ describe("NavLink using a data router", () => {
         future: {
           v7_fetcherPersist: true,
           v7_partialHydration: true,
-          v7_skipActionStatusRevalidation: true
-        }
+          v7_skipActionStatusRevalidation: true,
+        },
       }
     );
     render(
@@ -1038,8 +1036,8 @@ describe("NavLink using a data router", () => {
         future: {
           v7_fetcherPersist: true,
           v7_partialHydration: true,
-          v7_skipActionStatusRevalidation: true
-        }
+          v7_skipActionStatusRevalidation: true,
+        },
       }
     );
     render(

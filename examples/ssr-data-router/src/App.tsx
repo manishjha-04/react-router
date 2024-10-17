@@ -1,5 +1,6 @@
 import type { RouteObject } from "react-router-dom";
-import { Outlet, Link, useLoaderData, redirect } from "react-router-dom";
+import { Link } from "react-router";
+import { Outlet, useLoaderData, redirect } from "react-router-dom";
 
 export const routes: RouteObject[] = [
   {

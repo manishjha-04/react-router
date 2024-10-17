@@ -1,13 +1,6 @@
 import * as React from "react";
-import {
-  Routes,
-  Route,
-  Outlet,
-  Link,
-  useLocation,
-  useNavigate,
-  useParams,
-} from "react-router-dom";
+import { Routes, Route, Link, useLocation } from "react-router";
+import { Outlet, useNavigate, useParams } from "react-router-dom";
 import { Dialog } from "@reach/dialog";
 import "@reach/dialog/styles.css";
 

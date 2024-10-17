@@ -6,10 +6,10 @@ import "./polyfills/drop-FormData-submitter";
 import * as React from "react";
 import { render, fireEvent, screen } from "@testing-library/react";
 import "@testing-library/jest-dom";
+import { Route } from "react-router";
+import { RouterProvider } from "react-router/dom";
 import {
   Form,
-  Route,
-  RouterProvider,
   createBrowserRouter,
   createHashRouter,
   createRoutesFromElements,

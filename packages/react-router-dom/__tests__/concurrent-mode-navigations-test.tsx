@@ -1,14 +1,12 @@
 import * as React from "react";
+import { Routes, Route, BrowserRouter } from "react-router";
+import { RouterProvider } from "react-router/dom";
 import {
   MemoryRouter,
-  Routes,
-  Route,
   useNavigate,
-  BrowserRouter,
   HashRouter,
   createMemoryRouter,
   createRoutesFromElements,
-  RouterProvider,
 } from "react-router-dom";
 import {
   act,

@@ -1,10 +1,7 @@
 import * as React from "react";
 import * as ReactDOM from "react-dom/client";
-import {
-  createBrowserRouter,
-  matchRoutes,
-  RouterProvider,
-} from "react-router-dom";
+import { RouterProvider } from "react-router/dom";
+import { createBrowserRouter, matchRoutes } from "react-router-dom";
 
 import { routes } from "./App";
 
@@ -33,7 +30,7 @@ async function hydrate() {
       v7_normalizeFormMethod: true,
       v7_fetcherPersist: true,
       v7_partialHydration: true,
-      v7_skipActionStatusRevalidation: true
+      v7_skipActionStatusRevalidation: true,
     },
   });
 

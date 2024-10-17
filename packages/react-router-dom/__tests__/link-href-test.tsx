@@ -1,13 +1,10 @@
 import * as React from "react";
+import { BrowserRouter, Link, Route, Routes } from "react-router";
+import { RouterProvider } from "react-router/dom";
 import {
-  BrowserRouter,
   HashRouter,
-  Link,
   MemoryRouter,
   Outlet,
-  Route,
-  RouterProvider,
-  Routes,
   createBrowserRouter,
   createHashRouter,
 } from "react-router-dom";
@@ -901,7 +898,7 @@ describe("<Link> href", () => {
               v7_normalizeFormMethod: true,
               v7_fetcherPersist: true,
               v7_partialHydration: true,
-              v7_skipActionStatusRevalidation: true
+              v7_skipActionStatusRevalidation: true,
             },
           }
         );

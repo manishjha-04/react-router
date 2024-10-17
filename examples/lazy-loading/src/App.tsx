@@ -1,5 +1,6 @@
 import * as React from "react";
-import { Routes, Route, Outlet, Link } from "react-router-dom";
+import { Routes, Route, Link } from "react-router";
+import { Outlet } from "react-router-dom";
 
 const About = React.lazy(() => import("./pages/About"));
 const Dashboard = React.lazy(() => import("./pages/Dashboard"));

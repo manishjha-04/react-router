@@ -1,12 +1,6 @@
 import * as React from "react";
-import {
-  Routes,
-  Route,
-  Outlet,
-  Link,
-  useSearchParams,
-  useParams,
-} from "react-router-dom";
+import { Routes, Route, Link } from "react-router";
+import { Outlet, useSearchParams, useParams } from "react-router-dom";
 import type { LinkProps } from "react-router-dom";
 import { VisuallyHidden } from "@reach/visually-hidden";
 
