@@ -664,7 +664,8 @@ describe("NavLink using a data router", () => {
         window: getWindow("/foo"),
 
         future: {
-          v7_fetcherPersist: true
+          v7_fetcherPersist: true,
+          v7_partialHydration: true
         }
       }
     );
@@ -714,7 +715,8 @@ describe("NavLink using a data router", () => {
         window: getWindow("/foo"),
 
         future: {
-          v7_fetcherPersist: true
+          v7_fetcherPersist: true,
+          v7_partialHydration: true
         }
       }
     );
@@ -779,7 +781,8 @@ describe("NavLink using a data router", () => {
         window: getWindow("/foo"),
 
         future: {
-          v7_fetcherPersist: true
+          v7_fetcherPersist: true,
+          v7_partialHydration: true
         }
       }
     );
@@ -844,7 +847,8 @@ describe("NavLink using a data router", () => {
         window: getWindow("/foo"),
 
         future: {
-          v7_fetcherPersist: true
+          v7_fetcherPersist: true,
+          v7_partialHydration: true
         }
       }
     );
@@ -903,7 +907,8 @@ describe("NavLink using a data router", () => {
         window: getWindow("/foo"),
 
         future: {
-          v7_fetcherPersist: true
+          v7_fetcherPersist: true,
+          v7_partialHydration: true
         }
       }
     );
@@ -960,7 +965,8 @@ describe("NavLink using a data router", () => {
         window: getWindow("/foo"),
 
         future: {
-          v7_fetcherPersist: true
+          v7_fetcherPersist: true,
+          v7_partialHydration: true
         }
       }
     );
@@ -1024,7 +1030,8 @@ describe("NavLink using a data router", () => {
         basename: "/base",
 
         future: {
-          v7_fetcherPersist: true
+          v7_fetcherPersist: true,
+          v7_partialHydration: true
         }
       }
     );

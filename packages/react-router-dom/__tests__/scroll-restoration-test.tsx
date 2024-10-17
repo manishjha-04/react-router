@@ -44,7 +44,8 @@ describe(`ScrollRestoration`, () => {
         window: testWindow,
 
         future: {
-          v7_fetcherPersist: true
+          v7_fetcherPersist: true,
+          v7_partialHydration: true
         }
       }
     );
@@ -122,7 +123,8 @@ describe(`ScrollRestoration`, () => {
         window: testWindow,
 
         future: {
-          v7_fetcherPersist: true
+          v7_fetcherPersist: true,
+          v7_partialHydration: true
         }
       }
     );
@@ -185,7 +187,8 @@ describe(`ScrollRestoration`, () => {
         window: testWindow,
 
         future: {
-          v7_fetcherPersist: true
+          v7_fetcherPersist: true,
+          v7_partialHydration: true
         }
       }
     );

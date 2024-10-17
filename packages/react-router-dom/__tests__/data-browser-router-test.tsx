@@ -6104,7 +6104,8 @@ function testDomRouter(
             window: getWindow("/"),
 
             future: {
-              v7_fetcherPersist: true
+              v7_fetcherPersist: true,
+              v7_partialHydration: true
             }
           }
         );

@@ -285,7 +285,8 @@ describe("special character tests", () => {
         window: testWindow,
 
         future: {
-          v7_fetcherPersist: true
+          v7_fetcherPersist: true,
+          v7_partialHydration: true
         }
       });
       ctx = render(
@@ -755,7 +756,8 @@ describe("special character tests", () => {
         window: testWindow,
 
         future: {
-          v7_fetcherPersist: true
+          v7_fetcherPersist: true,
+          v7_partialHydration: true
         }
       });
       ctx = render(
@@ -1014,7 +1016,8 @@ describe("special character tests", () => {
             window: testWindow,
 
             future: {
-              v7_fetcherPersist: true
+              v7_fetcherPersist: true,
+              v7_partialHydration: true
             }
           }
         );
@@ -1052,7 +1055,8 @@ describe("special character tests", () => {
             window: testWindow,
 
             future: {
-              v7_fetcherPersist: true
+              v7_fetcherPersist: true,
+              v7_partialHydration: true
             }
           }
         );
@@ -1099,7 +1103,8 @@ describe("special character tests", () => {
             window: testWindow,
 
             future: {
-              v7_fetcherPersist: true
+              v7_fetcherPersist: true,
+              v7_partialHydration: true
             }
           }
         );
