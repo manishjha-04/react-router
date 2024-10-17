@@ -10,8 +10,9 @@ ReactDOM.hydrateRoot(
   <React.StrictMode>
     <BrowserRouter
       future={{
-        v7_relativeSplatPath: true
-      }}>
+        v7_relativeSplatPath: true,
+      }}
+    >
       <App />
     </BrowserRouter>
   </React.StrictMode>

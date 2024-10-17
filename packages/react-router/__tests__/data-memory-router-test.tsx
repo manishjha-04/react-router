@@ -913,7 +913,9 @@ describe("createMemoryRouter", () => {
     let router = createMemoryRouter(
       createRoutesFromElements(
         <Route path="/deep">
-          <Route path="path/*" element={<Child />} />
+          <Route path="path">
+            <Route path="*" element={<Child />} />
+          </Route>
         </Route>
       ),
       {
@@ -938,7 +940,9 @@ describe("createMemoryRouter", () => {
     function Child() {
       return (
         <Routes>
-          <Route path="to/*" element={<GrandChild />} />
+          <Route path="to">
+            <Route path="*" element={<GrandChild />} />
+          </Route>
         </Routes>
       );
     }

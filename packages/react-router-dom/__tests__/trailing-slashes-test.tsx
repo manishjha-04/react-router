@@ -36,8 +36,9 @@ describe("trailing slashes", () => {
               basename="/app"
               window={window}
               future={{
-                v7_relativeSplatPath: true
-              }}>
+                v7_relativeSplatPath: true,
+              }}
+            >
               <Routes>
                 <Route
                   index
@@ -73,8 +74,9 @@ describe("trailing slashes", () => {
               basename="/app"
               window={window}
               future={{
-                v7_relativeSplatPath: true
-              }}>
+                v7_relativeSplatPath: true,
+              }}
+            >
               <Routes>
                 <Route
                   path=""
@@ -110,8 +112,9 @@ describe("trailing slashes", () => {
               basename="/app"
               window={window}
               future={{
-                v7_relativeSplatPath: true
-              }}>
+                v7_relativeSplatPath: true,
+              }}
+            >
               <Routes>
                 <Route
                   path="parent"
@@ -199,8 +202,9 @@ describe("trailing slashes", () => {
               basename="/app/"
               window={window}
               future={{
-                v7_relativeSplatPath: true
-              }}>
+                v7_relativeSplatPath: true,
+              }}
+            >
               <Routes>
                 <Route
                   index
@@ -236,8 +240,9 @@ describe("trailing slashes", () => {
               basename="/app/"
               window={window}
               future={{
-                v7_relativeSplatPath: true
-              }}>
+                v7_relativeSplatPath: true,
+              }}
+            >
               <Routes>
                 <Route
                   path=""
@@ -273,8 +278,9 @@ describe("trailing slashes", () => {
               basename="/app/"
               window={window}
               future={{
-                v7_relativeSplatPath: true
-              }}>
+                v7_relativeSplatPath: true,
+              }}
+            >
               <Routes>
                 <Route
                   path="parent"
@@ -367,8 +373,9 @@ describe("trailing slashes", () => {
               basename="/foo"
               window={window}
               future={{
-                v7_relativeSplatPath: true
-              }}>
+                v7_relativeSplatPath: true,
+              }}
+            >
               <Routes>
                 <Route index element={<h1>👋</h1>} />
                 <Route path="bar" element={<SingleNavigate to="/" />} />
@@ -390,8 +397,9 @@ describe("trailing slashes", () => {
               basename="/foo"
               window={window}
               future={{
-                v7_relativeSplatPath: true
-              }}>
+                v7_relativeSplatPath: true,
+              }}
+            >
               <Routes>
                 <Route index element={<h1>👋</h1>} />
                 <Route path="bar" element={<SingleNavigate to="../" />} />
@@ -414,8 +422,9 @@ describe("trailing slashes", () => {
               basename="/foo"
               window={window}
               future={{
-                v7_relativeSplatPath: true
-              }}>
+                v7_relativeSplatPath: true,
+              }}
+            >
               <Routes>
                 <Route index element={<SingleNavigate to="bar" />} />
                 <Route path="bar" element={<h1>👋</h1>} />
@@ -439,8 +448,9 @@ describe("trailing slashes", () => {
               basename="/foo"
               window={window}
               future={{
-                v7_relativeSplatPath: true
-              }}>
+                v7_relativeSplatPath: true,
+              }}
+            >
               <Routes>
                 <Route index element={<SingleNavigate to="bar/" />} />
                 <Route path="bar" element={<h1>👋</h1>} />
@@ -465,8 +475,9 @@ describe("trailing slashes", () => {
               basename="/foo/"
               window={window}
               future={{
-                v7_relativeSplatPath: true
-              }}>
+                v7_relativeSplatPath: true,
+              }}
+            >
               <Routes>
                 <Route index element={<h1>👋</h1>} />
                 <Route path="bar" element={<SingleNavigate to="/" />} />
@@ -488,8 +499,9 @@ describe("trailing slashes", () => {
               basename="/foo/"
               window={window}
               future={{
-                v7_relativeSplatPath: true
-              }}>
+                v7_relativeSplatPath: true,
+              }}
+            >
               <Routes>
                 <Route index element={<h1>👋</h1>} />
                 <Route path="bar" element={<SingleNavigate to=".." />} />
@@ -512,8 +524,9 @@ describe("trailing slashes", () => {
               basename="/foo/"
               window={window}
               future={{
-                v7_relativeSplatPath: true
-              }}>
+                v7_relativeSplatPath: true,
+              }}
+            >
               <Routes>
                 <Route index element={<SingleNavigate to="bar" />} />
                 <Route path="bar" element={<h1>👋</h1>} />
@@ -537,8 +550,9 @@ describe("trailing slashes", () => {
               basename="/foo/"
               window={window}
               future={{
-                v7_relativeSplatPath: true
-              }}>
+                v7_relativeSplatPath: true,
+              }}
+            >
               <Routes>
                 <Route index element={<SingleNavigate to="bar/" />} />
                 <Route path="bar" element={<h1>👋</h1>} />
@@ -564,8 +578,9 @@ describe("trailing slashes", () => {
               basename="/foo"
               window={window}
               future={{
-                v7_relativeSplatPath: true
-              }}>
+                v7_relativeSplatPath: true,
+              }}
+            >
               <Routes>
                 <Route index element={<h1>👋</h1>} />
                 <Route path="bar" element={<SingleNavigate to="" />} />
@@ -589,8 +604,9 @@ describe("trailing slashes", () => {
               basename="/foo"
               window={window}
               future={{
-                v7_relativeSplatPath: true
-              }}>
+                v7_relativeSplatPath: true,
+              }}
+            >
               <Routes>
                 <Route index element={<h1>👋</h1>} />
                 <Route path="bar" element={<SingleNavigate to="" />} />
@@ -616,8 +632,9 @@ describe("trailing slashes", () => {
               basename="/foo/"
               window={window}
               future={{
-                v7_relativeSplatPath: true
-              }}>
+                v7_relativeSplatPath: true,
+              }}
+            >
               <Routes>
                 <Route index element={<h1>👋</h1>} />
                 <Route path="bar" element={<SingleNavigate to="." />} />
@@ -641,8 +658,9 @@ describe("trailing slashes", () => {
               basename="/foo/"
               window={window}
               future={{
-                v7_relativeSplatPath: true
-              }}>
+                v7_relativeSplatPath: true,
+              }}
+            >
               <Routes>
                 <Route index element={<h1>👋</h1>} />
                 <Route path="bar" element={<SingleNavigate to="." />} />
@@ -678,8 +696,9 @@ describe("trailing slashes", () => {
             basename="/foo"
             window={window}
             future={{
-              v7_relativeSplatPath: true
-            }}>
+              v7_relativeSplatPath: true,
+            }}
+          >
             <Routes>
               <Route index element={<SetSearchParams />} />
             </Routes>
@@ -711,8 +730,9 @@ describe("trailing slashes", () => {
             basename="/foo/"
             window={window}
             future={{
-              v7_relativeSplatPath: true
-            }}>
+              v7_relativeSplatPath: true,
+            }}
+          >
             <Routes>
               <Route index element={<SetSearchParams />} />
             </Routes>

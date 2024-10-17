@@ -6,20 +6,23 @@ import {
 
 import "./index.css";
 
-let router = createBrowserRouter([
-  {
-    path: "/",
-    loader: () => ({ message: "Hello Data Router!" }),
-    Component() {
-      let data = useLoaderData() as { message: string };
-      return <h1>{data.message}</h1>;
+let router = createBrowserRouter(
+  [
+    {
+      path: "/",
+      loader: () => ({ message: "Hello Data Router!" }),
+      Component() {
+        let data = useLoaderData() as { message: string };
+        return <h1>{data.message}</h1>;
+      },
     },
-  },
-], {
-  future: {
-    v7_relativeSplatPath: true
+  ],
+  {
+    future: {
+      v7_relativeSplatPath: true,
+    },
   }
-});
+);
 
 export default function App() {
   return <RouterProvider router={router} fallbackElement={<p>Loading...</p>} />;

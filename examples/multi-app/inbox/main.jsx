@@ -11,8 +11,9 @@ ReactDOM.createRoot(document.getElementById("root")).render(
     <BrowserRouter
       basename="inbox"
       future={{
-        v7_relativeSplatPath: true
-      }}>
+        v7_relativeSplatPath: true,
+      }}
+    >
       <InboxApp />
     </BrowserRouter>
   </React.StrictMode>

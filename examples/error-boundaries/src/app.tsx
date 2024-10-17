@@ -10,31 +10,34 @@ import {
   projectLoader,
 } from "./routes";
 
-let router = createBrowserRouter([
+let router = createBrowserRouter(
+  [
+    {
+      path: "/",
+      element: <Layout />,
+      children: [
+        {
+          path: "",
+          element: <Outlet />,
+          errorElement: <RootErrorBoundary />,
+          children: [
+            {
+              path: "projects/:projectId",
+              element: <Project />,
+              errorElement: <ProjectErrorBoundary />,
+              loader: projectLoader,
+            },
+          ],
+        },
+      ],
+    },
+  ],
   {
-    path: "/",
-    element: <Layout />,
-    children: [
-      {
-        path: "",
-        element: <Outlet />,
-        errorElement: <RootErrorBoundary />,
-        children: [
-          {
-            path: "projects/:projectId",
-            element: <Project />,
-            errorElement: <ProjectErrorBoundary />,
-            loader: projectLoader,
-          },
-        ],
-      },
-    ],
-  },
-], {
-  future: {
-    v7_relativeSplatPath: true
+    future: {
+      v7_relativeSplatPath: true,
+    },
   }
-});
+);
 
 if (import.meta.hot) {
   import.meta.hot.dispose(() => router.dispose());

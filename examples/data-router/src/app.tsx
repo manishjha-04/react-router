@@ -24,42 +24,45 @@ import { addTodo, deleteTodo, getTodos } from "./todos";
 
 import "./index.css";
 
-let router = createBrowserRouter([
+let router = createBrowserRouter(
+  [
+    {
+      path: "/",
+      Component: Layout,
+      children: [
+        {
+          index: true,
+          loader: homeLoader,
+          Component: Home,
+        },
+        {
+          path: "todos",
+          action: todosAction,
+          loader: todosLoader,
+          Component: TodosList,
+          ErrorBoundary: TodosBoundary,
+          children: [
+            {
+              path: ":id",
+              loader: todoLoader,
+              Component: Todo,
+            },
+          ],
+        },
+        {
+          path: "deferred",
+          loader: deferredLoader,
+          Component: DeferredPage,
+        },
+      ],
+    },
+  ],
   {
-    path: "/",
-    Component: Layout,
-    children: [
-      {
-        index: true,
-        loader: homeLoader,
-        Component: Home,
-      },
-      {
-        path: "todos",
-        action: todosAction,
-        loader: todosLoader,
-        Component: TodosList,
-        ErrorBoundary: TodosBoundary,
-        children: [
-          {
-            path: ":id",
-            loader: todoLoader,
-            Component: Todo,
-          },
-        ],
-      },
-      {
-        path: "deferred",
-        loader: deferredLoader,
-        Component: DeferredPage,
-      },
-    ],
-  },
-], {
-  future: {
-    v7_relativeSplatPath: true
+    future: {
+      v7_relativeSplatPath: true,
+    },
   }
-});
+);
 
 if (import.meta.hot) {
   import.meta.hot.dispose(() => router.dispose());
@@ -89,14 +92,12 @@ export function Layout() {
   return (
     <>
       <h1>Data Router Example</h1>
-
       <p>
         This example demonstrates some of the core features of React Router
         including nested &lt;Route&gt;s, &lt;Outlet&gt;s, &lt;Link&gt;s, and
         using a "*" route (aka "splat route") to render a "not found" page when
         someone visits an unrecognized URL.
       </p>
-
       <nav>
         <ul>
           <li>
@@ -234,7 +235,7 @@ export function TodosList() {
       </ul>
       <Form method="post" ref={formRef}>
         <input type="hidden" name="action" value="add" />
-        <input name="todo"></input>
+        <input name="todo" />
         <button type="submit" disabled={isAdding}>
           {isAdding ? "Adding..." : "Add"}
         </button>
@@ -266,7 +267,6 @@ export function TodoItem({ id, todo }: TodoItemProps) {
   return (
     <>
       <Link to={`/todos/${id}`}>{todo}</Link>
-      &nbsp;
       <fetcher.Form method="post" style={{ display: "inline" }}>
         <input type="hidden" name="action" value="delete" />
         <button type="submit" name="todoId" value={id} disabled={isDeleting}>
@@ -350,32 +350,27 @@ export function DeferredPage() {
       {/* Critical data renders immediately */}
       <p>{data.critical1}</p>
       <p>{data.critical2}</p>
-
       {/* Pre-resolved deferred data never triggers the fallback */}
       <React.Suspense fallback={<p>should not see me!</p>}>
         <Await resolve={data.lazyResolved}>
           <RenderAwaitedData />
         </Await>
       </React.Suspense>
-
       {/* Deferred data can be rendered using a component + the useAsyncValue() hook */}
       <React.Suspense fallback={<p>loading 1...</p>}>
         <Await resolve={data.lazy1}>
           <RenderAwaitedData />
         </Await>
       </React.Suspense>
-
       <React.Suspense fallback={<p>loading 2...</p>}>
         <Await resolve={data.lazy2}>
           <RenderAwaitedData />
         </Await>
       </React.Suspense>
-
       {/* Or you can bypass the hook and use a render function */}
       <React.Suspense fallback={<p>loading 3...</p>}>
         <Await resolve={data.lazy3}>{(data: string) => <p>{data}</p>}</Await>
       </React.Suspense>
-
       {/* Deferred rejections render using the useAsyncError hook */}
       <React.Suspense fallback={<p>loading (error)...</p>}>
         <Await resolve={data.lazyError} errorElement={<RenderAwaitedError />}>
@@ -397,7 +392,8 @@ function RenderAwaitedError() {
     <p style={{ color: "red" }}>
       Error (errorElement)!
       <br />
-      {error.message} {error.stack}
+      {error.message}
+      {error.stack}
     </p>
   );
 }

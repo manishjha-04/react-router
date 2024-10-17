@@ -23,7 +23,6 @@ export default function Root() {
           ))}
         </ul>
       </div>
-
       <div style={{ flex: 1, padding: "0 2rem" }}>
         <Outlet />
       </div>

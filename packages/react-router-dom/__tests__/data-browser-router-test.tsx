@@ -3391,10 +3391,9 @@ function testDomRouter(
       it("navigates relative to the URL for splat routes", async () => {
         let router = createTestRouter(
           createRoutesFromElements(
-            <Route
-              path="inbox/messages/*"
-              element={<Form action=".." relative="path" />}
-            />
+            <Route path="inbox/messages">
+              <Route path="*" element={<Form action=".." relative="path" />} />
+            </Route>
           ),
           {
             window: getWindow("/inbox/messages/1/2/3"),
@@ -3928,14 +3927,12 @@ function testDomRouter(
               <Form id="myform" method="post">
                 <input type="text" name="tasks" defaultValue="first" />
                 <input type="text" name="tasks" defaultValue="second" />
-
                 <button name="tasks" value="">
                   Add Task
                 </button>
                 <button value="">No Name</button>
                 <input type="image" name="tasks" alt="Add Task" />
                 <input type="image" alt="No Name" />
-
                 <input type="text" name="tasks" defaultValue="last" />
               </Form>
             </>
@@ -5676,9 +5673,9 @@ function testDomRouter(
                       Component() {
                         let fetcher = useFetcher();
                         return (
-                          <button onClick={() => fetcher.load("/fetch")}>
-                            {`Load (${fetcher.state})`}
-                          </button>
+                          <button
+                            onClick={() => fetcher.load("/fetch")}
+                          >{`Load (${fetcher.state})`}</button>
                         );
                       },
                     },
@@ -5751,9 +5748,7 @@ function testDomRouter(
                                 { method: "post", action: "/fetch" }
                               )
                             }
-                          >
-                            {`Submit (${fetcher.state})`}
-                          </button>
+                          >{`Submit (${fetcher.state})`}</button>
                         );
                       },
                     },
@@ -5813,9 +5808,9 @@ function testDomRouter(
                       Component() {
                         let fetcher = useFetcher();
                         return (
-                          <button onClick={() => fetcher.load("/fetch")}>
-                            {`Load (${fetcher.state})`}
-                          </button>
+                          <button
+                            onClick={() => fetcher.load("/fetch")}
+                          >{`Load (${fetcher.state})`}</button>
                         );
                       },
                     },
@@ -5882,9 +5877,7 @@ function testDomRouter(
                                 { method: "post", action: "/fetch" }
                               )
                             }
-                          >
-                            {`Submit (${fetcher.state})`}
-                          </button>
+                          >{`Submit (${fetcher.state})`}</button>
                         );
                       },
                     },
@@ -5950,9 +5943,7 @@ function testDomRouter(
                                 { method: "post", action: "/fetch" }
                               )
                             }
-                          >
-                            {`Submit (${fetcher.state})`}
-                          </button>
+                          >{`Submit (${fetcher.state})`}</button>
                         );
                       },
                     },
@@ -6024,9 +6015,7 @@ function testDomRouter(
                                 { method: "post", action: "/fetch" }
                               )
                             }
-                          >
-                            {`Submit (${fetcher.state})`}
-                          </button>
+                          >{`Submit (${fetcher.state})`}</button>
                         );
                       },
                     },
@@ -6104,9 +6093,7 @@ function testDomRouter(
                                 { method: "post", action: "/fetch" }
                               )
                             }
-                          >
-                            {`Submit (${fetcher.state})`}
-                          </button>
+                          >{`Submit (${fetcher.state})`}</button>
                         );
                       },
                     },
@@ -6174,9 +6161,7 @@ function testDomRouter(
                         let fetcher = useFetcher();
                         return (
                           <fetcher.Form method="post" action="/fetch">
-                            <button type="submit">
-                              {`Submit (${fetcher.state})`}
-                            </button>
+                            <button type="submit">{`Submit (${fetcher.state})`}</button>
                           </fetcher.Form>
                         );
                       },
@@ -6235,9 +6220,9 @@ function testDomRouter(
                       Component() {
                         let fetcher = useFetcher();
                         return (
-                          <button onClick={() => fetcher.load("/fetch")}>
-                            {`Load (${fetcher.state})`}
-                          </button>
+                          <button
+                            onClick={() => fetcher.load("/fetch")}
+                          >{`Load (${fetcher.state})`}</button>
                         );
                       },
                     },
@@ -6303,9 +6288,9 @@ function testDomRouter(
                         return (
                           <>
                             <h1>Index</h1>
-                            <button onClick={() => fetcher.load("/fetch")}>
-                              {`Load (${fetcher.state})`}
-                            </button>
+                            <button
+                              onClick={() => fetcher.load("/fetch")}
+                            >{`Load (${fetcher.state})`}</button>
                           </>
                         );
                       },
@@ -6381,9 +6366,7 @@ function testDomRouter(
                                 { method: "post", action: "/fetch" }
                               )
                             }
-                          >
-                            {`Submit (${fetcher.state})`}
-                          </button>
+                          >{`Submit (${fetcher.state})`}</button>
                         );
                       },
                     },
@@ -6456,9 +6439,7 @@ function testDomRouter(
                                   { method: "post", action: "/fetch" }
                                 )
                               }
-                            >
-                              {`Submit (${fetcher.state})`}
-                            </button>
+                            >{`Submit (${fetcher.state})`}</button>
                           </>
                         );
                       },

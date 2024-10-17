@@ -17,29 +17,32 @@ import {
   useLocation,
 } from "react-router-dom";
 
-let router = createBrowserRouter(createRoutesFromElements(
-  <Route path="/" element={<Layout />}>
-    <Route index element={<h2>Index</h2>} />
-    <Route path="one" element={<h2>One</h2>} />
-    <Route path="two" element={<h2>Two</h2>} />
-    <Route
-      path="three"
-      action={() => json({ ok: true })}
-      element={
-        <>
-          <h2>Three</h2>
-          <ImportantForm />
-        </>
-      }
-    />
-    <Route path="four" element={<h2>Four</h2>} />
-    <Route path="five" element={<h2>Five</h2>} />
-  </Route>
-), {
-  future: {
-    v7_relativeSplatPath: true
+let router = createBrowserRouter(
+  createRoutesFromElements(
+    <Route path="/" element={<Layout />}>
+      <Route index element={<h2>Index</h2>} />
+      <Route path="one" element={<h2>One</h2>} />
+      <Route path="two" element={<h2>Two</h2>} />
+      <Route
+        path="three"
+        action={() => json({ ok: true })}
+        element={
+          <>
+            <h2>Three</h2>
+            <ImportantForm />
+          </>
+        }
+      />
+      <Route path="four" element={<h2>Four</h2>} />
+      <Route path="five" element={<h2>Five</h2>} />
+    </Route>
+  ),
+  {
+    future: {
+      v7_relativeSplatPath: true,
+    },
   }
-});
+);
 
 if (import.meta.hot) {
   import.meta.hot.dispose(() => router.dispose());
@@ -69,12 +72,12 @@ function Layout() {
     <>
       <h1>Navigation Blocking Example</h1>
       <nav>
-        <Link to="/">Index</Link>&nbsp;&nbsp;
-        <Link to="/one">One</Link>&nbsp;&nbsp;
-        <Link to="/two">Two</Link>&nbsp;&nbsp;
-        <Link to="/three">Three (Form with blocker)</Link>&nbsp;&nbsp;
-        <Link to="/four">Four</Link>&nbsp;&nbsp;
-        <Link to="/five">Five</Link>&nbsp;&nbsp;
+        <Link to="/">Index</Link>
+        <Link to="/one">One</Link>
+        <Link to="/two">Two</Link>
+        <Link to="/three">Three (Form with blocker)</Link>
+        <Link to="/four">Four</Link>
+        <Link to="/five">Five</Link>
       </nav>
       <p>
         Current location (index): {location.pathname} ({historyIndex})
@@ -119,7 +122,6 @@ function ImportantForm() {
           <span style={{ color: "green" }}>No</span>
         )}
       </p>
-
       <Form method="post">
         <label>
           Enter some important data:
@@ -131,7 +133,6 @@ function ImportantForm() {
         </label>
         <button type="submit">Save</button>
       </Form>
-
       {blocker ? <ConfirmNavigation blocker={blocker} /> : null}
     </>
   );

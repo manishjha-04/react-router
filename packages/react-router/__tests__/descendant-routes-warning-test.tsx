@@ -18,7 +18,6 @@ describe("Descendant <Routes>", () => {
         return (
           <div>
             <h1>React</h1>
-
             <Routes>
               <Route
                 path="react-fundamentals"
@@ -66,7 +65,6 @@ Please change the parent <Route path="react"> to <Route path="react/*">.`);
         return (
           <div>
             <h1>React</h1>
-
             <Routes>
               <Route
                 path="/react-fundamentals"
@@ -102,7 +100,6 @@ Please change the parent <Route path="/"> to <Route path="*">.`);
         return (
           <div>
             <h1>React</h1>
-
             <Routes>
               <Route
                 path="react-fundamentals"
@@ -127,7 +124,9 @@ Please change the parent <Route path="/"> to <Route path="*">.`);
           <MemoryRouter initialEntries={["/courses/react"]}>
             <Routes>
               <Route path="courses" element={<Courses />}>
-                <Route path="react/*" element={<ReactCourses />} />
+                <Route path="react">
+                  <Route path="*" element={<ReactCourses />} />
+                </Route>
               </Route>
             </Routes>
           </MemoryRouter>

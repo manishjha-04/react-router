@@ -29,16 +29,13 @@ export default function App() {
   return (
     <div>
       <h1>Route Objects Example</h1>
-
       <p>
         This example demonstrates how to use React Router's "route object" API
         instead of the JSX API to configure your routes. Both APIs are
         first-class. In fact, React Router actually uses the object-based API
         internally by creating route objects from your{" "}
-        <code>&lt;Route&gt;</code>
-        elements.
+        <code>&lt;Route&gt;</code>elements.
       </p>
-
       <p>
         React Router exposes a <code>useRoutes()</code> hook that allows you to
         hook into the same matching algorithm that <code>&lt;Routes&gt;</code>{" "}
@@ -46,7 +43,6 @@ export default function App() {
         When you use this hook, you get back an element that will render your
         entire route hierarchy.
       </p>
-
       {element}
     </div>
   );
@@ -68,9 +64,7 @@ function Layout() {
           </li>
         </ul>
       </nav>
-
       <hr />
-
       <Outlet />
     </div>
   );
@@ -97,7 +91,6 @@ function CoursesIndex() {
   return (
     <div>
       <p>Please choose a course:</p>
-
       <nav>
         <ul>
           <li>
@@ -123,9 +116,7 @@ function Course() {
       <h2>
         Welcome to the {id!.split("-").map(capitalizeString).join(" ")} course!
       </h2>
-
       <p>This is a great course. You're gonna love it!</p>
-
       <Link to="/courses">See all courses</Link>
     </div>
   );

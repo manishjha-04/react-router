@@ -13,9 +13,7 @@ export function DashboardLayout() {
           </li>
         </ul>
       </nav>
-
       <hr />
-
       <Outlet />
     </div>
   );

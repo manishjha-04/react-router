@@ -171,7 +171,7 @@ describe("special character tests", () => {
         return (
           <>
             <h1>{heading}</h1>
-            <CaptureLocation></CaptureLocation>
+            <CaptureLocation />
           </>
         );
       }
@@ -189,10 +189,12 @@ describe("special character tests", () => {
               element={<Comp heading="Parent Nested Param Route" />}
             />
           </Route>
-          <Route
-            path="/inline-splat/*"
-            element={<Comp heading="Inline Nested Splat Route" />}
-          />
+          <Route path="/inline-splat">
+            <Route
+              path="*"
+              element={<Comp heading="Inline Nested Splat Route" />}
+            />
+          </Route>
           <Route path="/splat">
             <Route
               path="*"
@@ -203,18 +205,22 @@ describe("special character tests", () => {
             path="/reset"
             element={<Link to={navigatePath}>Link to path</Link>}
           />
-          <Route
-            path="/descendant/:param/*"
-            element={
-              <Routes>
-                <Route
-                  path="match"
-                  element={<Comp heading="Descendant Route" />}
-                />
-              </Routes>
-            }
-          />
-          <Route path="/*" element={<Comp heading="Root Splat Route" />} />
+          <Route path="/descendant/:param">
+            <Route
+              path="*"
+              element={
+                <Routes>
+                  <Route
+                    path="match"
+                    element={<Comp heading="Descendant Route" />}
+                  />
+                </Routes>
+              }
+            />
+          </Route>
+          <Route path="">
+            <Route path="*" element={<Comp heading="Root Splat Route" />} />
+          </Route>
         </>
       );
 
@@ -225,8 +231,9 @@ describe("special character tests", () => {
         <BrowserRouter
           window={testWindow}
           future={{
-            v7_relativeSplatPath: true
-          }}>
+            v7_relativeSplatPath: true,
+          }}
+        >
           <Routes>{routeElements}</Routes>
         </BrowserRouter>
       );
@@ -539,8 +546,9 @@ describe("special character tests", () => {
         <BrowserRouter
           window={getWindow("/parent/child/%20%20param%20%20")}
           future={{
-            v7_relativeSplatPath: true
-          }}>
+            v7_relativeSplatPath: true,
+          }}
+        >
           <App />
         </BrowserRouter>
       );
@@ -577,7 +585,9 @@ describe("special character tests", () => {
       function App() {
         return (
           <Routes>
-            <Route path="/parent/*" element={<Parent />} />
+            <Route path="/parent">
+              <Route path="*" element={<Parent />} />
+            </Route>
           </Routes>
         );
       }
@@ -585,7 +595,9 @@ describe("special character tests", () => {
       function Parent() {
         return (
           <Routes>
-            <Route path="child/:param/*" element={<Child />} />
+            <Route path="child/:param">
+              <Route path="*" element={<Child />} />
+            </Route>
           </Routes>
         );
       }
@@ -695,8 +707,9 @@ describe("special character tests", () => {
         <BrowserRouter
           window={testWindow}
           future={{
-            v7_relativeSplatPath: true
-          }}>
+            v7_relativeSplatPath: true,
+          }}
+        >
           <Routes>{routeElements}</Routes>
         </BrowserRouter>
       );
@@ -902,8 +915,9 @@ describe("special character tests", () => {
           <BrowserRouter
             window={testWindow}
             future={{
-              v7_relativeSplatPath: true
-            }}>
+              v7_relativeSplatPath: true,
+            }}
+          >
             <Routes>
               <Route path="/with space" element={<ShowPath />} />
             </Routes>
@@ -930,8 +944,9 @@ describe("special character tests", () => {
           <BrowserRouter
             window={testWindow}
             future={{
-              v7_relativeSplatPath: true
-            }}>
+              v7_relativeSplatPath: true,
+            }}
+          >
             <Routes>
               <Route path="/" element={<Start />} />
               <Route path="/with space" element={<ShowPath />} />

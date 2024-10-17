@@ -2098,14 +2098,16 @@ describe("useNavigate", () => {
           renderer = TestRenderer.create(
             <MemoryRouter basename="/base" initialEntries={["/base"]}>
               <Routes>
-                <Route
-                  path="/*"
-                  element={
-                    <Routes>
-                      <Route index element={<Home />} />
-                    </Routes>
-                  }
-                />
+                <Route path="">
+                  <Route
+                    path="*"
+                    element={
+                      <Routes>
+                        <Route index element={<Home />} />
+                      </Routes>
+                    }
+                  />
+                </Route>
                 <Route path="/path" element={<h1>Path</h1>} />
               </Routes>
             </MemoryRouter>

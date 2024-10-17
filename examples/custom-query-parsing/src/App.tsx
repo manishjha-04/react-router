@@ -7,12 +7,10 @@ export default function App() {
   return (
     <div>
       <h1>Custom Query Parsing Example</h1>
-
       <p>
         This example demonstrates how to store a complex data structure in a URL
         query parameter.
       </p>
-
       <p>
         Each time a field in the form below changes, the URL is updated with a
         serialized version of the form's values. To see the effect this has,
@@ -20,7 +18,6 @@ export default function App() {
         bar and paste it into a new tab in your browser to see the form in the
         exact same state as when you left it!
       </p>
-
       <Routes>
         <Route index element={<Home />} />
         <Route path="*" element={<NoMatch />} />
@@ -93,7 +90,6 @@ function Home() {
     <div>
       <form onChange={handleChange}>
         <p>What would you like on your pizza?</p>
-
         <p>
           <label>
             <input
@@ -125,7 +121,6 @@ function Home() {
             Olives
           </label>
         </p>
-
         <p>
           <label>
             <input
@@ -157,7 +152,6 @@ function Home() {
             Deep Dish
           </label>
         </p>
-
         <p>
           <label>
             <input
@@ -169,11 +163,8 @@ function Home() {
           </label>
         </p>
       </form>
-
       <hr />
-
       <p>The current form values are:</p>
-
       <pre>{JSON.stringify(pizza || {}, null, 2)}</pre>
     </div>
   );

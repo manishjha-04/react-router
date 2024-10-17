@@ -16,10 +16,8 @@ export function Layout() {
   return (
     <>
       <nav>
-        <Link to="/projects/authorized">Authorized Project</Link>
-        &nbsp;|&nbsp;
-        <Link to="/projects/unauthorized">Unauthorized Project</Link>
-        &nbsp;|&nbsp;
+        <Link to="/projects/authorized">Authorized Project</Link>| 
+        <Link to="/projects/unauthorized">Unauthorized Project</Link>| 
         <Link to="/projects/broken">Broken Project</Link>
       </nav>
       <p>
@@ -40,9 +38,9 @@ export function Layout() {
         <li>
           Clicking the "Broken Project" link will return some malformed data
           causing a render error. This is beyond what{" "}
-          <code>&lt;ProjectErrorBoundary&gt;</code> can handle, so it re-throws
+          <code>&lt;ProjectErrorBoundary&gt;</code>can handle, so it re-throws
           the error and it gets handled by{" "}
-          <code>&lt;RootErrorBoundary&gt;</code> instead.
+          <code>&lt;RootErrorBoundary&gt;</code>instead.
         </li>
       </ul>
       <Outlet />

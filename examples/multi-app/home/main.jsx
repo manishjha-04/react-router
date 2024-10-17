@@ -9,8 +9,9 @@ ReactDOM.createRoot(document.getElementById("root")).render(
     {/* No basename for this router. This app renders at the root / URL. */}
     <BrowserRouter
       future={{
-        v7_relativeSplatPath: true
-      }}>
+        v7_relativeSplatPath: true,
+      }}
+    >
       <HomeApp />
     </BrowserRouter>
   </React.StrictMode>

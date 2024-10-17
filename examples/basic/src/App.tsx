@@ -4,7 +4,6 @@ export default function App() {
   return (
     <div>
       <h1>Basic Example</h1>
-
       <p>
         This example demonstrates some of the core features of React Router
         including nested <code>&lt;Route&gt;</code>s,{" "}
@@ -12,7 +11,6 @@ export default function App() {
         "*" route (aka "splat route") to render a "not found" page when someone
         visits an unrecognized URL.
       </p>
-
       {/* Routes nest inside one another. Nested route paths build upon
             parent route paths, and nested route elements render inside
             parent route elements. See the note about <Outlet> below. */}
@@ -21,7 +19,6 @@ export default function App() {
           <Route index element={<Home />} />
           <Route path="about" element={<About />} />
           <Route path="dashboard" element={<Dashboard />} />
-
           {/* Using path="*"" means "match anything", so this route
                 acts like a catch-all for URLs that we don't have explicit
                 routes for. */}
@@ -53,9 +50,7 @@ function Layout() {
           </li>
         </ul>
       </nav>
-
       <hr />
-
       {/* An <Outlet> renders whatever child route is currently active,
           so you can think about this <Outlet> as a placeholder for
           the child routes we defined above. */}

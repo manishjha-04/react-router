@@ -12,32 +12,35 @@ import "@reach/dialog/styles.css";
 
 import { IMAGES, getImageById } from "./images";
 
-const router = createBrowserRouter([
+const router = createBrowserRouter(
+  [
+    {
+      path: "/",
+      Component: Layout,
+      children: [
+        {
+          path: "/",
+          Component: Home,
+        },
+        {
+          path: "gallery",
+          Component: Gallery,
+          children: [
+            {
+              path: "img/:id",
+              Component: ImageView,
+            },
+          ],
+        },
+      ],
+    },
+  ],
   {
-    path: "/",
-    Component: Layout,
-    children: [
-      {
-        path: "/",
-        Component: Home,
-      },
-      {
-        path: "gallery",
-        Component: Gallery,
-        children: [
-          {
-            path: "img/:id",
-            Component: ImageView,
-          },
-        ],
-      },
-    ],
-  },
-], {
-  future: {
-    v7_relativeSplatPath: true
+    future: {
+      v7_relativeSplatPath: true,
+    },
   }
-});
+);
 
 export default function App() {
   return <RouterProvider router={router} />;

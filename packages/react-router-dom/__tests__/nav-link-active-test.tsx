@@ -215,8 +215,9 @@ describe("NavLink", () => {
           <BrowserRouter
             window={getWindow("/users/matt brophy")}
             future={{
-              v7_relativeSplatPath: true
-            }}>
+              v7_relativeSplatPath: true,
+            }}
+          >
             <Routes>
               <Route
                 path="/users/:name"
@@ -384,10 +385,7 @@ describe("NavLink", () => {
           <MemoryRouter initialEntries={["/home"]}>
             <Routes>
               <Route index element={<h1>Root</h1>} />
-              <Route
-                path="home"
-                element={<NavLink to="/">Root</NavLink>}
-              ></Route>
+              <Route path="home" element={<NavLink to="/">Root</NavLink>} />
             </Routes>
           </MemoryRouter>
         );
@@ -413,10 +411,7 @@ describe("NavLink", () => {
                   </>
                 }
               >
-                <Route
-                  path="home"
-                  element={<NavLink to="/">Root</NavLink>}
-                ></Route>
+                <Route path="home" element={<NavLink to="/">Root</NavLink>} />
               </Route>
             </Routes>
           </MemoryRouter>
@@ -725,7 +720,6 @@ describe("NavLink using a data router", () => {
           >
             Link to Bar
           </NavLink>
-
           <Outlet />
         </>
       );
@@ -780,7 +774,6 @@ describe("NavLink using a data router", () => {
           >
             Link to Bar
           </NavLink>
-
           <Outlet />
         </>
       );
@@ -832,7 +825,6 @@ describe("NavLink using a data router", () => {
                 : "Link to Bar (idle)"
             }
           </NavLink>
-
           <Outlet />
         </>
       );

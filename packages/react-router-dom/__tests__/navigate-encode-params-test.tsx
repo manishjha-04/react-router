@@ -43,8 +43,9 @@ describe("navigate with params", () => {
         ReactDOM.createRoot(node).render(
           <BrowserRouter
             future={{
-              v7_relativeSplatPath: true
-            }}>
+              v7_relativeSplatPath: true,
+            }}
+          >
             <Routes>
               <Route path="/" element={<Start />} />
               <Route path="blog/:slug" element={<Blog />} />
@@ -79,8 +80,9 @@ describe("navigate with params", () => {
         ReactDOM.createRoot(node).render(
           <BrowserRouter
             future={{
-              v7_relativeSplatPath: true
-            }}>
+              v7_relativeSplatPath: true,
+            }}
+          >
             <Routes>
               <Route path="/" element={<Start />} />
               <Route path="blog/:slug" element={<Blog />} />
