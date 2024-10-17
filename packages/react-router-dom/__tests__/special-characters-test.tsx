@@ -143,7 +143,7 @@ describe("special character tests", () => {
     return (
       <>
         <p>{location.pathname}</p>
-        <Link to="/reset">Link to reset</Link>
+        <Link to="..//reset">Link to reset</Link>
       </>
     );
   }
@@ -605,7 +605,7 @@ describe("special character tests", () => {
       function Child() {
         return (
           <>
-            <Link to="./grandchild">Link to grandchild</Link>
+            <Link to=".././grandchild">Link to grandchild</Link>
             <Routes>
               <Route path="grandchild" element={<Grandchild />} />
             </Routes>
@@ -654,7 +654,7 @@ describe("special character tests", () => {
         return (
           <>
             <p>{location.pathname}</p>
-            <Link to="/reset">Link to reset</Link>
+            <Link to="..//reset">Link to reset</Link>
           </>
         );
       }

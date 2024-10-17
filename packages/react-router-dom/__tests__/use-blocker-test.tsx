@@ -74,7 +74,7 @@ describe("navigation blocking with useBlocker", () => {
             useBlocker(shouldBlock);
             return (
               <div>
-                <Link to="/about">About</Link>
+                <Link to="..//about">About</Link>
                 <Outlet />
               </div>
             );
@@ -127,7 +127,7 @@ describe("navigation blocking with useBlocker", () => {
           }
           return (
             <div>
-              <Link to="/about">/about</Link>
+              <Link to="..//about">/about</Link>
               <Outlet />
             </div>
           );
@@ -165,8 +165,8 @@ describe("navigation blocking with useBlocker", () => {
           let blocker = useBlocker(true);
           return (
             <div>
-              <Link to="/one">/one</Link>
-              <Link to="/two">/two</Link>
+              <Link to="..//one">/one</Link>
+              <Link to="..//two">/two</Link>
               <Outlet />
               <p>{blocker.state}</p>
               {blocker.state === "blocked" ? (

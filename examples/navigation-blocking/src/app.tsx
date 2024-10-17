@@ -72,12 +72,12 @@ function Layout() {
     <>
       <h1>Navigation Blocking Example</h1>
       <nav>
-        <Link to="/">Index</Link>
-        <Link to="/one">One</Link>
-        <Link to="/two">Two</Link>
-        <Link to="/three">Three (Form with blocker)</Link>
-        <Link to="/four">Four</Link>
-        <Link to="/five">Five</Link>
+        <Link to="../">Index</Link>
+        <Link to="..//one">One</Link>
+        <Link to="..//two">Two</Link>
+        <Link to="..//three">Three (Form with blocker)</Link>
+        <Link to="..//four">Four</Link>
+        <Link to="..//five">Five</Link>
       </nav>
       <p>
         Current location (index): {location.pathname} ({historyIndex})

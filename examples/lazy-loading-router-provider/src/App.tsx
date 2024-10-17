@@ -100,13 +100,13 @@ function Layout() {
       <nav>
         <ul>
           <li>
-            <Link to="/">Home</Link>
+            <Link to="../">Home</Link>
           </li>
           <li>
-            <Link to="/about">About</Link>
+            <Link to="..//about">About</Link>
           </li>
           <li>
-            <Link to="/dashboard/messages">Messages (Dashboard)</Link>
+            <Link to="..//dashboard/messages">Messages (Dashboard)</Link>
           </li>
         </ul>
       </nav>
@@ -129,7 +129,7 @@ function NoMatch() {
     <div>
       <h2>Nothing to see here!</h2>
       <p>
-        <Link to="/">Go to the home page</Link>
+        <Link to="../">Go to the home page</Link>
       </p>
     </div>
   );

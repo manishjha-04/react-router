@@ -27,7 +27,7 @@ describe("usePrompt", () => {
             path: "/",
             Component() {
               usePrompt({ when: true, message: "Are you sure??" });
-              return <Link to="/arbitrary">Navigate</Link>;
+              return <Link to="..//arbitrary">Navigate</Link>;
             },
           },
           {
@@ -60,7 +60,7 @@ describe("usePrompt", () => {
             path: "/",
             Component() {
               usePrompt({ when: true, message: "Are you sure??" });
-              return <Link to="/arbitrary">Navigate</Link>;
+              return <Link to="..//arbitrary">Navigate</Link>;
             },
           },
           {
@@ -95,7 +95,7 @@ describe("usePrompt", () => {
             path: "/",
             Component() {
               usePrompt({ when: false, message: "Are you sure??" });
-              return <Link to="/arbitrary">Navigate</Link>;
+              return <Link to="..//arbitrary">Navigate</Link>;
             },
           },
           {

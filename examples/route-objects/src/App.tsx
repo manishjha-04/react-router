@@ -54,13 +54,13 @@ function Layout() {
       <nav>
         <ul>
           <li>
-            <Link to="/">Home</Link>
+            <Link to="../">Home</Link>
           </li>
           <li>
-            <Link to="/courses">Courses</Link>
+            <Link to="..//courses">Courses</Link>
           </li>
           <li>
-            <Link to="/nothing-here">Nothing Here</Link>
+            <Link to="..//nothing-here">Nothing Here</Link>
           </li>
         </ul>
       </nav>
@@ -94,13 +94,13 @@ function CoursesIndex() {
       <nav>
         <ul>
           <li>
-            <Link to="react-fundamentals">React Fundamentals</Link>
+            <Link to="../react-fundamentals">React Fundamentals</Link>
           </li>
           <li>
-            <Link to="advanced-react">Advanced React</Link>
+            <Link to="../advanced-react">Advanced React</Link>
           </li>
           <li>
-            <Link to="react-router">React Router</Link>
+            <Link to="../react-router">React Router</Link>
           </li>
         </ul>
       </nav>
@@ -117,7 +117,7 @@ function Course() {
         Welcome to the {id!.split("-").map(capitalizeString).join(" ")} course!
       </h2>
       <p>This is a great course. You're gonna love it!</p>
-      <Link to="/courses">See all courses</Link>
+      <Link to="..//courses">See all courses</Link>
     </div>
   );
 }
@@ -131,7 +131,7 @@ function NoMatch() {
     <div>
       <h2>It looks like you're lost...</h2>
       <p>
-        <Link to="/">Go to the home page</Link>
+        <Link to="../">Go to the home page</Link>
       </p>
     </div>
   );

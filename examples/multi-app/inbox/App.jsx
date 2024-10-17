@@ -36,7 +36,7 @@ function Layout() {
             <a href="/about">About</a>
           </li>
           <li>
-            <Link to="/">Inbox</Link>
+            <Link to="../">Inbox</Link>
           </li>
         </ul>
       </nav>

@@ -56,7 +56,7 @@ describe("A <StaticRouterProvider>", () => {
       return (
         <>
           <h1>👋</h1>
-          <Link to="/the/other/path">Other</Link>
+          <Link to="..//the/other/path">Other</Link>
         </>
       );
     }
@@ -199,7 +199,7 @@ describe("A <StaticRouterProvider>", () => {
       return (
         <>
           <h1>👋</h1>
-          <Link to="/the/other/path">Other</Link>
+          <Link to="..//the/other/path">Other</Link>
         </>
       );
     }
@@ -324,7 +324,7 @@ describe("A <StaticRouterProvider>", () => {
       return (
         <>
           <h1>👋</h1>
-          <Link to="/the/other/path">Other</Link>
+          <Link to="..//the/other/path">Other</Link>
         </>
       );
     }
@@ -513,7 +513,7 @@ describe("A <StaticRouterProvider>", () => {
   });
 
   it("encodes auto-generated <a href> values to avoid hydration errors", async () => {
-    let routes = [{ path: "/path/:param", element: <Link to=".">👋</Link> }];
+    let routes = [{ path: "/path/:param", element: <Link to="../.">👋</Link> }];
     let { query } = createStaticHandler(routes);
 
     let context = (await query(
@@ -535,7 +535,7 @@ describe("A <StaticRouterProvider>", () => {
 
   it("does not encode user-specified <a href> values", async () => {
     let routes = [
-      { path: "/", element: <Link to="/path/with space">👋</Link> },
+      { path: "/", element: <Link to="..//path/with space">👋</Link> },
     ];
     let { query } = createStaticHandler(routes);
 
@@ -1236,10 +1236,12 @@ describe("A <StaticRouterProvider>", () => {
         path: "/",
         element: (
           <>
-            <Link to="/the/path">relative path</Link>
-            <Link to="http://localhost/the/path">absolute same-origin url</Link>
-            <Link to="https://remix.run">absolute different-origin url</Link>
-            <Link to="mailto:foo@baz.com">absolute mailto: url</Link>
+            <Link to="..//the/path">relative path</Link>
+            <Link to="../http://localhost/the/path">
+              absolute same-origin url
+            </Link>
+            <Link to="../https://remix.run">absolute different-origin url</Link>
+            <Link to="../mailto:foo@baz.com">absolute mailto: url</Link>
           </>
         ),
       },

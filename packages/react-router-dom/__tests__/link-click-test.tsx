@@ -66,7 +66,7 @@ describe("A <Link> click", () => {
       return (
         <div>
           <h1>Home</h1>
-          <Link to="http://localhost/about">About</Link>
+          <Link to="../http://localhost/about">About</Link>
         </div>
       );
     }
@@ -102,7 +102,7 @@ describe("A <Link> click", () => {
         return (
           <div>
             <h1>Home</h1>
-            <Link to="https://remix.run">About</Link>
+            <Link to="../https://remix.run">About</Link>
           </div>
         );
       }
@@ -138,7 +138,7 @@ describe("A <Link> click", () => {
           <div>
             <h1>Home</h1>
             <Link
-              to="https://remix.run"
+              to="../https://remix.run"
               onClick={(e) => {
                 handlerCalled = true;
                 defaultPrevented = e.defaultPrevented;
@@ -176,7 +176,7 @@ describe("A <Link> click", () => {
         return (
           <div>
             <h1>Home</h1>
-            <Link to="http://localhost/not/base">About</Link>
+            <Link to="../http://localhost/not/base">About</Link>
           </div>
         );
       }
@@ -211,7 +211,7 @@ describe("A <Link> click", () => {
           <div>
             <h1>Home</h1>
             <Link
-              to="http://localhost/not/base"
+              to="../http://localhost/not/base"
               onClick={(e) => {
                 handlerCalled = true;
                 defaultPrevented = e.defaultPrevented;

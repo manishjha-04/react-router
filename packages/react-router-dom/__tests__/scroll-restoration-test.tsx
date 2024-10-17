@@ -91,7 +91,7 @@ describe(`ScrollRestoration`, () => {
             {
               index: true,
               Component() {
-                return <Link to="/page">/page</Link>;
+                return <Link to="..//page">/page</Link>;
               },
             },
             {
@@ -196,7 +196,7 @@ const testPages = [
       return (
         <p>
           On page 1<br />
-          <Link to="/page">Go to page 2</Link>
+          <Link to="..//page">Go to page 2</Link>
         </p>
       );
     },
@@ -207,7 +207,7 @@ const testPages = [
       return (
         <p>
           On page 2<br />
-          <Link to="/">Go to page 1</Link>
+          <Link to="../">Go to page 1</Link>
         </p>
       );
     },

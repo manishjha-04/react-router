@@ -63,7 +63,7 @@ function Layout() {
         <h3>Filter by brand</h3>
         <ul>
           <li>
-            <Link to="/">All</Link>
+            <Link to="../">All</Link>
           </li>
           {brands.map((brand) => (
             <li key={brand}>
@@ -168,7 +168,7 @@ function NoMatch() {
     <div>
       <h2>Nothing to see here!</h2>
       <p>
-        <Link to="/">Go to the home page</Link>
+        <Link to="../">Go to the home page</Link>
       </p>
     </div>
   );

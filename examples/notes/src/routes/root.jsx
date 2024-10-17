@@ -13,7 +13,7 @@ export default function Root() {
       <div style={{ padding: "0 2rem", borderRight: "solid 1px #ccc" }}>
         <h1>Notes!</h1>
         <p>
-          <Link to="new">Create Note</Link>
+          <Link to="../new">Create Note</Link>
         </p>
         <ul>
           {notes.map((note) => (

@@ -62,7 +62,7 @@ describe("Link push and replace", () => {
         return (
           <div>
             <h1>Home</h1>
-            <Link to="?name=michael">Michael</Link>
+            <Link to="../?name=michael">Michael</Link>
             <ShowNavigationType />
           </div>
         );
@@ -116,7 +116,7 @@ describe("Link push and replace", () => {
         return (
           <div>
             <h1>Home</h1>
-            <Link to="#bio">Bio</Link>
+            <Link to="../#bio">Bio</Link>
             <ShowNavigationType />
           </div>
         );
@@ -170,7 +170,7 @@ describe("Link push and replace", () => {
         return (
           <div>
             <h1>Home</h1>
-            <Link to=".">Home</Link>
+            <Link to="../.">Home</Link>
             <ShowNavigationType />
           </div>
         );
@@ -229,7 +229,7 @@ describe("Link push and replace", () => {
         return (
           <div>
             <h1>Home</h1>
-            <Link to="." replace={false}>
+            <Link to="../." replace={false}>
               Home
             </Link>
             <ShowNavigationType />
@@ -290,7 +290,7 @@ describe("Link push and replace", () => {
         return (
           <div>
             <h1>Home</h1>
-            <Link to="http://localhost/base/about">About</Link>
+            <Link to="../http://localhost/base/about">About</Link>
           </div>
         );
       }

@@ -44,8 +44,8 @@ describe("trailing slashes", () => {
                   index
                   element={
                     <>
-                      <Link to="" />
-                      <Link to="/" />
+                      <Link to="../" />
+                      <Link to="../" />
                     </>
                   }
                 />
@@ -82,8 +82,8 @@ describe("trailing slashes", () => {
                   path=""
                   element={
                     <>
-                      <Link to="" />
-                      <Link to="/" />
+                      <Link to="../" />
+                      <Link to="../" />
                     </>
                   }
                 />
@@ -120,7 +120,7 @@ describe("trailing slashes", () => {
                   path="parent"
                   element={
                     <>
-                      <Link to=".." />
+                      <Link to="../.." />
                       <Link to="../" />
                       <Outlet />
                     </>
@@ -210,8 +210,8 @@ describe("trailing slashes", () => {
                   index
                   element={
                     <>
-                      <Link to="" />
-                      <Link to="/" />
+                      <Link to="../" />
+                      <Link to="../" />
                     </>
                   }
                 />
@@ -248,8 +248,8 @@ describe("trailing slashes", () => {
                   path=""
                   element={
                     <>
-                      <Link to="" />
-                      <Link to="/" />
+                      <Link to="../" />
+                      <Link to="../" />
                     </>
                   }
                 />
@@ -286,7 +286,7 @@ describe("trailing slashes", () => {
                   path="parent"
                   element={
                     <>
-                      <Link to=".." />
+                      <Link to="../.." />
                       <Link to="../" />
                       <Outlet />
                     </>

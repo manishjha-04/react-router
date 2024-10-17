@@ -16,9 +16,9 @@ export function Layout() {
   return (
     <>
       <nav>
-        <Link to="/projects/authorized">Authorized Project</Link>| 
-        <Link to="/projects/unauthorized">Unauthorized Project</Link>| 
-        <Link to="/projects/broken">Broken Project</Link>
+        <Link to="..//projects/authorized">Authorized Project</Link>| 
+        <Link to="..//projects/unauthorized">Unauthorized Project</Link>| 
+        <Link to="..//projects/broken">Broken Project</Link>
       </nav>
       <p>
         This example shows the flexibility of{" "}

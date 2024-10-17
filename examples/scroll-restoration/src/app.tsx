@@ -82,31 +82,31 @@ function Layout() {
   return (
     <>
       <style>{`
-      .wrapper {
-        display: grid;
-        grid-template-columns: 1fr 2fr;
-        padding: 1rem;
-      }
+    .wrapper {
+      display: grid;
+      grid-template-columns: 1fr 2fr;
+      padding: 1rem;
+    }
 
-      .fixed {
-        position: fixed;
-        max-width: 20%;
-        height: 100%;
-        padding: 1rem;
-      }
+    .fixed {
+      position: fixed;
+      max-width: 20%;
+      height: 100%;
+      padding: 1rem;
+    }
 
-      .navitem {
-        margin: 1rem 0;
-      }
+    .navitem {
+      margin: 1rem 0;
+    }
 
-      .spinner {
-        position: fixed;
-        top: 0;
-        right: 0;
-        padding: 5px;
-        background-color: lightgreen;
-      }
-    `}</style>
+    .spinner {
+      position: fixed;
+      top: 0;
+      right: 0;
+      padding: 5px;
+      background-color: lightgreen;
+    }
+  `}</style>
       <div
         className="spinner"
         style={{
@@ -121,26 +121,26 @@ function Layout() {
             <nav>
               <ul>
                 <li className="navitem">
-                  <Link to="/">Home</Link>
+                  <Link to="../">Home</Link>
                 </li>
                 <li className="navitem">
-                  <Link to="/restore-by-key">
+                  <Link to="..//restore-by-key">
                     This page restores by location.key
                   </Link>
                 </li>
                 <li className="navitem">
-                  <Link to="/restore-by-pathname">
+                  <Link to="..//restore-by-pathname">
                     {" "}
                     This page restores by location.pathname
                   </Link>
                 </li>
                 <li className="navitem">
-                  <Link to="/link-to-hash#heading">
+                  <Link to="..//link-to-hash#heading">
                     This link will link to a nested heading via hash
                   </Link>
                 </li>
                 <li className="navitem">
-                  <Link to="/restore-by-key" preventScrollReset>
+                  <Link to="..//restore-by-key" preventScrollReset>
                     This link will not scroll to the top
                   </Link>
                 </li>
@@ -158,9 +158,9 @@ function Layout() {
         </div>
       </div>
       {/*
-      Including this component inside a data router component tree is what
-      enables restoration
-    */}
+    Including this component inside a data router component tree is what
+    enables restoration
+  */}
       <ScrollRestoration getKey={getKey} />
     </>
   );

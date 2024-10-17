@@ -590,8 +590,8 @@ function testDomRouter(
       function Layout() {
         return (
           <div>
-            <Link to="/foo">Link to Foo</Link>
-            <Link to="/bar">Link to Bar</Link>
+            <Link to="..//foo">Link to Foo</Link>
+            <Link to="..//bar">Link to Bar</Link>
             <Outlet />
           </div>
         );
@@ -624,8 +624,8 @@ function testDomRouter(
       function Layout() {
         return (
           <div>
-            <Link to="/foo">Link to Foo</Link>
-            <Link to="/bar">Link to Bar</Link>
+            <Link to="..//foo">Link to Foo</Link>
+            <Link to="..//bar">Link to Bar</Link>
             <div id="output">
               <Outlet />
             </div>
@@ -667,7 +667,7 @@ function testDomRouter(
         let navigation = useNavigation();
         return (
           <div>
-            <Link to="/bar">Link to Bar</Link>
+            <Link to="..//bar">Link to Bar</Link>
             <div id="output">
               <p>{navigation.state}</p>
               <Outlet />
@@ -756,7 +756,7 @@ function testDomRouter(
         let navigation = useNavigation();
         return (
           <div>
-            <Link to="/bar">Link to Bar</Link>
+            <Link to="..//bar">Link to Bar</Link>
             <div id="output">
               <p>{navigation.state}</p>
               <Outlet />
@@ -835,10 +835,10 @@ function testDomRouter(
         let state = React.useContext(DataRouterStateContext);
         return (
           <div>
-            <Link to="/foo" preventScrollReset>
+            <Link to="..//foo" preventScrollReset>
               Link to Foo
             </Link>
-            <Link to="/bar">Link to Bar</Link>
+            <Link to="..//bar">Link to Bar</Link>
             <p id="preventScrollReset">{String(state?.preventScrollReset)}</p>
             <Outlet />
           </div>
@@ -884,10 +884,10 @@ function testDomRouter(
         let state = React.useContext(DataRouterStateContext);
         return (
           <div>
-            <Link to="/foo" preventScrollReset={true}>
+            <Link to="..//foo" preventScrollReset={true}>
               Link to Foo
             </Link>
-            <Link to="/bar">Link to Bar</Link>
+            <Link to="..//bar">Link to Bar</Link>
             <p id="preventScrollReset">{String(state?.preventScrollReset)}</p>
             <Outlet />
           </div>
@@ -1744,7 +1744,7 @@ function testDomRouter(
         let navigate = useNavigate();
         return (
           <>
-            <Link to="form">Go to Form</Link>
+            <Link to="../form">Go to Form</Link>
             <button onClick={() => navigate(-1)}>Go back</button>
             <div className="output">
               <Outlet />
@@ -1812,7 +1812,7 @@ function testDomRouter(
         let navigate = useNavigate();
         return (
           <>
-            <Link to="form">Go to Form</Link>
+            <Link to="../form">Go to Form</Link>
             <button onClick={() => navigate(-1)}>Go back</button>
             <div className="output">
               <Outlet />
@@ -1946,7 +1946,7 @@ function testDomRouter(
         formData.append("test", "value");
         return (
           <>
-            <Link to="1">Go to 1</Link>
+            <Link to="../1">Go to 1</Link>
             <button
               onClick={() => {
                 submit(formData, { action: "2", method: "post" });
@@ -2039,7 +2039,7 @@ function testDomRouter(
         formData.append("test", "value");
         return (
           <>
-            <Link to="1">Go to 1</Link>
+            <Link to="../1">Go to 1</Link>
             <button
               onClick={() => {
                 submit(formData, { action: "1", method: "post" });
@@ -4847,8 +4847,8 @@ function testDomRouter(
           let fetchers = useFetchers();
           return (
             <>
-              <Link to="/1">Link to 1</Link>
-              <Link to="/2">Link to 2</Link>
+              <Link to="..//1">Link to 1</Link>
+              <Link to="..//2">Link to 2</Link>
               <div id="output">
                 <p>{JSON.stringify(fetchers.map((f) => f.state))}</p>
                 <Outlet />
@@ -5662,7 +5662,7 @@ function testDomRouter(
                     return (
                       <>
                         <pre>{`Num fetchers: ${fetchers.length}`}</pre>
-                        <Link to="/page">Go to /page</Link>
+                        <Link to="..//page">Go to /page</Link>
                         <Outlet />
                       </>
                     );
@@ -5730,7 +5730,7 @@ function testDomRouter(
                     return (
                       <>
                         <pre>{`Num fetchers: ${fetchers.length}`}</pre>
-                        <Link to="/page">Go to /page</Link>
+                        <Link to="..//page">Go to /page</Link>
                         <Outlet />
                       </>
                     );
@@ -5797,7 +5797,7 @@ function testDomRouter(
                     return (
                       <>
                         <pre>{`Num fetchers: ${fetchers.length}`}</pre>
-                        <Link to="/page">Go to /page</Link>
+                        <Link to="..//page">Go to /page</Link>
                         <Outlet />
                       </>
                     );
@@ -5859,7 +5859,7 @@ function testDomRouter(
                     return (
                       <>
                         <pre>{`Num fetchers: ${fetchers.length}`}</pre>
-                        <Link to="/page">Go to /page</Link>
+                        <Link to="..//page">Go to /page</Link>
                         <Outlet />
                       </>
                     );
@@ -5925,7 +5925,7 @@ function testDomRouter(
                     return (
                       <>
                         <pre>{`Num fetchers: ${fetchers.length}`}</pre>
-                        <Link to="/page">Go to /page</Link>
+                        <Link to="..//page">Go to /page</Link>
                         <Outlet />
                       </>
                     );
@@ -5997,7 +5997,7 @@ function testDomRouter(
                     return (
                       <>
                         <pre>{`Num fetchers: ${fetchers.length}`}</pre>
-                        <Link to="/page">Go to /page</Link>
+                        <Link to="..//page">Go to /page</Link>
                         <Outlet />
                       </>
                     );
@@ -6075,7 +6075,7 @@ function testDomRouter(
                     return (
                       <>
                         <pre>{`Num fetchers: ${fetchers.length}`}</pre>
-                        <Link to="/page">Go to /page</Link>
+                        <Link to="..//page">Go to /page</Link>
                         <Outlet />
                       </>
                     );
@@ -6149,7 +6149,7 @@ function testDomRouter(
                     return (
                       <>
                         <pre>{`Num fetchers: ${fetchers.length}`}</pre>
-                        <Link to="/page">Go to /page</Link>
+                        <Link to="..//page">Go to /page</Link>
                         <Outlet />
                       </>
                     );
@@ -6209,7 +6209,7 @@ function testDomRouter(
                     return (
                       <>
                         <pre>{`Num fetchers: ${fetchers.length}`}</pre>
-                        <Link to="/page">Go to /page</Link>
+                        <Link to="..//page">Go to /page</Link>
                         <Outlet />
                       </>
                     );
@@ -6275,7 +6275,7 @@ function testDomRouter(
                     return (
                       <>
                         <pre>{`Num fetchers: ${fetchers.length}`}</pre>
-                        <Link to="/page">Go to /page</Link>
+                        <Link to="..//page">Go to /page</Link>
                         <Outlet />
                       </>
                     );
@@ -6348,7 +6348,7 @@ function testDomRouter(
                     return (
                       <>
                         <pre>{`Num fetchers: ${fetchers.length}`}</pre>
-                        <Link to="/page">Go to /page</Link>
+                        <Link to="..//page">Go to /page</Link>
                         <Outlet />
                       </>
                     );
@@ -6419,7 +6419,7 @@ function testDomRouter(
                     return (
                       <>
                         <pre>{`Num fetchers: ${fetchers.length}`}</pre>
-                        <Link to="/page">Go to /page</Link>
+                        <Link to="..//page">Go to /page</Link>
                         <Outlet />
                       </>
                     );
@@ -7300,8 +7300,8 @@ function testDomRouter(
           let navigation = useNavigation();
           return (
             <div>
-              <Link to="/foo">Link to Foo</Link>
-              <Link to="/bar">Link to Bar</Link>
+              <Link to="..//foo">Link to Foo</Link>
+              <Link to="..//bar">Link to Bar</Link>
               <div id="output">
                 <p>{navigation.state}</p>
                 <Outlet />
@@ -7416,8 +7416,8 @@ function testDomRouter(
           let navigation = useNavigation();
           return (
             <div>
-              <Link to="/foo">Link to Foo</Link>
-              <Link to="/bar">Link to Bar</Link>
+              <Link to="..//foo">Link to Foo</Link>
+              <Link to="..//bar">Link to Bar</Link>
               <div id="output">
                 <p>{navigation.state}</p>
                 <Outlet />
@@ -7500,7 +7500,7 @@ function testDomRouter(
           let navigation = useNavigation();
           return (
             <div>
-              <Link to="/bar">Link to Bar</Link>
+              <Link to="..//bar">Link to Bar</Link>
               <div id="output">
                 <p>{navigation.state}</p>
                 <Outlet />
@@ -7585,7 +7585,7 @@ function testDomRouter(
           let navigation = useNavigation();
           return (
             <div>
-              <Link to="/bar">Link to Bar</Link>
+              <Link to="..//bar">Link to Bar</Link>
               <div id="output">
                 <p>{navigation.state}</p>
                 <Outlet />
@@ -7659,8 +7659,8 @@ function testDomRouter(
               Component() {
                 return (
                   <div>
-                    <Link to="/a">/a</Link>
-                    <Link to="/b" viewTransition>
+                    <Link to="..//a">/a</Link>
+                    <Link to="..//b" viewTransition>
                       /b
                     </Link>
                     <Form action="/c">
@@ -7741,7 +7741,7 @@ function testDomRouter(
               Component() {
                 return (
                   <>
-                    <Link to="/page" viewTransition>
+                    <Link to="..//page" viewTransition>
                       /page
                     </Link>
                     <Outlet />

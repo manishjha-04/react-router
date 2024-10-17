@@ -270,7 +270,7 @@ function Nav() {
     <nav>
       <ul>
         <li>
-          <Link to="/" unstable_viewTransition>
+          <Link to="../" unstable_viewTransition>
             Home
           </Link>
           <ul>
@@ -281,7 +281,7 @@ function Nav() {
           </ul>
         </li>
         <li>
-          <Link to="/loader" unstable_viewTransition>
+          <Link to="..//loader" unstable_viewTransition>
             Loader with delay
           </Link>{" "}
           <button
@@ -333,7 +333,7 @@ function Nav() {
           </ul>
         </li>
         <li>
-          <Link to="/images" unstable_viewTransition>
+          <Link to="..//images" unstable_viewTransition>
             Image Gallery Example
           </Link>
         </li>
@@ -349,7 +349,7 @@ function Nav() {
           </ul>
         </li>
         <li>
-          <Link to="/defer-no-boundary" unstable_viewTransition>
+          <Link to="..//defer-no-boundary" unstable_viewTransition>
             Deferred Data (without boundary)
           </Link>
           <ul>

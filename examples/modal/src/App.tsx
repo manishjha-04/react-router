@@ -73,10 +73,10 @@ function Layout() {
       <nav>
         <ul>
           <li>
-            <Link to="/">Home</Link>
+            <Link to="../">Home</Link>
           </li>
           <li>
-            <Link to="/gallery">Gallery</Link>
+            <Link to="..//gallery">Gallery</Link>
           </li>
         </ul>
       </nav>
@@ -93,10 +93,10 @@ function Home() {
       <h3>Featured Images</h3>
       <ul>
         <li>
-          <Link to="/img/1">Image 1</Link>
+          <Link to="..//img/1">Image 1</Link>
         </li>
         <li>
-          <Link to="/img/2">Image 2</Link>
+          <Link to="..//img/2">Image 2</Link>
         </li>
       </ul>
     </div>
@@ -215,7 +215,7 @@ function NoMatch() {
     <div>
       <h2>Nothing to see here!</h2>
       <p>
-        <Link to="/">Go to the home page</Link>
+        <Link to="../">Go to the home page</Link>
       </p>
     </div>
   );

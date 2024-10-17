@@ -59,10 +59,10 @@ export function Layout() {
         <nav>
           <ul>
             <li>
-              <Link to="/">Home</Link>
+              <Link to="../">Home</Link>
             </li>
             <li>
-              <Link to="/gallery">Gallery</Link>
+              <Link to="..//gallery">Gallery</Link>
             </li>
           </ul>
         </nav>
@@ -78,7 +78,7 @@ export function Home() {
     <div>
       <h2>Home</h2>
       <p>
-        Click over to the <Link to="/gallery">Gallery</Link> route to see the
+        Click over to the <Link to="..//gallery">Gallery</Link> route to see the
         modal in action
       </p>
       <Outlet />

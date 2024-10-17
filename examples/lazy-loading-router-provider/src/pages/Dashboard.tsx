@@ -6,10 +6,10 @@ export function DashboardLayout() {
       <nav>
         <ul>
           <li>
-            <Link to="/dashboard">Dashboard Home</Link>
+            <Link to="..//dashboard">Dashboard Home</Link>
           </li>
           <li>
-            <Link to="/dashboard/messages">Messages</Link>
+            <Link to="..//dashboard/messages">Messages</Link>
           </li>
         </ul>
       </nav>

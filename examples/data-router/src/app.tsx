@@ -101,16 +101,16 @@ export function Layout() {
       <nav>
         <ul>
           <li>
-            <Link to="/">Home</Link>
+            <Link to="../">Home</Link>
           </li>
           <li>
-            <Link to="/todos">Todos</Link>
+            <Link to="..//todos">Todos</Link>
           </li>
           <li>
-            <Link to="/deferred">Deferred</Link>
+            <Link to="..//deferred">Deferred</Link>
           </li>
           <li>
-            <Link to="/404">404 Link</Link>
+            <Link to="..//404">404 Link</Link>
           </li>
           <li>
             <button onClick={() => revalidator.revalidate()}>
@@ -125,11 +125,11 @@ export function Layout() {
         {fetcherInProgress && <p>Fetcher in progress...</p>}
       </div>
       <p>
-        Click on over to <Link to="/todos">/todos</Link> and check out these
+        Click on over to <Link to="..//todos">/todos</Link> and check out these
         data loading APIs!
       </p>
       <p>
-        Or, checkout <Link to="/deferred">/deferred</Link> to see how to
+        Or, checkout <Link to="..//deferred">/deferred</Link> to see how to
         separate critical and lazily loaded data in your loaders.
       </p>
       <p>
@@ -223,7 +223,7 @@ export function TodosList() {
       </p>
       <ul>
         <li>
-          <Link to="/todos/junk">
+          <Link to="..//todos/junk">
             Click this link to force an error in the loader
           </Link>
         </li>
