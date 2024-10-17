@@ -35,7 +35,13 @@ describe("usePrompt", () => {
             Component: () => <h1>Arbitrary</h1>,
           },
         ],
-        { window: testWindow }
+        {
+          window: testWindow,
+
+          future: {
+            v7_fetcherPersist: true
+          }
+        }
       );
 
       render(
@@ -75,7 +81,13 @@ describe("usePrompt", () => {
             Component: () => <h1>Arbitrary</h1>,
           },
         ],
-        { window: testWindow }
+        {
+          window: testWindow,
+
+          future: {
+            v7_fetcherPersist: true
+          }
+        }
       );
 
       render(
@@ -117,7 +129,13 @@ describe("usePrompt", () => {
             Component: () => <h1>Arbitrary</h1>,
           },
         ],
-        { window: testWindow }
+        {
+          window: testWindow,
+
+          future: {
+            v7_fetcherPersist: true
+          }
+        }
       );
 
       render(

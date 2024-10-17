@@ -39,7 +39,14 @@ describe(`ScrollRestoration`, () => {
           children: testPages,
         },
       ],
-      { basename: "/base", window: testWindow }
+      {
+        basename: "/base",
+        window: testWindow,
+
+        future: {
+          v7_fetcherPersist: true
+        }
+      }
     );
     let { container } = render(
       <RouterProvider
@@ -110,7 +117,14 @@ describe(`ScrollRestoration`, () => {
           ],
         },
       ],
-      { basename: "/base", window: testWindow }
+      {
+        basename: "/base",
+        window: testWindow,
+
+        future: {
+          v7_fetcherPersist: true
+        }
+      }
     );
     let { container } = render(
       <RouterProvider
@@ -166,7 +180,14 @@ describe(`ScrollRestoration`, () => {
           children: testPages,
         },
       ],
-      { basename: "/base", window: testWindow }
+      {
+        basename: "/base",
+        window: testWindow,
+
+        future: {
+          v7_fetcherPersist: true
+        }
+      }
     );
     let { container } = render(
       <RouterProvider

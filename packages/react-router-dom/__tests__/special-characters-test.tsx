@@ -281,7 +281,13 @@ describe("special character tests", () => {
       // Now run the same initialized-location render through a data router
       // and confirm all the same assertions
       let routes = createRoutesFromElements(routeElements);
-      let router = createBrowserRouter(routes, { window: testWindow });
+      let router = createBrowserRouter(routes, {
+        window: testWindow,
+
+        future: {
+          v7_fetcherPersist: true
+        }
+      });
       ctx = render(
         <RouterProvider
           router={router}
@@ -745,7 +751,13 @@ describe("special character tests", () => {
       // Now run the same initialized-location render through a data router
       // and confirm all the same assertions
       let routes = createRoutesFromElements(routeElements);
-      let router = createBrowserRouter(routes, { window: testWindow });
+      let router = createBrowserRouter(routes, {
+        window: testWindow,
+
+        future: {
+          v7_fetcherPersist: true
+        }
+      });
       ctx = render(
         <RouterProvider
           router={router}
@@ -998,7 +1010,13 @@ describe("special character tests", () => {
 
         let router = createBrowserRouter(
           [{ path: "/with space", element: <ShowPath /> }],
-          { window: testWindow }
+          {
+            window: testWindow,
+
+            future: {
+              v7_fetcherPersist: true
+            }
+          }
         );
         let ctx = render(
           <RouterProvider
@@ -1030,7 +1048,13 @@ describe("special character tests", () => {
             { path: "/", element: <Start /> },
             { path: "/with space", element: <ShowPath /> },
           ],
-          { window: testWindow }
+          {
+            window: testWindow,
+
+            future: {
+              v7_fetcherPersist: true
+            }
+          }
         );
         let ctx = render(
           <RouterProvider
@@ -1071,7 +1095,13 @@ describe("special character tests", () => {
               ],
             },
           ],
-          { window: testWindow }
+          {
+            window: testWindow,
+
+            future: {
+              v7_fetcherPersist: true
+            }
+          }
         );
         let ctx = render(
           <RouterProvider

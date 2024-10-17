@@ -169,19 +169,19 @@ const router = createBrowserRouter(
               document.title = "Images";
             }, []);
             return (
-              <div className="image-list">
+              (<div className="image-list">
                 <h1>Image List</h1>
                 <div>
                   {images.map((src, idx) => (
                     // Adds 'transitioning' class to the <a> during the transition
-                    <NavLink
+                    (<NavLink
                       key={src}
                       to={`/images/${idx}`}
                       unstable_viewTransition
                     >
                       <p>Image Number {idx}</p>
                       <img src={src} alt={`Img ${idx}`} />
-                    </NavLink>
+                    </NavLink>)
 
                     // Render prop approach similar to isActive/isPending
                     // <NavLink
@@ -201,7 +201,7 @@ const router = createBrowserRouter(
                     // <NavImage key={src} src={src} idx={idx} />
                   ))}
                 </div>
-              </div>
+              </div>)
             );
           },
         },
@@ -227,6 +227,7 @@ const router = createBrowserRouter(
     future: {
       v7_relativeSplatPath: true,
       v7_normalizeFormMethod: true,
+      v7_fetcherPersist: true
     },
   }
 );

@@ -6102,6 +6102,10 @@ function testDomRouter(
           ],
           {
             window: getWindow("/"),
+
+            future: {
+              v7_fetcherPersist: true
+            }
           }
         );
 

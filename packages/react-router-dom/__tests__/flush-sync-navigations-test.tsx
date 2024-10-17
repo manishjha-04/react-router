@@ -42,6 +42,10 @@ describe("flushSync", () => {
       ],
       {
         window: getWindowImpl("/"),
+
+        future: {
+          v7_fetcherPersist: true
+        }
       }
     );
     render(
@@ -124,6 +128,10 @@ describe("flushSync", () => {
       ],
       {
         window: getWindowImpl("/"),
+
+        future: {
+          v7_fetcherPersist: true
+        }
       }
     );
     render(
@@ -192,6 +200,10 @@ describe("flushSync", () => {
       ],
       {
         window: getWindowImpl("/"),
+
+        future: {
+          v7_fetcherPersist: true
+        }
       }
     );
     render(
@@ -263,6 +275,10 @@ describe("flushSync", () => {
       ],
       {
         window: getWindowImpl("/"),
+
+        future: {
+          v7_fetcherPersist: true
+        }
       }
     );
     render(
